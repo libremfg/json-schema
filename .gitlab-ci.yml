@@ -1,0 +1,33 @@
+stages:
+  - lint
+  - containerize
+
+lint:
+  stage: lint
+  image: python:3.9
+  when: manual
+  script:
+    - go install github.com/giantswarm/schemalint/v2@latest
+    - |
+      for i in ./Schema/*.json;
+        do echo "checking $i";
+        schemalint verify $i;
+      done
+
+containerize-localhost:
+  stage: containerize
+  image: docker:20.10.16
+  when: manual
+  varibles:
+    HOST: "http://localhost/"
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA . --build-arg HOST=$HOST
+
+containerize-jsonlibremfgai:
+  stage: containerize
+  when: manual
+  image: docker:20.10.16
+  varibles:
+    HOST: "https://json.libremfg.ai/"
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA . --build-arg HOST=$HOST

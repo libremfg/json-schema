@@ -1,0 +1,36 @@
+baseURL = 'https://json.libremfg.ai/'
+languageCode = 'en-us'
+title = 'Rhize B2MML-BatchML JSON Schema'
+
+[params]
+  company = 'Libre Technologies, Inc.'
+
+  # Socials
+  linkedin = 'rhizemdh'
+  youtube = 'UC724P3ntWSGgpRw7J6L8Cug'
+
+  # Miscellaneous
+  disableHLJS = true                              # disable highlight.js
+  disablePostNavigation = true                    # disable post navigation
+  monoDarkIcon = true                             # show monochrome dark mode icon
+  math = true                                     # enable KaTeX math typesetting globally
+  localKatex = false                              # use local KaTeX js/css instead of CDN
+  favicon = "favicon.ico"                         # customize the default favicon
+  appleTouchIcon = "rhize-logo-favicon-32x32.png" # customize the default Apple touch icon
+
+  [params.contact]
+    email = 'info@rhize.com'
+
+  [[params.social]]
+    name = 'LinkedIn'
+    icon = 'linkedin'
+    url = 'https://www.linkedin.com/company/rhizemdh/'
+
+  [[params.social]]
+    name = 'YouTube'
+    icon = 'youtube'
+    url = 'https://youtube.com/channel/UC724P3ntWSGgpRw7J6L8Cug'
+
+[services]
+  [googleAnalytics]
+    ID = 'G-EPGBVT1ZX6'

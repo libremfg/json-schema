@@ -1,0 +1,4 @@
+./Docs/static/schemas/*.json
+/Docs/public/
+.hugo_build.lock
+Examples/
