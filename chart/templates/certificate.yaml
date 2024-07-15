@@ -1,0 +1,16 @@
+{{- if eq .Values.ingress.className "traefik" }}
+{{ range  $entry := .Values.ingress.hosts }}
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: {{ $entry.host }}
+spec:
+  secretName: {{ $entry.host }}-tls
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: {{ $entry.host }}
+  dnsNames:
+    - {{ $entry.host }}
+{{ end }}
+{{- end }}

@@ -48192,8 +48192,8 @@
     "properties": {
         "$schema": {
             "type": "string",
-            "format": "uri",
-            "default": "https://json-schema.org/draft/2020-12/schema"
+            "default": "https://json-schema.org/draft/2020-12/schema",
+            "format": "uri"
         },
         "@xmlns:Extended": {
             "default": "./v1.0.0.extensions.schema.json#"
