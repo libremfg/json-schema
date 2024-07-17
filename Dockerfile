@@ -2,7 +2,7 @@
 FROM alpine:latest AS build
 
 # Install the Hugo go app.
-RUN apk add --update hugo
+RUN apk add --update hugo jq
 
 # Set Working directory
 WORKDIR /opt/b2mml-batchml
@@ -18,6 +18,12 @@ RUN mkdir ./Docs/static/schemas && \
     cp ./Schema/* ./Docs/static/schemas/ && \
     sed -i 's,\("$id"\: *"\),\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json && \
     sed -i 's,\("$ref"\: *"\)\./,\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json
+
+# Minimize the JSON Schema files.
+RUN for f in ./Docs/static/schemas/*.json; do \
+    path=${f%.json}.min.json && \
+    (jq -c . < ./$f) > $path; \
+    done
 
 # Run Hugo in the Workdir to generate HTML.
 RUN hugo -s ./Docs -b ${HOST}
