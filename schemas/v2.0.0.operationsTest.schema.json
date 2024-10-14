@@ -1,0 +1,1724 @@
+{
+  "$id": "v2.0.0.operationsTest.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Operations Test Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeOperationsTestInformation": {
+      "$ref": "#/$defs/AcknowledgeOperationsTestInformationType"
+    },
+    "AcknowledgeOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "OperationsTestInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeTestResult": {
+      "$ref": "#/$defs/AcknowledgeTestResultType"
+    },
+    "AcknowledgeTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeTestSpecification": {
+      "$ref": "#/$defs/AcknowledgeTestSpecificationType"
+    },
+    "AcknowledgeTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelOperationsTestInformation": {
+      "$ref": "#/$defs/CancelOperationsTestInformationType"
+    },
+    "CancelOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "OperationsTestInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelTestResult": {
+      "$ref": "#/$defs/CancelTestResultType"
+    },
+    "CancelTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelTestSpecification": {
+      "$ref": "#/$defs/CancelTestSpecificationType"
+    },
+    "CancelTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeOperationsTestInformation": {
+      "$ref": "#/$defs/ChangeOperationsTestInformationType"
+    },
+    "ChangeOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "OperationsTestInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeTestResult": {
+      "$ref": "#/$defs/ChangeTestResultType"
+    },
+    "ChangeTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeTestSpecification": {
+      "$ref": "#/$defs/ChangeTestSpecificationType"
+    },
+    "ChangeTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetOperationsTestInformation": {
+      "$ref": "#/$defs/GetOperationsTestInformationType"
+    },
+    "GetOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "OperationsTestInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetTestResult": {
+      "$ref": "#/$defs/GetTestResultType"
+    },
+    "GetTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetTestSpecification": {
+      "$ref": "#/$defs/GetTestSpecificationType"
+    },
+    "GetTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsTestInformation": {
+      "$ref": "#/$defs/OperationsTestInformationType",
+      "description": "Operations test information is exchanged to communicate criteria that are to be applied to perform tests of personnel, equipment, physical assets and/or materials and to communicate the results of those tests."
+    },
+    "OperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+            }
+          ]
+        },
+        "ID": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            }
+          ]
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "TestResult": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/TestResultType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "TestSpecification": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/TestSpecificationType"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessOperationsTestInformation": {
+      "$ref": "#/$defs/ProcessOperationsTestInformationType"
+    },
+    "ProcessOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "OperationsTestInformation",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessTestResult": {
+      "$ref": "#/$defs/ProcessTestResultType"
+    },
+    "ProcessTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessTestSpecification": {
+      "$ref": "#/$defs/ProcessTestSpecificationType"
+    },
+    "ProcessTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "PropertyMeasurementType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/PropertyMeasurementType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "Expiration": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MeasurementDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "TestableObjectPropertyID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+            }
+          ]
+        },
+        "WorkDefinitionID": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondOperationsTestInformation": {
+      "$ref": "#/$defs/RespondOperationsTestInformationType"
+    },
+    "RespondOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "OperationsTestInformation",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondTestResult": {
+      "$ref": "#/$defs/RespondTestResultType"
+    },
+    "RespondTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondTestSpecification": {
+      "$ref": "#/$defs/RespondTestSpecificationType"
+    },
+    "RespondTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowOperationsTestInformation": {
+      "$ref": "#/$defs/ShowOperationsTestInformationType"
+    },
+    "ShowOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "OperationsTestInformation",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowTestResult": {
+      "$ref": "#/$defs/ShowTestResultType"
+    },
+    "ShowTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowTestSpecification": {
+      "$ref": "#/$defs/ShowTestSpecificationType"
+    },
+    "ShowTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncOperationsTestInformation": {
+      "$ref": "#/$defs/SyncOperationsTestInformationType"
+    },
+    "SyncOperationsTestInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncOperationsTestInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsTestInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsTestInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsTestInformation",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncTestResult": {
+      "$ref": "#/$defs/SyncTestResultType"
+    },
+    "SyncTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncTestResultType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "TestResult": {
+              "items": {
+                "$ref": "#/$defs/TestResultType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "TestResult"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncTestSpecification": {
+      "$ref": "#/$defs/SyncTestSpecificationType"
+    },
+    "SyncTestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncTestSpecificationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "TestSpecification": {
+              "items": {
+                "$ref": "#/$defs/TestSpecificationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "TestSpecification"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TestResult": {
+      "$ref": "#/$defs/TestResultType",
+      "description": "Operations test information is exchanged to communicate test result for evaluated test criteria and/or \nproperty measurement for performed test specifications of personnel, equipment, physical assets and/or \nmaterials.  The test result details for the evaluation of test specification criteria and/or property \nmeasurement of the tested evaluated property(s) required for a testable object to match the quality \nor performance requirements of a test specification. A test result may contain other test results to \nform a hierarchy of test specifications. "
+    },
+    "TestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TestResultType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "EvaluatedCriterionResult": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+            }
+          ]
+        },
+        "EvaluationDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "Expiration": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "HierarchyScope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+            }
+          ]
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsTestRequirementID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PropertyMeasurement": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/PropertyMeasurementType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "TestResultChild": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/TestResultType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "TestableObjectID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TestSpecification": {
+      "$ref": "#/$defs/TestSpecificationType",
+      "description": "The test specification details the test specification criteria and the tested evaluated property(s) \nrequired for a testable object to match the quality or performance requirements of the business or \nparticular customers. A test specification may contain other test specifications to form a hierarchy \nof test specifications. "
+    },
+    "TestSpecificationCriteriaType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationCriteriaType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EvaluatedPropertyID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Expression": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Result": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "Sequence": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TestSpecificationEvaluatedPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationEvaluatedPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TestSpecificationCriteriaID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "TestableObjectPropertyID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "WorkDefinitionID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TestSpecificationPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TestSpecificationPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/TestSpecificationPropertyType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TestSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EvaluatedProperty": {
+          "items": {
+            "$ref": "#/$defs/TestSpecificationEvaluatedPropertyType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsTestRequirementID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PhysicalSampleRequired": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IndicatorType"
+        },
+        "PublishedEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "RecurrenceQuantity": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+        },
+        "RecurrenceTimeInterval": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DurationType"
+        },
+        "TestSampleSize": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+        },
+        "TestSpecificationChild": {
+          "items": {
+            "$ref": "#/$defs/TestSpecificationType"
+          },
+          "type": "array"
+        },
+        "TestSpecificationCriteria": {
+          "items": {
+            "$ref": "#/$defs/TestSpecificationCriteriaType"
+          },
+          "type": "array"
+        },
+        "TestSpecificationProperty": {
+          "items": {
+            "$ref": "#/$defs/TestSpecificationPropertyType"
+          },
+          "type": "array"
+        },
+        "TestableObjectID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "EvaluatedProperty"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeOperationsTestInformation": {
+      "$ref": "#/$defs/AcknowledgeOperationsTestInformation"
+    },
+    "AcknowledgeTestResult": {
+      "$ref": "#/$defs/AcknowledgeTestResult"
+    },
+    "AcknowledgeTestSpecification": {
+      "$ref": "#/$defs/AcknowledgeTestSpecification"
+    },
+    "CancelOperationsTestInformation": {
+      "$ref": "#/$defs/CancelOperationsTestInformation"
+    },
+    "CancelTestResult": {
+      "$ref": "#/$defs/CancelTestResult"
+    },
+    "CancelTestSpecification": {
+      "$ref": "#/$defs/CancelTestSpecification"
+    },
+    "ChangeOperationsTestInformation": {
+      "$ref": "#/$defs/ChangeOperationsTestInformation"
+    },
+    "ChangeTestResult": {
+      "$ref": "#/$defs/ChangeTestResult"
+    },
+    "ChangeTestSpecification": {
+      "$ref": "#/$defs/ChangeTestSpecification"
+    },
+    "GetOperationsTestInformation": {
+      "$ref": "#/$defs/GetOperationsTestInformation"
+    },
+    "GetTestResult": {
+      "$ref": "#/$defs/GetTestResult"
+    },
+    "GetTestSpecification": {
+      "$ref": "#/$defs/GetTestSpecification"
+    },
+    "OperationsTestInformation": {
+      "$ref": "#/$defs/OperationsTestInformation"
+    },
+    "ProcessOperationsTestInformation": {
+      "$ref": "#/$defs/ProcessOperationsTestInformation"
+    },
+    "ProcessTestResult": {
+      "$ref": "#/$defs/ProcessTestResult"
+    },
+    "ProcessTestSpecification": {
+      "$ref": "#/$defs/ProcessTestSpecification"
+    },
+    "RespondOperationsTestInformation": {
+      "$ref": "#/$defs/RespondOperationsTestInformation"
+    },
+    "RespondTestResult": {
+      "$ref": "#/$defs/RespondTestResult"
+    },
+    "RespondTestSpecification": {
+      "$ref": "#/$defs/RespondTestSpecification"
+    },
+    "ShowOperationsTestInformation": {
+      "$ref": "#/$defs/ShowOperationsTestInformation"
+    },
+    "ShowTestResult": {
+      "$ref": "#/$defs/ShowTestResult"
+    },
+    "ShowTestSpecification": {
+      "$ref": "#/$defs/ShowTestSpecification"
+    },
+    "SyncOperationsTestInformation": {
+      "$ref": "#/$defs/SyncOperationsTestInformation"
+    },
+    "SyncTestResult": {
+      "$ref": "#/$defs/SyncTestResult"
+    },
+    "SyncTestSpecification": {
+      "$ref": "#/$defs/SyncTestSpecification"
+    },
+    "TestResult": {
+      "$ref": "#/$defs/TestResult"
+    },
+    "TestSpecification": {
+      "$ref": "#/$defs/TestSpecification"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}

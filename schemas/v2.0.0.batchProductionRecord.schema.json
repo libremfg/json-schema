@@ -1,0 +1,2462 @@
+{
+  "$id": "v2.0.0.batchProductionRecord.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Batch Production Record Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeBatchProductionRecord": {
+      "$ref": "#/$defs/AcknowledgeBatchProductionRecordType"
+    },
+    "AcknowledgeBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "BatchProductionRecord"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AlarmDataType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AlarmDataType"
+        }
+      ],
+      "properties": {
+        "AlarmEvent": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "AlarmLimit": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "AlarmType": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "Priority": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AlarmEvent",
+        "AlarmType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "BatchProductionRecord": {
+      "$ref": "#/$defs/BatchProductionRecordType"
+    },
+    "BatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/BatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "BatchID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "BatchProductionRecord": {
+          "$ref": "#/$defs/BatchProductionRecordType"
+        },
+        "BatchProductionRecordSpec": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "CampaignID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ChangeHistory": {
+          "$ref": "#/$defs/ChangeHistoryType"
+        },
+        "ChangeIndication": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "Comments": {
+          "$ref": "#/$defs/CommentsType"
+        },
+        "ControlRecipes": {
+          "$ref": "#/$defs/ControlRecipesType"
+        },
+        "CreationDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "DataSets": {
+          "$ref": "#/$defs/DataSetsType"
+        },
+        "Delimiter": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "EquipmentID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "EquipmentScope": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Events": {
+          "$ref": "#/$defs/EventsType"
+        },
+        "ExpirationDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Language": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "LastChangedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "LotID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MasterRecipes": {
+          "$ref": "#/$defs/MasterRecipesType"
+        },
+        "MaterialDefinitionID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "OperationsDefinitions": {
+          "$ref": "#/$defs/OperationsDefinitionsType"
+        },
+        "OperationsPerformances": {
+          "$ref": "#/$defs/OperationsPerformancesType"
+        },
+        "OperationsSchedules": {
+          "$ref": "#/$defs/OperationsSchedulesType"
+        },
+        "PersonnelIdentification": {
+          "$ref": "#/$defs/PersonnelIdentificationType"
+        },
+        "PhysicalAssetID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "RecipeElements": {
+          "$ref": "#/$defs/RecipeElementsType"
+        },
+        "RecordStatus": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "ResourceQualifications": {
+          "$ref": "#/$defs/ResourceQualificationsType"
+        },
+        "Samples": {
+          "$ref": "#/$defs/SamplesType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkDirectives": {
+          "$ref": "#/$defs/WorkDirectivesType"
+        },
+        "WorkMasters": {
+          "$ref": "#/$defs/WorkMastersType"
+        },
+        "WorkPerformances": {
+          "$ref": "#/$defs/WorkPerformancesType"
+        },
+        "WorkSchedules": {
+          "$ref": "#/$defs/WorkSchedulesType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ID",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelBatchProductionRecord": {
+      "$ref": "#/$defs/CancelBatchProductionRecordType"
+    },
+    "CancelBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Cancel"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeBatchProductionRecord": {
+      "$ref": "#/$defs/ChangeBatchProductionRecordType"
+    },
+    "ChangeBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Change"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeHistoryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeHistoryType"
+        }
+      ],
+      "properties": {
+        "Change": {
+          "items": {
+            "$ref": "#/$defs/ChangeType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "PrechangeData": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+              }
+            ]
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "Reason": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "RecordReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "PrechangeData",
+        "RecordReference"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CommentType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CommentType"
+        }
+      ],
+      "properties": {
+        "CommentText": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "PersonID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
+        },
+        "RecordReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "CommentText",
+        "EntryID",
+        "ObjectType",
+        "RecordReference"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CommentsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CommentsType"
+        }
+      ],
+      "properties": {
+        "Comment": {
+          "items": {
+            "$ref": "#/$defs/CommentType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ControlRecipeRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ControlRecipeRecordType"
+        }
+      ],
+      "properties": {
+        "ControlRecipe": {
+          "$ref": "v2.0.0.batchInformation.schema.json#/$defs/ControlRecipeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "ControlRecipe",
+        "EntryID",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ControlRecipesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ControlRecipesType"
+        }
+      ],
+      "properties": {
+        "ControlRecipeRecord": {
+          "items": {
+            "$ref": "#/$defs/ControlRecipeRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "DataSetType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/DataSetType"
+        }
+      ],
+      "properties": {
+        "DelimitedDataBlock": {
+          "$ref": "#/$defs/DelimitedDataBlockType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EndTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "OrderedData": {
+          "items": {
+            "$ref": "#/$defs/OrderedDataType"
+          },
+          "type": "array"
+        },
+        "StartTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "TagSpecification": {
+          "items": {
+            "$ref": "#/$defs/TagSpecificationType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "TimeSpecification": {
+          "$ref": "#/$defs/TimeSpecificationType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "TrendSystemReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "TagSpecification"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "DataSetsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/DataSetsType"
+        }
+      ],
+      "properties": {
+        "DataSet": {
+          "items": {
+            "$ref": "#/$defs/DataSetType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "DataValueType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/DataValueType"
+        }
+      ],
+      "properties": {
+        "Quality": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TagIndex": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+          },
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "Value"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "DelimitedDataBlockType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/DelimitedDataBlockType"
+        }
+      ],
+      "properties": {
+        "DelimitedData": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "OrderDelimiter": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "TagDelimiter": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "required": [
+        "DelimitedData",
+        "OrderDelimiter",
+        "TagDelimiter"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "EventSubType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Allocation",
+            "Application",
+            "Consume",
+            "Deallocation",
+            "Equipment",
+            "Message",
+            "Mode Change",
+            "Mode Command",
+            "Modification",
+            "Movement",
+            "Parameter Data",
+            "Process",
+            "Process Data",
+            "Produce",
+            "Prompt",
+            "Prompt Response",
+            "Property Value Change",
+            "Reconciliation",
+            "Security",
+            "State Change",
+            "State Command",
+            "Status Change",
+            "System",
+            "Target End Time",
+            "Target Start Time",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "EventSubTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Allocation",
+            "Application",
+            "Consume",
+            "Deallocation",
+            "Equipment",
+            "Message",
+            "Mode Change",
+            "Mode Command",
+            "Modification",
+            "Movement",
+            "Parameter Data",
+            "Process",
+            "Process Data",
+            "Produce",
+            "Prompt",
+            "Prompt Response",
+            "Property Value Change",
+            "Reconciliation",
+            "Security",
+            "State Change",
+            "State Command",
+            "Status Change",
+            "System",
+            "Target End Time",
+            "Target Start Time",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "EventType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Alarm",
+            "Control Recipe",
+            "Equipment",
+            "General",
+            "Material",
+            "Message",
+            "Operator",
+            "Procedural Execution",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "EventTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Alarm",
+            "Control Recipe",
+            "Equipment",
+            "General",
+            "Material",
+            "Message",
+            "Operator",
+            "Procedural Execution",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "EventsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/EventsType"
+        }
+      ],
+      "properties": {
+        "Event": {
+          "items": {
+            "$ref": "#/$defs/SingleEventType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetBatchProductionRecord": {
+      "$ref": "#/$defs/GetBatchProductionRecordType"
+    },
+    "GetBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Get"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MasterRecipeRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MasterRecipeRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MasterRecipe": {
+          "$ref": "v2.0.0.batchInformation.schema.json#/$defs/MasterRecipeType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "MasterRecipe",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MasterRecipesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MasterRecipesType"
+        }
+      ],
+      "properties": {
+        "MasterRecipeRecord": {
+          "items": {
+            "$ref": "#/$defs/MasterRecipeRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsDefinitionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsDefinitionRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "OperationsDefinition": {
+          "$ref": "v2.0.0.operationsDefinition.schema.json#/$defs/OperationsDefinitionType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "OperationsDefinition"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsDefinitionsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsDefinitionsType"
+        }
+      ],
+      "properties": {
+        "OperationsDefinitionRecord": {
+          "items": {
+            "$ref": "#/$defs/OperationsDefinitionRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsPerformanceRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsPerformanceRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "OperationsPerformance": {
+          "$ref": "v2.0.0.operationsPerformance.schema.json#/$defs/OperationsPerformanceType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "OperationsPerformance"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsPerformancesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsPerformancesType"
+        }
+      ],
+      "properties": {
+        "OperationsPerformanceRecord": {
+          "items": {
+            "$ref": "#/$defs/OperationsPerformanceRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsScheduleRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsScheduleRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "OperationsSchedule": {
+          "$ref": "v2.0.0.operationsSchedule.schema.json#/$defs/OperationsScheduleType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "OperationsSchedule"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsSchedulesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsSchedulesType"
+        }
+      ],
+      "properties": {
+        "OperationsScheduleRecord": {
+          "items": {
+            "$ref": "#/$defs/OperationsScheduleRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OrderedDataType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OrderedDataType"
+        }
+      ],
+      "properties": {
+        "DataValue": {
+          "items": {
+            "$ref": "#/$defs/DataValueType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "OrderIndex": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        },
+        "TimeValue": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "DataValue"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "PersonnelIdentificationManifestType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelIdentificationManifestType"
+        }
+      ],
+      "properties": {
+        "ChangeIndication": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Name": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "Reason": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+        },
+        "RecordReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "ChangeIndication",
+        "EntryID",
+        "Name",
+        "ObjectType",
+        "RecordReference"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "PersonnelIdentificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelIdentificationType"
+        }
+      ],
+      "properties": {
+        "PersonnelIdentificationManifest": {
+          "items": {
+            "$ref": "#/$defs/PersonnelIdentificationManifestType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessBatchProductionRecord": {
+      "$ref": "#/$defs/ProcessBatchProductionRecordType"
+    },
+    "ProcessBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RecipeElementRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RecipeElementRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "RecipeElementType": {
+          "$ref": "v2.0.0.batchInformation.schema.json#/$defs/RecipeElementType1"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "RecipeElementType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RecipeElementsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RecipeElementsType"
+        }
+      ],
+      "properties": {
+        "RecipeElementRecord": {
+          "items": {
+            "$ref": "#/$defs/RecipeElementRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RecordObjectType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Batch Production Record",
+            "Change",
+            "Comment",
+            "Control Recipe",
+            "Data Set",
+            "Event",
+            "Master Recipe",
+            "Personnel Identification Manifest",
+            "Resource Definition Manifest",
+            "Recipe Element",
+            "Sample",
+            "Sample Test",
+            "Sample Test Result",
+            "Work Directive",
+            "Work Master",
+            "Work Performance",
+            "Work Schedule",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "RecordObjectTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Batch Production Record",
+            "Change",
+            "Comment",
+            "Control Recipe",
+            "Data Set",
+            "Event",
+            "Master Recipe",
+            "Personnel Identification Manifest",
+            "Resource Definition Manifest",
+            "Recipe Element",
+            "Sample",
+            "Sample Test",
+            "Sample Test Result",
+            "Work Directive",
+            "Work Master",
+            "Work Performance",
+            "Work Schedule",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ResourceQualificationsManifestType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceQualificationsManifestType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveTimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExpirationTimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "QualificationStatus": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "RecordReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ResourceID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ResourceType": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ResourceUse": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "QualificationStatus",
+        "RecordReference",
+        "ResourceID",
+        "ResourceType",
+        "ResourceUse"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ResourceQualificationsType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceQualificationsType"
+        }
+      ],
+      "properties": {
+        "ResourceQualificationsManifest": {
+          "items": {
+            "$ref": "#/$defs/ResourceQualificationsManifestType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondBatchProductionRecord": {
+      "$ref": "#/$defs/RespondBatchProductionRecordType"
+    },
+    "RespondBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SampleTestResultType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SampleTestResultType"
+        }
+      ],
+      "properties": {
+        "AnalysisUsed": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "EquipmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ExpectedResults": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "Expiration": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "PhysicalAssetID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Results": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "TestDisposition": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SampleTestType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SampleTestType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "SampleTestResult": {
+          "items": {
+            "$ref": "#/$defs/SampleTestResultType"
+          },
+          "type": "array"
+        },
+        "TestCode": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "TestName": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SampleType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SampleType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "EquipmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "PhysicalAssetID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ProceduralElementReference": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "SOPReference": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "SampleExpiration": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "SamplePullReason": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "SampleSize": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+          },
+          "type": "array"
+        },
+        "SampleSourceID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "SampleTest": {
+          "items": {
+            "$ref": "#/$defs/SampleTestType"
+          },
+          "type": "array"
+        },
+        "SampleType": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+          },
+          "type": "array"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SamplesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SamplesType"
+        }
+      ],
+      "properties": {
+        "Sample": {
+          "items": {
+            "$ref": "#/$defs/SampleType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowBatchProductionRecord": {
+      "$ref": "#/$defs/ShowBatchProductionRecordType"
+    },
+    "ShowBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SingleEventType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SingleEventType"
+        }
+      ],
+      "properties": {
+        "AlarmData": {
+          "items": {
+            "$ref": "#/$defs/AlarmDataType"
+          },
+          "type": "array"
+        },
+        "AssociatedEventID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Category": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ComputerID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "EquipmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "EventSubType": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/EventSubTypeType"
+            }
+          ]
+        },
+        "EventType": {
+          "$ref": "#/$defs/EventTypeType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MessageText": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "PersonID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
+          },
+          "type": "array"
+        },
+        "PhysicalAssetID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "PreviousValue": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "ProceduralElementReference": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "UserAttribute": {
+          "items": {
+            "$ref": "#/$defs/UserAttributeType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "EntryID",
+        "EventSubType",
+        "EventType",
+        "ObjectType"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncBatchProductionRecord": {
+      "$ref": "#/$defs/SyncBatchProductionRecordType"
+    },
+    "SyncBatchProductionRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncBatchProductionRecordType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "BatchProductionRecord": {
+              "items": {
+                "$ref": "#/$defs/BatchProductionRecordType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "BatchProductionRecord",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TagSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TagSpecificationType"
+        }
+      ],
+      "properties": {
+        "Alias": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "DataCompression": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "DataSource": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "DataType": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/DataTypeType"
+            }
+          ]
+        },
+        "Deadband": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EquipmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "PhysicalAssetID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ProceduralElementReference": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "SamplingType": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "SignificantDigits": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "TagIndex": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        },
+        "UnitOfMeasure": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/UnitOfMeasureType"
+            }
+          ]
+        }
+      },
+      "required": [
+        "DataType",
+        "TagIndex",
+        "UnitOfMeasure"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "TimeSpecificationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/TimeSpecificationType"
+        }
+      ],
+      "properties": {
+        "OffsetTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Relative": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IndicatorType"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "UserAttributeType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/UserAttributeType"
+        }
+      ],
+      "properties": {
+        "AttributeID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "AttributeID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkDirectiveRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkDirectiveRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkDirective": {
+          "$ref": "v2.0.0.workDefinition.schema.json#/$defs/WorkDirectiveType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "WorkDirective"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkDirectivesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkDirectivesType"
+        }
+      ],
+      "properties": {
+        "WorkDirectiverRecord": {
+          "items": {
+            "$ref": "#/$defs/WorkDirectiveRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkMasterRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkMasterRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkMaster": {
+          "$ref": "v2.0.0.workDefinition.schema.json#/$defs/WorkMasterType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "WorkMaster"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkMastersType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkMastersType"
+        }
+      ],
+      "properties": {
+        "WorkMasterRecord": {
+          "items": {
+            "$ref": "#/$defs/WorkMasterRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkPerformanceRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkPerformanceRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkPerformance": {
+          "$ref": "v2.0.0.workPerformance.schema.json#/$defs/WorkPerformanceType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "WorkPerformance"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkPerformancesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkPerformancesType"
+        }
+      ],
+      "properties": {
+        "WorkPerformanceRecord": {
+          "items": {
+            "$ref": "#/$defs/WorkPerformanceRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkScheduleRecordType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkScheduleRecordType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ExternalReference": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ObjectType": {
+          "$ref": "#/$defs/RecordObjectTypeType"
+        },
+        "TimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkSchedule": {
+          "$ref": "v2.0.0.workSchedule.schema.json#/$defs/WorkScheduleType"
+        }
+      },
+      "required": [
+        "EntryID",
+        "ObjectType",
+        "WorkSchedule"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkSchedulesType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkSchedulesType"
+        }
+      ],
+      "properties": {
+        "WorkScheduleRecord": {
+          "items": {
+            "$ref": "#/$defs/WorkScheduleRecordType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeBatchProductionRecord": {
+      "$ref": "#/$defs/AcknowledgeBatchProductionRecord"
+    },
+    "BatchProductionRecord": {
+      "$ref": "#/$defs/BatchProductionRecord"
+    },
+    "CancelBatchProductionRecord": {
+      "$ref": "#/$defs/CancelBatchProductionRecord"
+    },
+    "ChangeBatchProductionRecord": {
+      "$ref": "#/$defs/ChangeBatchProductionRecord"
+    },
+    "GetBatchProductionRecord": {
+      "$ref": "#/$defs/GetBatchProductionRecord"
+    },
+    "ProcessBatchProductionRecord": {
+      "$ref": "#/$defs/ProcessBatchProductionRecord"
+    },
+    "RespondBatchProductionRecord": {
+      "$ref": "#/$defs/RespondBatchProductionRecord"
+    },
+    "ShowBatchProductionRecord": {
+      "$ref": "#/$defs/ShowBatchProductionRecord"
+    },
+    "SyncBatchProductionRecord": {
+      "$ref": "#/$defs/SyncBatchProductionRecord"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}

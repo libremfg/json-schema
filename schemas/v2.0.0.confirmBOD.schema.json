@@ -1,0 +1,90 @@
+{
+    "$id": "v2.0.0.confirmBOD.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "ConfirmBOD": {
+            "$ref": "#/$defs/ConfirmBODType"
+        },
+        "BODType": {
+            "type": "object",
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "Note": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "OriginalApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "UserArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransUserAreaType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/BODType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ConfirmBODType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea"
+            ],
+            "properties": {
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "BOD",
+                        "Confirm"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "BOD": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/BODType"
+                            },
+                            "minItems": 1
+                        },
+                        "Confirm": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransConfirmType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ConfirmBODType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize B2MML-JSON - ConfirmBOD Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "ConfirmBOD": {
+            "$ref": "#/$defs/ConfirmBOD"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.0.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
