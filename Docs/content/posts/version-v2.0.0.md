@@ -31,7 +31,7 @@ Based on the works of https://github.com/MESAInternational/B2MML-BatchML.
 Start out by importing the schema and using it in your JSON documents. 
 
 ```
-"$schema": "{{< siteurl >}}schemas"
+"$schema": "{{< siteurl >}}schemas/"
 ```
 
 Here is an example using the JSON schema in a `NotifyWorkDefined` message.

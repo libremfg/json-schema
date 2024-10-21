@@ -8,49 +8,38 @@ import (
 
 // This is a very specific script that took all the definitions within v2.0.0.dataType.schema.json and checked if it existed within the base file
 // if it existed (which they all do) then it will copy the reference over, which saves a lot of tedious copy and pasting
-
-func DTchangeReferences() {
-	jsonFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/dataTypeTest.json"
-	baseFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/oldSchema/v2.0.0.base.schema.json"
+func DTchangeReferences(newFile string, baseFile string) (int, error) {
 
 	// Extract keys from the JSON file
-	keys, err := DTextractKeys(jsonFile)
+	keys, err := DTextractKeys(newFile)
 	if err != nil {
-		fmt.Println("Error extracting keys:", err)
-		return
+		return fmt.Println("Error extracting keys:", err)
 	}
-
-	// fmt.Println("Extracted keys:", keys)
-	// fmt.Println("Length of extracted keys:", len(keys))
 
 	// Get the $ref values from the base file
 	refs, err := DTgetRefs(keys, baseFile)
 	if err != nil {
-		fmt.Println("Error getting references:", err)
-		return
+		return fmt.Println("Error getting references:", err)
 	}
-
-	// Print the map of refs
-	// refsJSON, err := json.MarshalIndent(refs, "", "  ")
-	// if err != nil {
-	// 	fmt.Println("Error marshalling refs:", err)
-	// 	return
-	// }
-	// fmt.Println("Refs:", string(refsJSON))
-	// fmt.Println("refs:", refs)
 
 	// Replace the $ref values in the output file
-	if err := DTreplacesRefs(jsonFile, refs); err != nil {
-		fmt.Println("Error replacing references:", err)
+	if err := DTreplacesRefs(newFile, refs); err != nil {
+		return fmt.Println("Error replacing references:", err)
 	}
+
+	return 0, nil
 }
 
+// Extracts the definitions keys from the dataType schema file
 func DTextractKeys(jsonFile string) ([]string, error) {
+
+	// read the json file
 	data, err := os.ReadFile(jsonFile)
 	if err != nil {
 		return nil, fmt.Errorf("error reading JSON file: %v", err)
 	}
 
+	// unmarshall the data from reading the json file and map it to the struct in main
 	var jsonData map[string]interface{}
 	if err := json.Unmarshal(data, &jsonData); err != nil {
 		return nil, fmt.Errorf("error unmarshalling JSON data: %v", err)
@@ -62,6 +51,7 @@ func DTextractKeys(jsonFile string) ([]string, error) {
 		return nil, fmt.Errorf("$defs section not found or is not an object")
 	}
 
+	// create string array for mapping definitions from schema
 	var keys []string
 	for key := range defs {
 		keys = append(keys, key)
@@ -70,7 +60,9 @@ func DTextractKeys(jsonFile string) ([]string, error) {
 	return keys, nil
 }
 
+// Finds the references within the base schema file and creates a map containing them
 func DTgetRefs(keys []string, baseFile string) (map[string]string, error) {
+
 	// Read the JSON file
 	data, err := os.ReadFile(baseFile)
 	if err != nil {
@@ -105,7 +97,9 @@ func DTgetRefs(keys []string, baseFile string) (map[string]string, error) {
 	return refMap, nil
 }
 
+// This will write the references found in the base file to the dataType schema file
 func DTreplacesRefs(outputFile string, refValues map[string]string) error {
+
 	// Read the JSON file
 	data, err := os.ReadFile(outputFile)
 	if err != nil {
@@ -143,6 +137,7 @@ func DTreplacesRefs(outputFile string, refValues map[string]string) error {
 
 // updateRefs recursively updates the $ref values in the $defs section
 func updateRefs(data interface{}, refValues map[string]string) {
+
 	switch v := data.(type) {
 	case map[string]interface{}:
 		for key, value := range v {

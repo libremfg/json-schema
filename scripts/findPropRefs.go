@@ -6,48 +6,48 @@ import (
 	"os"
 )
 
-func findPropRefs(schemaFile string) {
-	// Command-line argument to implement
-	// xsdFile := flag.String("xsd", "b2mml-batchml/B2MML-ConfirmBOD .xsd", "XSD file to parse")
-	// jsonFile := flag.String("json", "b2mml-batchml/Schema/v2.0.0.base.schema.json", "JSON file to parse")
-	// outputFile := flag.String("output", "testFile.json", "Output file name")
-	// flag.Parse()
+// After converting an XSD file to a JSON file, this script adds all references found
+// within the specified base file to the designated schema file.
+func findPropRefs(schemaFile string, baseFile string) (int, error) {
 
-	// schemaFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/errorTest.json"
-	baseFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/schemas/v2.0.0.batchInformation.schema.json"
-
-	// Get the list of names from the XSD file
+	// Gets the list of names from the XSD file
 	propNames, err := getPropNames(schemaFile)
 	if err != nil {
-		fmt.Println("Error parsing schema file:", err)
-		return
+		return fmt.Println("Error parsing schema file:", err)
 	}
 
+	// Gets the name of the references needed to search for in the basefile
 	baseRefs, err := getBaseRefs(propNames, baseFile)
 	if err != nil {
-		fmt.Println("Error getting base references:", err)
-		return
+		return fmt.Println("Error getting base references:", err)
 	}
 
+	// Adds each instance of a reference to the definition
 	err = addDefs(baseRefs, schemaFile)
 	if err != nil {
-		fmt.Println("Error adding definitions:", err)
-		return
+		return fmt.Println("Error adding definitions:", err)
 	}
+
+	return 0, nil
 }
 
+// Reads the property names that need to be searched for in the base file
 func getPropNames(jsonFile string) (map[string]interface{}, error) {
+
+	// Read the inputted schema file
 	data, err := os.ReadFile(jsonFile)
 	if err != nil {
 		return nil, fmt.Errorf("error reading JSON file: %v", err)
 	}
 
+	// unmarshal the read data into the JSON struct
 	var jsonData JSONStructure
 	if err := json.Unmarshal(data, &jsonData); err != nil {
 		return nil, fmt.Errorf("error unmarshalling JSON data: %v", err)
 	}
 
-	var refProps = make(map[string]interface{}) // Initialize the map
+	// Initialize the map
+	var refProps = make(map[string]interface{})
 
 	for key, value := range jsonData.Properties {
 		refProps[key] = value
@@ -56,7 +56,9 @@ func getPropNames(jsonFile string) (map[string]interface{}, error) {
 	return refProps, nil
 }
 
+// Gets the property names from the base schema and adds them to the json structure
 func getBaseRefs(propNames map[string]interface{}, baseSchema string) (map[string]interface{}, error) {
+
 	data, err := os.ReadFile(baseSchema)
 	if err != nil {
 		return nil, fmt.Errorf("error reading JSON file: %v", err)
@@ -79,7 +81,9 @@ func getBaseRefs(propNames map[string]interface{}, baseSchema string) (map[strin
 	return propNames, nil
 }
 
+// Adds the definitions found from the base file into the inputted schema file
 func addDefs(definitions map[string]interface{}, schemaFile string) error {
+
 	data, err := os.ReadFile(schemaFile)
 	if err != nil {
 		return fmt.Errorf("error reading JSON file: %v", err)
@@ -90,7 +94,6 @@ func addDefs(definitions map[string]interface{}, schemaFile string) error {
 		return fmt.Errorf("error unmarshalling JSON data: %v", err)
 	}
 
-	// var refProps = make(map[string]interface{})
 	for key, value := range definitions {
 		jsonData.Defs[key] = value
 	}
@@ -100,7 +103,7 @@ func addDefs(definitions map[string]interface{}, schemaFile string) error {
 		return fmt.Errorf("error marshalling JSON data: %v", err)
 	}
 
-	// Step 5: Write the updated JSON content back to the file
+	// Write the updated JSON content back to the file
 	if err := os.WriteFile(schemaFile, updatedContent, 0644); err != nil {
 		return fmt.Errorf("error writing to file: %v", err)
 	}

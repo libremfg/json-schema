@@ -9,24 +9,23 @@ import (
 	"strings"
 )
 
-func changeReferences(jsonFile string) {
-	defDirectory := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/schemas"
+// This script is designed to recursively search for properties referenced within other schemas.
+// It traverses the schemas deeply to ensure that all references are accurately identified.
+func changeReferences(jsonFile string, schemaDirectory string) (int, error) {
 
 	// Extract $ref values
 	refValues, err := extractRefValues(jsonFile)
 	if err != nil {
-		fmt.Println("Error extracting $ref values:", err)
-		return
+		return fmt.Println("Error extracting $ref values:", err)
 	}
 
 	fmt.Println("Extracted $ref values:", refValues)
 	fmt.Println("Length of extracted $ref values:", len(refValues))
 
 	// Find definition files based on the extracted $ref values
-	definitionRefs, err := findRefFiles(refValues, defDirectory)
+	definitionRefs, err := findRefFiles(refValues, schemaDirectory)
 	if err != nil {
-		fmt.Println("Error finding definition references:", err)
-		return
+		return fmt.Println("Error finding definition references:", err)
 	}
 
 	// Print the results
@@ -37,10 +36,17 @@ func changeReferences(jsonFile string) {
 		fmt.Printf("found in file: %s\n", path[0])
 	}
 
-	replacesRefs(jsonFile, definitionRefs)
+	err = replacesRefs(jsonFile, definitionRefs)
+	if err != nil {
+		return fmt.Println("Error replacing references:", err)
+	}
+
+	return 0, nil
 }
 
+// Finds the name of the reference values needed to be searched for
 func extractRefValues(jsonFile string) ([]string, error) {
+
 	data, err := os.ReadFile(jsonFile)
 	if err != nil {
 		return nil, fmt.Errorf("error reading JSON file: %v", err)
@@ -59,7 +65,9 @@ func extractRefValues(jsonFile string) ([]string, error) {
 	return refValues, nil
 }
 
+// Recursively does the extracting of references
 func extractRefsRead(data interface{}) []string {
+
 	var refs []string
 	switch v := data.(type) {
 	case map[string]interface{}:
@@ -83,21 +91,27 @@ func extractRefsRead(data interface{}) []string {
 	return refs
 }
 
+// Extracts a specific part of the string that comes after the /
 func extractName(ref string) string {
+
 	lastSlashIndex := strings.LastIndex(ref, "/")
 	if lastSlashIndex == -1 {
-		return ref // Return the original string if '/' is not found
+		// Return the original string if '/' is not found because we only want the string that comes after it
+		return ref
 	}
 	return ref[lastSlashIndex+1:]
 }
 
 // Finds definition files based on $ref names in a directory
 func findRefFiles(definitions []string, directory string) (map[string][]string, error) {
+
 	results := make(map[string][]string)
+	// Walk the directory to go through each schema file
 	err := filepath.WalkDir(directory, func(path string, info os.DirEntry, err error) error {
 		if err != nil {
 			return err
 		}
+		// checks to see if the specified file is a json file
 		if !info.IsDir() && strings.HasSuffix(info.Name(), ".json") {
 			fileData, err := os.ReadFile(path)
 			if err != nil {
@@ -109,8 +123,8 @@ func findRefFiles(definitions []string, directory string) (map[string][]string, 
 				return err
 			}
 
-			// fmt.Printf("Processing file: %s\n", path)
 			// Directly use jsonData.Defs which is of type map[string]interface{}
+			// If the reference exists within a definition in the directory, then it will add the path as a reference
 			for _, name := range definitions {
 				if _, exists := jsonData.Defs[name]; exists {
 					if paths, found := results[name]; found {
@@ -118,7 +132,6 @@ func findRefFiles(definitions []string, directory string) (map[string][]string, 
 					} else {
 						results[name] = []string{path}
 					}
-					// fmt.Printf("  Match found: %s\n", name)
 				}
 			}
 		}
@@ -130,7 +143,9 @@ func findRefFiles(definitions []string, directory string) (map[string][]string, 
 	return results, nil
 }
 
+// Unmarshals the data from the map and calls the helper functions
 func replacesRefs(jsonFile string, definitionRefs map[string][]string) error {
+
 	data, err := os.ReadFile(jsonFile)
 	if err != nil {
 		return fmt.Errorf("error reading JSON file: %v", err)
@@ -161,8 +176,11 @@ func replacesRefs(jsonFile string, definitionRefs map[string][]string) error {
 	return nil
 }
 
+// Does the actual replacing of references found within directories into the json file in
 func replaceRefsInData(data *map[string]interface{}, replacements map[string][]string) error {
+
 	for key, value := range *data {
+		// finds the key value "$ref" in the schema file
 		if key == "$ref" {
 			if refValue, ok := value.(string); ok {
 				name := extractName(refValue)
@@ -200,6 +218,7 @@ func replaceRefsInData(data *map[string]interface{}, replacements map[string][]s
 	return nil
 }
 
+// Extracts a specific part of the schema path that fits the format of the references
 func extractPath(path string, refValue string) (string, error) {
 	// Check if the path is empty
 	if path == "" {
