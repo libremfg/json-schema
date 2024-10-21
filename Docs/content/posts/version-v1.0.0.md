@@ -1,5 +1,5 @@
 +++
-title = 'Version v1.0.0'
+title = 'Version 1.0.0'
 date = 2024-07-12T18:43:31Z
 +++
 

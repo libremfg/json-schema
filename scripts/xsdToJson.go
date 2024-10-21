@@ -8,29 +8,19 @@ import (
 	"regexp"
 )
 
-func parse() {
-	// Command-line argument to implement
-	// xsdFile := flag.String("xsd", "b2mml-batchml/B2MML-ConfirmBOD .xsd", "XSD file to parse")
-	// jsonFile := flag.String("json", "b2mml-batchml/Schema/v2.0.0.base.schema.json", "JSON file to parse")
-	// outputFile := flag.String("output", "testFile.json", "Output file name")
-	// flag.Parse()
-
-	xsdFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/BatchML-GeneralRecipeExtensions.xsd"
-	jsonFile := "/Users/mattprincev/Documents/Rhize/JSON Schema/b2mml-batchml/oldSchema/v2.0.0.base.schema.json"
-	outputFile := "v2.0.0.generalRecipeExtensions.schema.json"
+// Parses the xsd file into the json file
+func parse(xsdFile string, jsonFile string, outputFile string) (int, error) {
 
 	// Get the list of names from the XSD file
 	names, err := getDefNames(xsdFile)
 	if err != nil {
-		fmt.Println("Error parsing XSD file:", err)
-		return
+		return fmt.Println("Error parsing XSD file:", err)
 	}
 
 	// Check the names against keys in the JSON file
 	matchingData, err := checkNamesInJSONDefs(names, jsonFile)
 	if err != nil {
-		fmt.Println("Error parsing JSON file:", err)
-		return
+		return fmt.Println("Error parsing JSON file:", err)
 	}
 
 	// Construct the output JSON structure
@@ -48,11 +38,15 @@ func parse() {
 
 	// Write the output JSON structure to the output file
 	if err := writeJSONToFile(outputData, outputFile); err != nil {
-		fmt.Println("Error writing to output file:", err)
+		return fmt.Println("Error writing to output file:", err)
 	}
+
+	return 0, nil
 }
 
+// Gets the definition of
 func getDefNames(fileToParse string) ([]string, error) {
+
 	// Open the XSD file
 	file, err := os.Open(fileToParse)
 	if err != nil {
@@ -82,6 +76,7 @@ func getDefNames(fileToParse string) ([]string, error) {
 	return names, nil
 }
 
+// Checks the names found in xsd file against the json file defs
 func checkNamesInJSONDefs(names []string, jsonFile string) (map[string]interface{}, error) {
 	// Read the JSON file
 	data, err := os.ReadFile(jsonFile)
