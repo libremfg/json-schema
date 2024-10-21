@@ -1,6 +1,6 @@
 +++
-title = 'Version 1.0.0'
-date = 2024-07-12T18:43:31Z
+title = 'Version 2.0.0'
+date = 2024-09-20T14:52:37-05:00
 +++
 
 > A JSON Schema implementation of the ANSI/ISA-95 and ANSI/ISA-88 standards.
@@ -31,14 +31,14 @@ Based on the works of https://github.com/MESAInternational/B2MML-BatchML.
 Start out by importing the schema and using it in your JSON documents. 
 
 ```
-"$schema": "{{< siteurl >}}schemas/v1.0.0.base.schema.json"
+"$schema": "{{< siteurl >}}schemas/"
 ```
 
 Here is an example using the JSON schema in a `NotifyWorkDefined` message.
 
 ```json
 {
-    "$schema": "{{< siteurl >}}schemas/v1.0.0.base.schema.json",
+    "$schema": "{{< siteurl >}}schemas/",
     "NotifyWorkDefined": {
         "ApplicationArea": {},
         "DataArea": {
@@ -50,3 +50,11 @@ Here is an example using the JSON schema in a `NotifyWorkDefined` message.
     }
 }
 ```
+
+## Updates Introduced in Version 2.0.0
+
+Refactored the v1.0.0.base.schema.json JSON file by separating it into multiple files that use the prefix "v2.0.0", aligning the structure with the existing B2MMl XML implementation https://github.com/MESAInternational/B2MML-BatchML/tree/master/Schema.
+
+Implemented several automated scripts to assist in refactoring. While these scripts are tailored for specific use cases, they can generally be disregarded outside of those particular scenarios.
+
+In Version 2.0.0, a JSON Schema validator is used for verification, replacing the previous Lint-based approach. This update compiles and validates schemas through the use of scripts, specifically compileSchemas.js, located in scripts, and validate.mjs.

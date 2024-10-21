@@ -1,0 +1,18 @@
+{
+    "$id": "v1.0.0.testExtensions.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Person Extensions",
+    "$defs": {
+        "ActualBatchSizeType": {
+            "type": "integer",
+            "description": "The actual size of the batch."
+        }
+    },
+    "type": "object",
+    "properties": {
+        "batchSize": {
+            "$ref": "#/$defs/ActualBatchSizeType"
+        }
+    },
+    "allOf": [false]
+}

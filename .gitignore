@@ -2,3 +2,5 @@
 /Docs/public/
 .hugo_build.lock
 Examples/
+node_modules/
+.DS_Store

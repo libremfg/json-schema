@@ -1,0 +1,1506 @@
+{
+  "$id": "v2.0.0.workDefinition.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Work Definition Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeWorkDefinitionInformation": {
+      "$ref": "#/$defs/AcknowledgeWorkDefinitionInformationType"
+    },
+    "AcknowledgeWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeWorkDirective": {
+      "$ref": "#/$defs/AcknowledgeWorkDirectiveType"
+    },
+    "AcknowledgeWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeWorkMaster": {
+      "$ref": "#/$defs/AcknowledgeWorkMasterType"
+    },
+    "AcknowledgeWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkDefinitionInformation": {
+      "$ref": "#/$defs/CancelWorkDefinitionInformationType"
+    },
+    "CancelWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkDirective": {
+      "$ref": "#/$defs/CancelWorkDirectiveType"
+    },
+    "CancelWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkMaster": {
+      "$ref": "#/$defs/CancelWorkMasterType"
+    },
+    "CancelWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkDefinitionInformation": {
+      "$ref": "#/$defs/ChangeWorkDefinitionInformationType"
+    },
+    "ChangeWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkDirective": {
+      "$ref": "#/$defs/ChangeWorkDirectiveType"
+    },
+    "ChangeWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkMaster": {
+      "$ref": "#/$defs/ChangeWorkMasterType"
+    },
+    "ChangeWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkDefinitionInformation": {
+      "$ref": "#/$defs/GetWorkDefinitionInformationType"
+    },
+    "GetWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkDirective": {
+      "$ref": "#/$defs/GetWorkDirectiveType"
+    },
+    "GetWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkMaster": {
+      "$ref": "#/$defs/GetWorkMasterType"
+    },
+    "GetWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkDefinitionInformation": {
+      "$ref": "#/$defs/ProcessWorkDefinitionInformationType"
+    },
+    "ProcessWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkDirective": {
+      "$ref": "#/$defs/ProcessWorkDirectiveType"
+    },
+    "ProcessWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkMaster": {
+      "$ref": "#/$defs/ProcessWorkMasterType"
+    },
+    "ProcessWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkDefinitionInformation": {
+      "$ref": "#/$defs/RespondWorkDefinitionInformationType"
+    },
+    "RespondWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkDirective": {
+      "$ref": "#/$defs/RespondWorkDirectiveType"
+    },
+    "RespondWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkMaster": {
+      "$ref": "#/$defs/RespondWorkMasterType"
+    },
+    "RespondWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkDefinitionInformation": {
+      "$ref": "#/$defs/ShowWorkDefinitionInformationType"
+    },
+    "ShowWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkDirective": {
+      "$ref": "#/$defs/ShowWorkDirectiveType"
+    },
+    "ShowWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkMaster": {
+      "$ref": "#/$defs/ShowWorkMasterType"
+    },
+    "ShowWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkDefinitionInformation": {
+      "$ref": "#/$defs/SyncWorkDefinitionInformationType"
+    },
+    "SyncWorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkDefinitionInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkDefinitionInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkDefinitionInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkDirective": {
+      "$ref": "#/$defs/SyncWorkDirectiveType"
+    },
+    "SyncWorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkDirective": {
+              "items": {
+                "$ref": "#/$defs/WorkDirectiveType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkDirective"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkMaster": {
+      "$ref": "#/$defs/SyncWorkMasterType"
+    },
+    "SyncWorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkMasterType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkMaster": {
+              "items": {
+                "$ref": "#/$defs/WorkMasterType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkMaster"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkDefinitionInformation": {
+      "$ref": "#/$defs/WorkDefinitionInformationType"
+    },
+    "WorkDefinitionInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkDefinitionInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkDirective": {
+          "items": {
+            "$ref": "#/$defs/WorkDirectiveType"
+          },
+          "type": "array"
+        },
+        "WorkMaster": {
+          "items": {
+            "$ref": "#/$defs/WorkMasterType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkDirective": {
+      "$ref": "#/$defs/WorkDirectiveType"
+    },
+    "WorkDirectiveType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkDirectiveType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "Duration": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DurationType"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EquipmentSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpEquipmentSpecificationType"
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "JobOrderSourceID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpMaterialSpecificationType"
+          },
+          "type": "array"
+        },
+        "ParameterSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ParameterType"
+          },
+          "type": "array"
+        },
+        "PersonnelSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpPersonnelSpecificationType"
+          },
+          "type": "array"
+        },
+        "PhysicalAssetSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpPhysicalAssetSpecificationType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkDirectiveChild": {
+          "items": {
+            "$ref": "#/$defs/WorkDirectiveType"
+          },
+          "type": "array"
+        },
+        "WorkDirectiveState": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ResponseStateType"
+        },
+        "WorkMasterID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkMasterVersion": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
+        },
+        "WorkflowSpecification": {
+          "$ref": "v2.0.0.workflowSpecification.schema.json#/$defs/WorkflowSpecificationType"
+        }
+      },
+      "required": [
+        "ID",
+        "WorkMasterID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkMaster": {
+      "$ref": "#/$defs/WorkMasterType"
+    },
+    "WorkMasterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkMasterType"
+        }
+      ],
+      "properties": {
+        "DefinitionType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DefinitionTypeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "Duration": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DurationType"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EquipmentSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpEquipmentSpecificationType"
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "JobOrderSourceID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpMaterialSpecificationType"
+          },
+          "type": "array"
+        },
+        "OperationsDefinitionID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "OperationsSegmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "ParameterSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ParameterType"
+          },
+          "type": "array"
+        },
+        "PersonnelSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpPersonnelSpecificationType"
+          },
+          "type": "array"
+        },
+        "PhysicalAssetSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OpPhysicalAssetSpecificationType"
+          },
+          "type": "array"
+        },
+        "ProcessSegmentID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkMasterChild": {
+          "items": {
+            "$ref": "#/$defs/WorkMasterType"
+          },
+          "type": "array"
+        },
+        "WorkMasterPatternID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
+        },
+        "WorkflowSpecification": {
+          "$ref": "v2.0.0.workflowSpecification.schema.json#/$defs/WorkflowSpecificationType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeWorkDefinitionInformation": {
+      "$ref": "#/$defs/AcknowledgeWorkDefinitionInformation"
+    },
+    "AcknowledgeWorkDirective": {
+      "$ref": "#/$defs/AcknowledgeWorkDirective"
+    },
+    "AcknowledgeWorkMaster": {
+      "$ref": "#/$defs/AcknowledgeWorkMaster"
+    },
+    "CancelWorkDefinitionInformation": {
+      "$ref": "#/$defs/CancelWorkDefinitionInformation"
+    },
+    "CancelWorkDirective": {
+      "$ref": "#/$defs/CancelWorkDirective"
+    },
+    "CancelWorkMaster": {
+      "$ref": "#/$defs/CancelWorkMaster"
+    },
+    "ChangeWorkDefinitionInformation": {
+      "$ref": "#/$defs/ChangeWorkDefinitionInformation"
+    },
+    "ChangeWorkDirective": {
+      "$ref": "#/$defs/ChangeWorkDirective"
+    },
+    "ChangeWorkMaster": {
+      "$ref": "#/$defs/ChangeWorkMaster"
+    },
+    "GetWorkDefinitionInformation": {
+      "$ref": "#/$defs/GetWorkDefinitionInformation"
+    },
+    "GetWorkDirective": {
+      "$ref": "#/$defs/GetWorkDirective"
+    },
+    "GetWorkMaster": {
+      "$ref": "#/$defs/GetWorkMaster"
+    },
+    "ProcessWorkDefinitionInformation": {
+      "$ref": "#/$defs/ProcessWorkDefinitionInformation"
+    },
+    "ProcessWorkDirective": {
+      "$ref": "#/$defs/ProcessWorkDirective"
+    },
+    "ProcessWorkMaster": {
+      "$ref": "#/$defs/ProcessWorkMaster"
+    },
+    "RespondWorkDefinitionInformation": {
+      "$ref": "#/$defs/RespondWorkDefinitionInformation"
+    },
+    "RespondWorkDirective": {
+      "$ref": "#/$defs/RespondWorkDirective"
+    },
+    "RespondWorkMaster": {
+      "$ref": "#/$defs/RespondWorkMaster"
+    },
+    "ShowWorkDefinitionInformation": {
+      "$ref": "#/$defs/ShowWorkDefinitionInformation"
+    },
+    "ShowWorkDirective": {
+      "$ref": "#/$defs/ShowWorkDirective"
+    },
+    "ShowWorkMaster": {
+      "$ref": "#/$defs/ShowWorkMaster"
+    },
+    "SyncWorkDefinitionInformation": {
+      "$ref": "#/$defs/SyncWorkDefinitionInformation"
+    },
+    "SyncWorkDirective": {
+      "$ref": "#/$defs/SyncWorkDirective"
+    },
+    "SyncWorkMaster": {
+      "$ref": "#/$defs/SyncWorkMaster"
+    },
+    "WorkDefinitionInformation": {
+      "$ref": "#/$defs/WorkDefinitionInformation"
+    },
+    "WorkDirective": {
+      "$ref": "#/$defs/WorkDirective"
+    },
+    "WorkMaster": {
+      "$ref": "#/$defs/WorkMaster"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}

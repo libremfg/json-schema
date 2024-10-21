@@ -1,24 +1,45 @@
 stages:
-  - lint
+  - jsonschema-validator
   - containerize
   - deploy
 
-lint:
-  stage: lint
-  image: golang:latest
+jsonschema-validator:
+  stage: jsonschema-validator
+  image: node:latest
   script:
-    - go install github.com/giantswarm/schemalint/v2@latest
     - |
-      for i in ./Schema/*.json;
-        do echo "checking $i";
-        schemalint verify $i;
-      done
+      #!/bin/bash
+
+      # Install dependencies
+      npm install ajv@^8.0.0
+
+      # Path to your validation script
+      VALIDATOR_SCRIPT="scripts/compileSchemas.js"
+
+      # Check if the validation script exists
+      if [ ! -f "$VALIDATOR_SCRIPT" ]; then
+        echo "Validation script $VALIDATOR_SCRIPT not found."
+        exit 1
+      fi
+
+      # Run the validation script
+      node "$VALIDATOR_SCRIPT"
+
+      # Check exit status
+      if [ $? -eq 0 ]; then
+        echo "All schemas compiled successfully."
+      else
+        echo "There was an error compiling schemas."
+        exit 1
+      fi
+
+
 
 containerize-localhost:
   stage: containerize
   image: docker:latest
   needs:
-    - lint
+    - jsonschema-validator
   variables:
     HOST: "http://localhost/"
   services:
@@ -40,7 +61,7 @@ containerize-jsonlibremfgai:
   stage: containerize
   image: docker:latest
   needs:
-    - lint
+    - jsonschema-validator
   variables:
     HOST: "https://json.libremfg.ai/"
     ENV_SLUG: "jsonlibremfgai"

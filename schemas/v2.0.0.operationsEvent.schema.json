@@ -1,0 +1,1935 @@
+{
+  "$id": "v2.0.0.operationsEvent.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Operations Event Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeOperationsEventClass": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventClassType"
+    },
+    "AcknowledgeOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "OperationsEventClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeOperationsEventDefinition": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventDefinitionType"
+    },
+    "AcknowledgeOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "OperationsEventDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeOperationsEventInformation": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventInformationType"
+    },
+    "AcknowledgeOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "OperationsEventInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelOperationsEventClass": {
+      "$ref": "#/$defs/CancelOperationsEventClassType"
+    },
+    "CancelOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "OperationsEventClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelOperationsEventDefinition": {
+      "$ref": "#/$defs/CancelOperationsEventDefinitionType"
+    },
+    "CancelOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "OperationsEventDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelOperationsEventInformation": {
+      "$ref": "#/$defs/CancelOperationsEventInformationType"
+    },
+    "CancelOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "OperationsEventInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeOperationsEventClass": {
+      "$ref": "#/$defs/ChangeOperationsEventClassType"
+    },
+    "ChangeOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "OperationsEventClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeOperationsEventDefinition": {
+      "$ref": "#/$defs/ChangeOperationsEventDefinitionType"
+    },
+    "ChangeOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "OperationsEventDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeOperationsEventInformation": {
+      "$ref": "#/$defs/ChangeOperationsEventInformationType"
+    },
+    "ChangeOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "OperationsEventInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetOperationsEventClass": {
+      "$ref": "#/$defs/GetOperationsEventClassType"
+    },
+    "GetOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "OperationsEventClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetOperationsEventDefinition": {
+      "$ref": "#/$defs/GetOperationsEventDefinitionType"
+    },
+    "GetOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "OperationsEventDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetOperationsEventInformation": {
+      "$ref": "#/$defs/GetOperationsEventInformationType"
+    },
+    "GetOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "OperationsEventInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "NotifyOperationsEvent": {
+      "$ref": "#/$defs/NotifyOperationsEventType"
+    },
+    "NotifyOperationsEventClass": {
+      "$ref": "#/$defs/NotifyOperationsEventClassType"
+    },
+    "NotifyOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/NotifyOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventClass",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "NotifyOperationsEventDefinition": {
+      "$ref": "#/$defs/NotifyOperationsEventDefinitionType"
+    },
+    "NotifyOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/NotifyOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventDefinition",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "NotifyOperationsEventInformation": {
+      "$ref": "#/$defs/NotifyOperationsEventInformationType"
+    },
+    "NotifyOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/NotifyOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventInformation",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "NotifyOperationsEventType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/NotifyOperationsEventType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEvent": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEvent",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEvent": {
+      "$ref": "#/$defs/OperationsEventType",
+      "description": "Large numbers of real-world events occur in any given manufacturing system. Only some \nreal-world events are associated with manufacturing operations management activities \nand functions. The subset of those real-world events that require notification of \nprocess context specific information exchanges of this standard shall be defined as \noperations events. Operations events may be generated by any Level 4 or Level 3 \nfunction or activity. "
+    },
+    "OperationsEventClass": {
+      "$ref": "#/$defs/OperationsEventClassType",
+      "description": "An operations event class is a representation of groupings of operations event definitions. "
+    },
+    "OperationsEventClassPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventClassPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventClassPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventClassPropertyType"
+          },
+          "type": "array"
+        },
+        "PropertyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Extension": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsEventExtensionType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventClassBaseID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "OperationsEventClassChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventClassType"
+          },
+          "type": "array"
+        },
+        "OperationsEventClassProperty": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventClassPropertyType"
+          },
+          "type": "array"
+        },
+        "OperationsEventDefinitionSourceID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "OpsEventClassRecordSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OperationsRecordSpecTemplateType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventDefinition": {
+      "$ref": "#/$defs/OperationsEventDefinitionType",
+      "description": "Definition and structure of operations event occurrences shall be shown as an operations \nevent definition. \nThe operations event definition of an operations event is identified by the definition \nID attribute in the operations event occurrence. \nThose constructing or interpreting an operations event obtain and validate the structure\nand definition from the operations event definition. "
+    },
+    "OperationsEventDefinitionPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventDefinitionPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventClassPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventDefinitionPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventDefinitionPropertyType"
+          },
+          "type": "array"
+        },
+        "PropertyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "Acknowledgement": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Category": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EnterpriseFunction": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/EnterpriseFunctionType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MOMFunction": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/MOMFunctionType"
+        },
+        "OperationsEventClassID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "OperationsEventDefinitionChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventDefinitionType"
+          },
+          "type": "array"
+        },
+        "OperationsEventDefinitionProperty": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventClassPropertyType"
+          },
+          "type": "array"
+        },
+        "OperationsEventLevel": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsEventLevelType"
+        },
+        "OperationsEventType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsEventTypeType"
+        },
+        "OperationsType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
+        },
+        "OpsEventDefinitionRecordSpecification": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OperationsRecordSpecTemplateType"
+          },
+          "type": "array"
+        },
+        "Priority": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Source": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventInformation": {
+      "$ref": "#/$defs/OperationsEventInformationType",
+      "description": "The operations event model represents a generic representation of event notifications using \nthe operations event object and the constructs required to define, group and structure the \noperations event occurrences. "
+    },
+    "OperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+            }
+          ]
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEvent": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/OperationsEventType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "OperationsEventClass": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/OperationsEventClassType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "OperationsEventDefinition": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventDefinitionPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventPropertyType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID",
+        "OperationsEventDefinitionPropertyID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "OperationsEventType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/OperationsEventType"
+        }
+      ],
+      "properties": {
+        "Acknowledgement": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Category": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveTimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EnterpriseFunction": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/EnterpriseFunctionType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MOMFunction": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/MOMFunctionType"
+        },
+        "OperationsDefinitionID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OperationsEventChild": {
+          "items": {
+            "$ref": "#/$defs/OperationsEventType"
+          },
+          "type": "array"
+        },
+        "OperationsEventLevel": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsEventLevelType"
+        },
+        "OperationsEventRecord": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/OperationsRecordTemplateType"
+          },
+          "type": "array"
+        },
+        "OperationsEventType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsEventTypeType"
+        },
+        "OperationsType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
+        },
+        "Priority": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        },
+        "RecordTimeStamp": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Source": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessOperationsEventClass": {
+      "$ref": "#/$defs/ProcessOperationsEventClassType"
+    },
+    "ProcessOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "OperationsEventClass",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessOperationsEventDefinition": {
+      "$ref": "#/$defs/ProcessOperationsEventDefinitionType"
+    },
+    "ProcessOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "OperationsEventDefinition",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessOperationsEventInformation": {
+      "$ref": "#/$defs/ProcessOperationsEventInformationType"
+    },
+    "ProcessOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "OperationsEventInformation",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondOperationsEventClass": {
+      "$ref": "#/$defs/RespondOperationsEventClassType"
+    },
+    "RespondOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "OperationsEventClass",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondOperationsEventDefinition": {
+      "$ref": "#/$defs/RespondOperationsEventDefinitionType"
+    },
+    "RespondOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "OperationsEventDefinition",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondOperationsEventInformation": {
+      "$ref": "#/$defs/RespondOperationsEventInformationType"
+    },
+    "RespondOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "OperationsEventInformation",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowOperationsEventClass": {
+      "$ref": "#/$defs/ShowOperationsEventClassType"
+    },
+    "ShowOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "OperationsEventClass",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowOperationsEventDefinition": {
+      "$ref": "#/$defs/ShowOperationsEventDefinitionType"
+    },
+    "ShowOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "OperationsEventDefinition",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowOperationsEventInformation": {
+      "$ref": "#/$defs/ShowOperationsEventInformationType"
+    },
+    "ShowOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "OperationsEventInformation",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncOperationsEventClass": {
+      "$ref": "#/$defs/SyncOperationsEventClassType"
+    },
+    "SyncOperationsEventClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncOperationsEventClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventClass": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventClass",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncOperationsEventDefinition": {
+      "$ref": "#/$defs/SyncOperationsEventDefinitionType"
+    },
+    "SyncOperationsEventDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncOperationsEventDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventDefinition": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventDefinition",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncOperationsEventInformation": {
+      "$ref": "#/$defs/SyncOperationsEventInformationType"
+    },
+    "SyncOperationsEventInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncOperationsEventInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "OperationsEventInformation": {
+              "items": {
+                "$ref": "#/$defs/OperationsEventInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "OperationsEventInformation",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeOperationsEventClass": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventClass"
+    },
+    "AcknowledgeOperationsEventDefinition": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventDefinition"
+    },
+    "AcknowledgeOperationsEventInformation": {
+      "$ref": "#/$defs/AcknowledgeOperationsEventInformation"
+    },
+    "CancelOperationsEventClass": {
+      "$ref": "#/$defs/CancelOperationsEventClass"
+    },
+    "CancelOperationsEventDefinition": {
+      "$ref": "#/$defs/CancelOperationsEventDefinition"
+    },
+    "CancelOperationsEventInformation": {
+      "$ref": "#/$defs/CancelOperationsEventInformation"
+    },
+    "ChangeOperationsEventClass": {
+      "$ref": "#/$defs/ChangeOperationsEventClass"
+    },
+    "ChangeOperationsEventDefinition": {
+      "$ref": "#/$defs/ChangeOperationsEventDefinition"
+    },
+    "ChangeOperationsEventInformation": {
+      "$ref": "#/$defs/ChangeOperationsEventInformation"
+    },
+    "GetOperationsEventClass": {
+      "$ref": "#/$defs/GetOperationsEventClass"
+    },
+    "GetOperationsEventDefinition": {
+      "$ref": "#/$defs/GetOperationsEventDefinition"
+    },
+    "GetOperationsEventInformation": {
+      "$ref": "#/$defs/GetOperationsEventInformation"
+    },
+    "NotifyOperationsEvent": {
+      "$ref": "#/$defs/NotifyOperationsEvent"
+    },
+    "NotifyOperationsEventClass": {
+      "$ref": "#/$defs/NotifyOperationsEventClass"
+    },
+    "NotifyOperationsEventDefinition": {
+      "$ref": "#/$defs/NotifyOperationsEventDefinition"
+    },
+    "NotifyOperationsEventInformation": {
+      "$ref": "#/$defs/NotifyOperationsEventInformation"
+    },
+    "OperationsEvent": {
+      "$ref": "#/$defs/OperationsEvent"
+    },
+    "OperationsEventClass": {
+      "$ref": "#/$defs/OperationsEventClass"
+    },
+    "OperationsEventDefinition": {
+      "$ref": "#/$defs/OperationsEventDefinition"
+    },
+    "OperationsEventInformation": {
+      "$ref": "#/$defs/OperationsEventInformation"
+    },
+    "ProcessOperationsEventClass": {
+      "$ref": "#/$defs/ProcessOperationsEventClass"
+    },
+    "ProcessOperationsEventDefinition": {
+      "$ref": "#/$defs/ProcessOperationsEventDefinition"
+    },
+    "ProcessOperationsEventInformation": {
+      "$ref": "#/$defs/ProcessOperationsEventInformation"
+    },
+    "RespondOperationsEventClass": {
+      "$ref": "#/$defs/RespondOperationsEventClass"
+    },
+    "RespondOperationsEventDefinition": {
+      "$ref": "#/$defs/RespondOperationsEventDefinition"
+    },
+    "RespondOperationsEventInformation": {
+      "$ref": "#/$defs/RespondOperationsEventInformation"
+    },
+    "ShowOperationsEventClass": {
+      "$ref": "#/$defs/ShowOperationsEventClass"
+    },
+    "ShowOperationsEventDefinition": {
+      "$ref": "#/$defs/ShowOperationsEventDefinition"
+    },
+    "ShowOperationsEventInformation": {
+      "$ref": "#/$defs/ShowOperationsEventInformation"
+    },
+    "SyncOperationsEventClass": {
+      "$ref": "#/$defs/SyncOperationsEventClass"
+    },
+    "SyncOperationsEventDefinition": {
+      "$ref": "#/$defs/SyncOperationsEventDefinition"
+    },
+    "SyncOperationsEventInformation": {
+      "$ref": "#/$defs/SyncOperationsEventInformation"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}

@@ -1,0 +1,2528 @@
+{
+  "$id": "v2.0.0.generalRecipe.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - General Recipe Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeGeneralRecipeInformation": {
+      "$ref": "#/$defs/AcknowledgeGeneralRecipeInformationType"
+    },
+    "AcknowledgeGeneralRecipeInformationType": {
+      "additionalProperties": false,
+      "properties": {
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        },
+        "releaseID": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "versionID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "releaseID"
+      ],
+      "type": "object"
+    },
+    "AcknowledgeProcessElementLibrary": {
+      "$ref": "#/$defs/AcknowledgeProcessElementLibraryType"
+    },
+    "AcknowledgeProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "ProcessElementLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeResourceConstraintLibrary": {
+      "$ref": "#/$defs/AcknowledgeResourceConstraintLibraryType"
+    },
+    "AcknowledgeResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "ResourceConstraintLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelGeneralRecipeInformation": {
+      "$ref": "#/$defs/CancelGeneralRecipeInformationType"
+    },
+    "CancelGeneralRecipeInformationType": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelGeneralRecipeInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object"
+    },
+    "CancelProcessElementLibrary": {
+      "$ref": "#/$defs/CancelProcessElementLibraryType"
+    },
+    "CancelProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "ProcessElementLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelResourceConstraintLibrary": {
+      "$ref": "#/$defs/CancelResourceConstraintLibraryType"
+    },
+    "CancelResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "ResourceConstraintLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeGeneralRecipeInformation": {
+      "$ref": "#/$defs/ChangeGeneralRecipeInformationType"
+    },
+    "ChangeGeneralRecipeInformationType": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeGeneralRecipeInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object"
+    },
+    "ChangeProcessElementLibrary": {
+      "$ref": "#/$defs/ChangeProcessElementLibraryType"
+    },
+    "ChangeProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "ProcessElementLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeResourceConstraintLibrary": {
+      "$ref": "#/$defs/ChangeResourceConstraintLibraryType"
+    },
+    "ChangeResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "ResourceConstraintLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ConstraintType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Optional",
+            "Required",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ConstraintTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Optional",
+            "Required",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "DirectedLinkType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/DirectedLinkType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "FromID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ToID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GROtherInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GROtherInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "OtherInfoID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "OtherValue": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GeneralRecipe": {
+      "$ref": "#/$defs/GeneralRecipeType"
+    },
+    "GeneralRecipeFormulaType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeFormulaType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ProcessElementParameter": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementParameterType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ProcessInputs": {
+          "$ref": "#/$defs/GeneralRecipeMaterialsType"
+        },
+        "ProcessIntermediates": {
+          "$ref": "#/$defs/GeneralRecipeMaterialsType"
+        },
+        "ProcessOutputs": {
+          "$ref": "#/$defs/GeneralRecipeMaterialsType"
+        }
+      },
+      "type": "object"
+    },
+    "GeneralRecipeInformation": {
+      "$ref": "#/$defs/GeneralRecipeInformationType"
+    },
+    "GeneralRecipeInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeInformationType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Recipe": {
+          "items": {
+            "$ref": "#/$defs/GeneralRecipeType"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GeneralRecipeMaterialType": {
+      "allOf": [
+        {
+            "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeMaterialType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Amount": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Order": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        }
+      },
+      "type": "object"
+    },
+    "GeneralRecipeMaterialsType": {
+      "allOf": [
+        {
+            "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeMaterialsType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Material": {
+          "items": {
+            "$ref": "#/$defs/GeneralRecipeMaterialType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "MaterialsType": {
+          "$ref": "#/$defs/MaterialsTypeType"
+        }
+      },
+      "type": "object"
+    },
+    "GeneralRecipeType": {
+      "allOf": [
+        {
+            "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "Formula": {
+          "$ref": "#/$defs/GeneralRecipeFormulaType"
+        },
+        "GeneralRecipeType": {
+          "$ref": "#/$defs/GeneralRecipeTypeType"
+        },
+        "Header": {
+          "$ref": "#/$defs/GeneralRecipeHeaderType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "LifeCycleState": {
+          "$ref": "#/$defs/LifeCycleStateType"
+        },
+        "OtherInformation": {
+          "items": {
+            "$ref": "#/$defs/GROtherInformationType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "ProcessProcedure": {
+          "$ref": "#/$defs/ProcessElementType"
+        },
+        "ResourceConstraint": {
+          "items": {
+            "$ref": "#/$defs/ResourceConstraintType"
+          },
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "GeneralRecipeTypeType": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GeneralRecipeType1Type"
+            },
+            {
+              "$ref": "v2.0.0.extensions.schema.json#/$defs/GeneralRecipeType"
+            }
+        ]
+        },
+        "OtherValue": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "GeneralRecipeType1Type": {
+      "type": "string",
+      "enum": ["General", "Site", "Other"]
+    },
+    "GeneralRecipeHeaderType": {
+      "type": "object",
+      "properties": {
+          "BatchSize": {
+              "type": "array",
+              "items": {
+                  "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+              }
+          },
+          "DerivedFromID": {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "Description": {
+              "type": "array",
+              "items": {
+                  "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+          },
+          "EffectiveDate": {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+          },
+          "ExpirationDate": {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+          },
+          "HeaderProperty": {
+              "$ref": "#/$defs/HeaderPropertyType"
+          },
+          "ProductID": {
+              "type": "array",
+              "items": {
+                  "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+              }
+          },
+          "ProductName": {
+              "type": "array",
+              "items": {
+                  "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
+              }
+          }
+      },
+      "allOf": [
+          {
+              "$ref": "./v2.0.0.extensions.schema.json#/$defs/GeneralRecipeHeaderType"
+          }
+      ],
+      "unevaluatedProperties": false
+  },
+    "GetGeneralRecipeInformation": {
+      "$ref": "#/$defs/GetGeneralRecipeInformationType"
+    },
+    "GetGeneralRecipeInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetGeneralRecipeInformationType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            }
+          },
+          "required": [
+            "Get",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        },
+        "releaseID": {
+          "type": "string"
+        },
+        "versionID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "releaseID"
+      ],
+      "type": "object"
+    },
+    "GetProcessElementLibrary": {
+      "$ref": "#/$defs/GetProcessElementLibraryType"
+    },
+    "GetProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "ProcessElementLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetResourceConstraintLibrary": {
+      "$ref": "#/$defs/GetResourceConstraintLibraryType"
+    },
+    "GetResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "ResourceConstraintLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "HeaderPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/HeaderPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "LifeCycleStateType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Draft",
+            "Approved",
+            "Released",
+            "Effective",
+            "Withdrawn",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "LifeCycleStateType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Draft",
+            "Approved",
+            "Released",
+            "Effective",
+            "Withdrawn",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "MaterialsType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Input",
+            "Output",
+            "Intermediate",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "MaterialsTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Input",
+            "Output",
+            "Intermediate",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcedureChartElementType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcedureChartElementType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Label": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/TextType"
+        },
+        "ProcedureChartElementType": {
+          "$ref": "#/$defs/ProcedureChartElementTypeType"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcedureChartElementType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Previous Operation Indicator",
+            "Next Operation Indicator",
+            "Start Parallel Indicator",
+            "End Parallel Indicator",
+            "Start Optional Parallel Indicator",
+            "End Optional Parallel Indicator",
+            "Annotation",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcedureChartElementTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Previous Operation Indicator",
+            "Next Operation Indicator",
+            "Start Parallel Indicator",
+            "End Parallel Indicator",
+            "Start Optional Parallel Indicator",
+            "End Optional Parallel Indicator",
+            "Annotation",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcessElement": {
+      "$ref": "#/$defs/ProcessElementType"
+    },
+    "ProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ProcessElementSpec": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessElementParameterType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessElementParameterType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ProcessElementParameter": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementParameterType"
+          },
+          "type": "array"
+        },
+        "ProcessElementParameterType": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementParameterTypeType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessElementParameterType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Constant",
+            "Equation",
+            "Input",
+            "Output",
+            "Optional",
+            "Reference",
+            "Required",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcessElementParameterTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Constant",
+            "Equation",
+            "Input",
+            "Output",
+            "Optional",
+            "Reference",
+            "Required",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcessElementType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessElementType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "DirectedLink": {
+          "items": {
+            "$ref": "#/$defs/DirectedLinkType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "LifeCycleState": {
+          "$ref": "#/$defs/LifeCycleStateType"
+        },
+        "Materials": {
+          "items": {
+            "$ref": "#/$defs/GeneralRecipeMaterialsType"
+          },
+          "type": "array"
+        },
+        "OtherInformation": {
+          "items": {
+            "$ref": "#/$defs/GROtherInformationType"
+          },
+          "type": "array"
+        },
+        "ProcedureChartElement": {
+          "items": {
+            "$ref": "#/$defs/ProcedureChartElementType"
+          },
+          "type": "array"
+        },
+        "ProcessElement": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementType"
+          },
+          "type": "array"
+        },
+        "ProcessElementParameter": {
+          "items": {
+            "$ref": "#/$defs/ProcessElementParameterType"
+          },
+          "type": "array"
+        },
+        "ProcessElementType": {
+          "$ref": "#/$defs/ProcessElementTypeType"
+        },
+        "ResourceConstraint": {
+          "items": {
+            "$ref": "#/$defs/ResourceConstraintType"
+          },
+          "type": "array"
+        },
+        "SequenceOrder": {
+          "$ref": "#/$defs/SequenceOrderType"
+        },
+        "SequencePath": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NumericType"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessElementType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Process",
+            "Process Stage",
+            "Process Operation",
+            "Process Action",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcessElementTypeType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "Process",
+            "Process Stage",
+            "Process Operation",
+            "Process Action",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ProcessProcessElementLibrary": {
+      "$ref": "#/$defs/ProcessProcessElementLibraryType"
+    },
+    "ProcessProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "ProcessElementLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessResourceConstraintLibrary": {
+      "$ref": "#/$defs/ProcessResourceConstraintLibraryType"
+    },
+    "ProcessResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "ResourceConstraintLibrary"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ResourceConstraint": {
+      "$ref": "#/$defs/ResourceConstraintType"
+    },
+    "ResourceConstraintLibrary": {
+      "$ref": "#/$defs/ResourceConstraintLibraryType"
+    },
+    "ResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "ResourceConstraintSpec": {
+          "items": {
+            "$ref": "#/$defs/ResourceConstraintType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ResourceConstraintPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceConstraintPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ResourceConstraintType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceConstraintType"
+        }
+      ],
+      "properties": {
+        "ConstraintID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "ConstraintType": {
+          "items": {
+            "$ref": "#/$defs/ConstraintTypeType"
+          },
+          "type": "array"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "LifeCycleState": {
+          "$ref": "#/$defs/LifeCycleStateType"
+        },
+        "Range": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "ResourceConstraintProperty": {
+          "items": {
+            "$ref": "#/$defs/ResourceConstraintPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondGeneralRecipeInformation": {
+      "$ref": "#/$defs/RespondGeneralRecipeInformationType"
+    },
+    "RespondGeneralRecipeInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondGeneralRecipeInformationType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "properties": {
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "Respond",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        },
+        "releaseID": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "versionID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "releaseID"
+      ],
+      "type": "object"
+    },
+    "RespondProcessElementLibrary": {
+      "$ref": "#/$defs/RespondProcessElementLibraryType"
+    },
+    "RespondProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "ProcessElementLibrary",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondResourceConstraintLibrary": {
+      "$ref": "#/$defs/RespondResourceConstraintLibraryType"
+    },
+    "RespondResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "ResourceConstraintLibrary",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SequenceOrderType": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "First Parallel",
+            "Middle Parallel",
+            "End Parallel",
+            "First In Path",
+            "Last In Path",
+            "Not In Parallel",
+            "Single First Parallel",
+            "Single Middle Parallel",
+            "Single End Parallel",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@OtherValue": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "SequenceOrderType1Type": {
+      "additionalProperties": false,
+      "properties": {
+        "$": {
+          "enum": [
+            "First Parallel",
+            "Middle Parallel",
+            "End Parallel",
+            "First In Path",
+            "Last In Path",
+            "Not In Parallel",
+            "Single First Parallel",
+            "Single Middle Parallel",
+            "Single End Parallel",
+            "Other"
+          ],
+          "type": "string"
+        },
+        "@languageID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/language"
+        },
+        "@listAgencyID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listAgencyName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@listName": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        },
+        "@listSchemeURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listURI": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/anyURI"
+        },
+        "@listVersionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@name": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
+        }
+      },
+      "type": [
+        "object",
+        "string",
+        "number",
+        "boolean"
+      ]
+    },
+    "ShowGeneralRecipeInformation": {
+      "$ref": "#/$defs/ShowGeneralRecipeInformationType"
+    },
+    "ShowGeneralRecipeInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowGeneralRecipeInformationType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "properties": {
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "Show",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        },
+        "releaseID": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "versionID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "releaseID"
+      ],
+      "type": "object"
+    },
+    "ShowProcessElementLibrary": {
+      "$ref": "#/$defs/ShowProcessElementLibraryType"
+    },
+    "ShowProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "ProcessElementLibrary",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowResourceConstraintLibrary": {
+      "$ref": "#/$defs/ShowResourceConstraintLibraryType"
+    },
+    "ShowResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "ResourceConstraintLibrary",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncGeneralRecipeInformation": {
+      "$ref": "#/$defs/SyncGeneralRecipeInformationType"
+    },
+    "SyncGeneralRecipeInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncGeneralRecipeInformationType"
+        }
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "properties": {
+            "GeneralRecipeInformation": {
+              "items": {
+                "$ref": "#/$defs/GeneralRecipeInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "Sync",
+            "GeneralRecipeInformation"
+          ],
+          "type": "object"
+        },
+        "releaseID": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "versionID": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "releaseID"
+      ],
+      "type": "object"
+    },
+    "SyncProcessElementLibrary": {
+      "$ref": "#/$defs/SyncProcessElementLibraryType"
+    },
+    "SyncProcessElementLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncProcessElementLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ProcessElementLibrary": {
+              "items": {
+                "$ref": "#/$defs/ProcessElementLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "ProcessElementLibrary",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncResourceConstraintLibrary": {
+      "$ref": "#/$defs/SyncResourceConstraintLibraryType"
+    },
+    "SyncResourceConstraintLibraryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceConstraintLibraryType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "ResourceConstraintLibrary": {
+              "items": {
+                "$ref": "#/$defs/ResourceConstraintLibraryType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "ResourceConstraintLibrary",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeGeneralRecipeInformation": {
+      "$ref": "#/$defs/AcknowledgeGeneralRecipeInformation"
+    },
+    "AcknowledgeProcessElementLibrary": {
+      "$ref": "#/$defs/AcknowledgeProcessElementLibrary"
+    },
+    "AcknowledgeResourceConstraintLibrary": {
+      "$ref": "#/$defs/AcknowledgeResourceConstraintLibrary"
+    },
+    "CancelGeneralRecipeInformation": {
+      "$ref": "#/$defs/CancelGeneralRecipeInformation"
+    },
+    "CancelProcessElementLibrary": {
+      "$ref": "#/$defs/CancelProcessElementLibrary"
+    },
+    "CancelResourceConstraintLibrary": {
+      "$ref": "#/$defs/CancelResourceConstraintLibrary"
+    },
+    "ChangeGeneralRecipeInformation": {
+      "$ref": "#/$defs/ChangeGeneralRecipeInformation"
+    },
+    "ChangeProcessElementLibrary": {
+      "$ref": "#/$defs/ChangeProcessElementLibrary"
+    },
+    "ChangeResourceConstraintLibrary": {
+      "$ref": "#/$defs/ChangeResourceConstraintLibrary"
+    },
+    "GeneralRecipe": {
+      "$ref": "#/$defs/GeneralRecipe"
+    },
+    "GeneralRecipeInformation": {
+      "$ref": "#/$defs/GeneralRecipeInformation"
+    },
+    "GetGeneralRecipeInformation": {
+      "$ref": "#/$defs/GetGeneralRecipeInformation"
+    },
+    "GetProcessElementLibrary": {
+      "$ref": "#/$defs/GetProcessElementLibrary"
+    },
+    "GetResourceConstraintLibrary": {
+      "$ref": "#/$defs/GetResourceConstraintLibrary"
+    },
+    "ProcessElement": {
+      "$ref": "#/$defs/ProcessElement"
+    },
+    "ProcessProcessElementLibrary": {
+      "$ref": "#/$defs/ProcessProcessElementLibrary"
+    },
+    "ProcessResourceConstraintLibrary": {
+      "$ref": "#/$defs/ProcessResourceConstraintLibrary"
+    },
+    "ResourceConstraint": {
+      "$ref": "#/$defs/ResourceConstraint"
+    },
+    "ResourceConstraintLibrary": {
+      "$ref": "#/$defs/ResourceConstraintLibrary"
+    },
+    "RespondGeneralRecipeInformation": {
+      "$ref": "#/$defs/RespondGeneralRecipeInformation"
+    },
+    "RespondProcessElementLibrary": {
+      "$ref": "#/$defs/RespondProcessElementLibrary"
+    },
+    "RespondResourceConstraintLibrary": {
+      "$ref": "#/$defs/RespondResourceConstraintLibrary"
+    },
+    "ShowGeneralRecipeInformation": {
+      "$ref": "#/$defs/ShowGeneralRecipeInformation"
+    },
+    "ShowProcessElementLibrary": {
+      "$ref": "#/$defs/ShowProcessElementLibrary"
+    },
+    "ShowResourceConstraintLibrary": {
+      "$ref": "#/$defs/ShowResourceConstraintLibrary"
+    },
+    "SyncGeneralRecipeInformation": {
+      "$ref": "#/$defs/SyncGeneralRecipeInformation"
+    },
+    "SyncProcessElementLibrary": {
+      "$ref": "#/$defs/SyncProcessElementLibrary"
+    },
+    "SyncResourceConstraintLibrary": {
+      "$ref": "#/$defs/SyncResourceConstraintLibrary"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}
