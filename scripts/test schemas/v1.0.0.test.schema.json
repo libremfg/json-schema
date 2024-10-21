@@ -1,0 +1,33 @@
+{
+    "$id": "v1.0.0.test.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Person",
+    "$defs": {
+      "testDefinition": {
+        "$ref": "v1.0.0.testExtensions.schema.json#/$defs/ActualBatchSizeType"
+      }
+    },
+    "type": "object",
+    "properties": {
+      "firstName": {
+        "type": "string",
+        "description": "The person's first name."
+      },
+      "lastName": {
+        "type": "string",
+        "description": "The person's last name."
+      },
+      "age": {
+        "description": "Age in years which must be equal to or greater than zero.",
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "allOf": [
+      {
+        "$ref": "#/$defs/testDefinition"
+      }
+  ],
+  "unevaluatedProperties": false
+  }
+  

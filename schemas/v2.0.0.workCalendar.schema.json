@@ -1,0 +1,1698 @@
+{
+  "$id": "v2.0.0.WorkCalendar.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Work Alert Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeWorkCalendar": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendarType"
+    },
+    "AcknowledgeWorkCalendarDefinition": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendarDefinitionType"
+    },
+    "AcknowledgeWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeWorkCalendarInformation": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendarInformationType"
+    },
+    "AcknowledgeWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkCalendar": {
+      "$ref": "#/$defs/CancelWorkCalendarType"
+    },
+    "CancelWorkCalendarDefinition": {
+      "$ref": "#/$defs/CancelWorkCalendarDefinitionType"
+    },
+    "CancelWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkCalendarInformation": {
+      "$ref": "#/$defs/CancelWorkCalendarInformationType"
+    },
+    "CancelWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkCalendar": {
+      "$ref": "#/$defs/ChangeWorkCalendarType"
+    },
+    "ChangeWorkCalendarDefinition": {
+      "$ref": "#/$defs/ChangeWorkCalendarDefinitionType"
+    },
+    "ChangeWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkCalendarInformation": {
+      "$ref": "#/$defs/ChangeWorkCalendarInformationType"
+    },
+    "ChangeWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkCalendar": {
+      "$ref": "#/$defs/GetWorkCalendarType"
+    },
+    "GetWorkCalendarDefinition": {
+      "$ref": "#/$defs/GetWorkCalendarDefinitionType"
+    },
+    "GetWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkCalendarInformation": {
+      "$ref": "#/$defs/GetWorkCalendarInformationType"
+    },
+    "GetWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkCalendar": {
+      "$ref": "#/$defs/ProcessWorkCalendarType"
+    },
+    "ProcessWorkCalendarDefinition": {
+      "$ref": "#/$defs/ProcessWorkCalendarDefinitionType"
+    },
+    "ProcessWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkCalendarInformation": {
+      "$ref": "#/$defs/ProcessWorkCalendarInformationType"
+    },
+    "ProcessWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Process",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkCalendar": {
+      "$ref": "#/$defs/RespondWorkCalendarType"
+    },
+    "RespondWorkCalendarDefinition": {
+      "$ref": "#/$defs/RespondWorkCalendarDefinitionType"
+    },
+    "RespondWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkCalendarInformation": {
+      "$ref": "#/$defs/RespondWorkCalendarInformationType"
+    },
+    "RespondWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Respond",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkCalendar": {
+      "$ref": "#/$defs/ShowWorkCalendarType"
+    },
+    "ShowWorkCalendarDefinition": {
+      "$ref": "#/$defs/ShowWorkCalendarDefinitionType"
+    },
+    "ShowWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkCalendarInformation": {
+      "$ref": "#/$defs/ShowWorkCalendarInformationType"
+    },
+    "ShowWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Show",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkCalendar": {
+      "$ref": "#/$defs/SyncWorkCalendarType"
+    },
+    "SyncWorkCalendarDefinition": {
+      "$ref": "#/$defs/SyncWorkCalendarDefinitionType"
+    },
+    "SyncWorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkCalendarDefinition": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkCalendarDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkCalendarInformation": {
+      "$ref": "#/$defs/SyncWorkCalendarInformationType"
+    },
+    "SyncWorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkCalendarInformation": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkCalendarInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncWorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncWorkCalendarType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            },
+            "WorkCalendar": {
+              "items": {
+                "$ref": "#/$defs/WorkCalendarType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Sync",
+            "WorkCalendar"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendar": {
+      "$ref": "#/$defs/WorkCalendarType"
+    },
+    "WorkCalendarDefinition": {
+      "$ref": "#/$defs/WorkCalendarDefinitionType"
+    },
+    "WorkCalendarDefinitionEntryPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarDefinitionEntryPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefinitionEntryPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionEntryPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarDefinitionEntryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarDefinitionEntryType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "DurationRule": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EntryType": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "RecurrenceTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarDefinitionEntryChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionEntryType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefinitionEntryProperty": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionEntryPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarDefinitionPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarDefinitionPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefinitionPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarDefinitionType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarDefinitionEntry": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionEntryType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "WorkCalendarDefinitionProperty": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarDefinitionPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID",
+        "WorkCalendarDefinitionEntry"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarEntryPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarEntryPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefintionEntryPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarEntryPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarEntryPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarEntryType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarEntryType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EntryType": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/CodeType"
+        },
+        "FinishDateTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "StartDateTime": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "WorkCalendarDefintionEntryID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarEntryChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarEntryType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarEntryProperty": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarEntryPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarInformation": {
+      "$ref": "#/$defs/WorkCalendarInformationType"
+    },
+    "WorkCalendarInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+            }
+          ]
+        },
+        "ID": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            }
+          ]
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "WorkCalendar": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/WorkCalendarType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefinition": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/WorkCalendarDefinitionType"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "WorkCalendarDefintionPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "WorkCalendarType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/WorkCalendarType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "PublishedDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "WorkCalendarEntry": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarEntryType"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "WorkCalendarProperty": {
+          "items": {
+            "$ref": "#/$defs/WorkCalendarPropertyType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID",
+        "WorkCalendarEntry"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeWorkCalendar": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendar"
+    },
+    "AcknowledgeWorkCalendarDefinition": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendarDefinition"
+    },
+    "AcknowledgeWorkCalendarInformation": {
+      "$ref": "#/$defs/AcknowledgeWorkCalendarInformation"
+    },
+    "CancelWorkCalendar": {
+      "$ref": "#/$defs/CancelWorkCalendar"
+    },
+    "CancelWorkCalendarDefinition": {
+      "$ref": "#/$defs/CancelWorkCalendarDefinition"
+    },
+    "CancelWorkCalendarInformation": {
+      "$ref": "#/$defs/CancelWorkCalendarInformation"
+    },
+    "ChangeWorkCalendar": {
+      "$ref": "#/$defs/ChangeWorkCalendar"
+    },
+    "ChangeWorkCalendarDefinition": {
+      "$ref": "#/$defs/ChangeWorkCalendarDefinition"
+    },
+    "ChangeWorkCalendarInformation": {
+      "$ref": "#/$defs/ChangeWorkCalendarInformation"
+    },
+    "GetWorkCalendar": {
+      "$ref": "#/$defs/GetWorkCalendar"
+    },
+    "GetWorkCalendarDefinition": {
+      "$ref": "#/$defs/GetWorkCalendarDefinition"
+    },
+    "GetWorkCalendarInformation": {
+      "$ref": "#/$defs/GetWorkCalendarInformation"
+    },
+    "ProcessWorkCalendar": {
+      "$ref": "#/$defs/ProcessWorkCalendar"
+    },
+    "ProcessWorkCalendarDefinition": {
+      "$ref": "#/$defs/ProcessWorkCalendarDefinition"
+    },
+    "ProcessWorkCalendarInformation": {
+      "$ref": "#/$defs/ProcessWorkCalendarInformation"
+    },
+    "RespondWorkCalendar": {
+      "$ref": "#/$defs/RespondWorkCalendar"
+    },
+    "RespondWorkCalendarDefinition": {
+      "$ref": "#/$defs/RespondWorkCalendarDefinition"
+    },
+    "RespondWorkCalendarInformation": {
+      "$ref": "#/$defs/RespondWorkCalendarInformation"
+    },
+    "ShowWorkCalendar": {
+      "$ref": "#/$defs/ShowWorkCalendar"
+    },
+    "ShowWorkCalendarDefinition": {
+      "$ref": "#/$defs/ShowWorkCalendarDefinition"
+    },
+    "ShowWorkCalendarInformation": {
+      "$ref": "#/$defs/ShowWorkCalendarInformation"
+    },
+    "SyncWorkCalendar": {
+      "$ref": "#/$defs/SyncWorkCalendar"
+    },
+    "SyncWorkCalendarDefinition": {
+      "$ref": "#/$defs/SyncWorkCalendarDefinition"
+    },
+    "SyncWorkCalendarInformation": {
+      "$ref": "#/$defs/SyncWorkCalendarInformation"
+    },
+    "WorkCalendar": {
+      "$ref": "#/$defs/WorkCalendar"
+    },
+    "WorkCalendarDefinition": {
+      "$ref": "#/$defs/WorkCalendarDefinition"
+    },
+    "WorkCalendarInformation": {
+      "$ref": "#/$defs/WorkCalendarInformation"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}

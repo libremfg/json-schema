@@ -15,7 +15,7 @@ ARG HOST=http://localhost/
 
 # Copy in the schema files & replace JSON Schema Location
 RUN mkdir ./Docs/static/schemas && \
-    cp ./Schema/* ./Docs/static/schemas/ && \
+    cp ./schemas/* ./Docs/static/schemas/ && \
     sed -i 's,\("$id"\: *"\),\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json && \
     sed -i 's,\("$ref"\: *"\)\./,\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json
 

@@ -1,0 +1,2695 @@
+{
+  "$id": "v2.0.0.material.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Rhize B2MML-JSON - Material Definitions",
+  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+  "$defs": {
+    "AcknowledgeMaterialClass": {
+      "$ref": "#/$defs/AcknowledgeMaterialClassType"
+    },
+    "AcknowledgeMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "MaterialClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeMaterialDefinition": {
+      "$ref": "#/$defs/AcknowledgeMaterialDefinitionType"
+    },
+    "AcknowledgeMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "MaterialDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeMaterialInformation": {
+      "$ref": "#/$defs/AcknowledgeMaterialInformationType"
+    },
+    "AcknowledgeMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "MaterialInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeMaterialLot": {
+      "$ref": "#/$defs/AcknowledgeMaterialLotType"
+    },
+    "AcknowledgeMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "MaterialLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "AcknowledgeMaterialSubLot": {
+      "$ref": "#/$defs/AcknowledgeMaterialSubLotType"
+    },
+    "AcknowledgeMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Acknowledge": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+            },
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Acknowledge",
+            "MaterialSubLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelMaterialClass": {
+      "$ref": "#/$defs/CancelMaterialClassType"
+    },
+    "CancelMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "MaterialClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelMaterialDefinition": {
+      "$ref": "#/$defs/CancelMaterialDefinitionType"
+    },
+    "CancelMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "MaterialDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelMaterialInformation": {
+      "$ref": "#/$defs/CancelMaterialInformationType"
+    },
+    "CancelMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "MaterialInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelMaterialLot": {
+      "$ref": "#/$defs/CancelMaterialLotType"
+    },
+    "CancelMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "MaterialLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "CancelMaterialSubLot": {
+      "$ref": "#/$defs/CancelMaterialSubLotType"
+    },
+    "CancelMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Cancel": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+            },
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Cancel",
+            "MaterialSubLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeMaterialClass": {
+      "$ref": "#/$defs/ChangeMaterialClassType"
+    },
+    "ChangeMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "MaterialClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeMaterialDefinition": {
+      "$ref": "#/$defs/ChangeMaterialDefinitionType"
+    },
+    "ChangeMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "MaterialDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeMaterialInformation": {
+      "$ref": "#/$defs/ChangeMaterialInformationType"
+    },
+    "ChangeMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "MaterialInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeMaterialLot": {
+      "$ref": "#/$defs/ChangeMaterialLotType"
+    },
+    "ChangeMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "MaterialLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ChangeMaterialSubLot": {
+      "$ref": "#/$defs/ChangeMaterialSubLotType"
+    },
+    "ChangeMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Change": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+            },
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Change",
+            "MaterialSubLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetMaterialClass": {
+      "$ref": "#/$defs/GetMaterialClassType"
+    },
+    "GetMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "MaterialClass"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetMaterialDefinition": {
+      "$ref": "#/$defs/GetMaterialDefinitionType"
+    },
+    "GetMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "MaterialDefinition"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetMaterialInformation": {
+      "$ref": "#/$defs/GetMaterialInformationType"
+    },
+    "GetMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "MaterialInformation"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetMaterialLot": {
+      "$ref": "#/$defs/GetMaterialLotType"
+    },
+    "GetMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "MaterialLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "GetMaterialSubLot": {
+      "$ref": "#/$defs/GetMaterialSubLotType"
+    },
+    "GetMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "Get": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+            },
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            }
+          },
+          "required": [
+            "Get",
+            "MaterialSubLot"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialClass": {
+      "$ref": "#/$defs/MaterialClassType"
+    },
+    "MaterialClassPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialClassPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialClassPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/MaterialClassPropertyType"
+          },
+          "type": "array"
+        },
+        "PropertyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialClassType"
+        }
+      ],
+      "properties": {
+        "AssemblyClass": {
+          "items": {
+            "$ref": "#/$defs/MaterialClassType"
+          },
+          "type": "array"
+        },
+        "AssemblyRelationship": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
+        },
+        "AssemblyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialClassBaseID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "MaterialClassProperty": {
+          "items": {
+            "$ref": "#/$defs/MaterialClassPropertyType"
+          },
+          "type": "array"
+        },
+        "MaterialDefinitionSourceID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "TestSpecificationID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialDefinition": {
+      "$ref": "#/$defs/MaterialDefinitionType"
+    },
+    "MaterialDefinitionPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialDefinitionPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialClassPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialDefinitionPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/MaterialDefinitionPropertyType"
+          },
+          "type": "array"
+        },
+        "PropertyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "AssemblyDefinition": {
+          "items": {
+            "$ref": "#/$defs/MaterialDefinitionType"
+          },
+          "type": "array"
+        },
+        "AssemblyRelationship": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
+        },
+        "AssemblyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialClassID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "MaterialDefinitionProperty": {
+          "items": {
+            "$ref": "#/$defs/MaterialDefinitionPropertyType"
+          },
+          "type": "array"
+        },
+        "MaterialLotSourceID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "SpatialDefinition": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+        },
+        "TestSpecificationID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialInformation": {
+      "$ref": "#/$defs/MaterialInformationType"
+    },
+    "MaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialInformationType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "HierarchyScope": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+            }
+          ]
+        },
+        "ID": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            }
+          ]
+        },
+        "MaterialClass": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/MaterialClassType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "MaterialDefinition": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "MaterialLot": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/MaterialLotType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "MaterialSubLot": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/$defs/MaterialSubLotType"
+              }
+            ]
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "TestSpecification": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationType"
+              }
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialLot": {
+      "$ref": "#/$defs/MaterialLotType"
+    },
+    "MaterialLotPropertyType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialLotPropertyType"
+        }
+      ],
+      "properties": {
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialDefinitionPropertyID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialLotPropertyChild": {
+          "items": {
+            "$ref": "#/$defs/MaterialLotPropertyType"
+          },
+          "type": "array"
+        },
+        "Value": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialLotType"
+        }
+      ],
+      "properties": {
+        "AssemblyLot": {
+          "items": {
+            "$ref": "#/$defs/MaterialLotType"
+          },
+          "type": "array"
+        },
+        "AssemblyRelationship": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
+        },
+        "AssemblySubLot": {
+          "items": {
+            "$ref": "#/$defs/MaterialSubLotType"
+          },
+          "type": "array"
+        },
+        "AssemblyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "Disposition": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DispositionType"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialDefinitionID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialLotProperty": {
+          "items": {
+            "$ref": "#/$defs/MaterialLotPropertyType"
+          },
+          "type": "array"
+        },
+        "MaterialSubLot": {
+          "items": {
+            "$ref": "#/$defs/MaterialSubLotType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "Quantity": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+          },
+          "type": "array"
+        },
+        "SpatialDefinition": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+        },
+        "Status": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/StatusType"
+        },
+        "StorageLocation": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+        },
+        "TestSpecificationID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "MaterialSubLot": {
+      "$ref": "#/$defs/MaterialSubLotType"
+    },
+    "MaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/MaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "AssemblyLot": {
+          "items": {
+            "$ref": "#/$defs/MaterialLotType"
+          },
+          "type": "array"
+        },
+        "AssemblyRelationship": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
+        },
+        "AssemblySubLot": {
+          "items": {
+            "$ref": "#/$defs/MaterialSubLotType"
+          },
+          "type": "array"
+        },
+        "AssemblyType": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
+        },
+        "Description": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+          },
+          "type": "array"
+        },
+        "Disposition": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/DispositionType"
+        },
+        "EffectiveEndDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "EffectiveStartDate": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        },
+        "HierarchyScope": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        },
+        "ID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialLotID": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        },
+        "MaterialLotProperty": {
+          "items": {
+            "$ref": "#/$defs/MaterialLotPropertyType"
+          },
+          "type": "array"
+        },
+        "MaterialSubLotChild": {
+          "items": {
+            "$ref": "#/$defs/MaterialSubLotType"
+          },
+          "type": "array"
+        },
+        "PublishedDate": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+            }
+          ]
+        },
+        "Quantity": {
+          "items": {
+            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+          },
+          "type": "array"
+        },
+        "SpatialDefinition": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+        },
+        "Status": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/StatusType"
+        },
+        "StorageLocation": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+        },
+        "TestSpecificationID": {
+          "items": {
+            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+          },
+          "type": "array"
+        },
+        "Version": {
+          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        }
+      },
+      "required": [
+        "ID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessMaterialClass": {
+      "$ref": "#/$defs/ProcessMaterialClassType"
+    },
+    "ProcessMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "MaterialClass",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessMaterialDefinition": {
+      "$ref": "#/$defs/ProcessMaterialDefinitionType"
+    },
+    "ProcessMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "MaterialDefinition",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessMaterialInformation": {
+      "$ref": "#/$defs/ProcessMaterialInformationType"
+    },
+    "ProcessMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "MaterialInformation",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessMaterialLot": {
+      "$ref": "#/$defs/ProcessMaterialLotType"
+    },
+    "ProcessMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "MaterialLot",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ProcessMaterialSubLot": {
+      "$ref": "#/$defs/ProcessMaterialSubLotType"
+    },
+    "ProcessMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Process": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+            }
+          },
+          "required": [
+            "MaterialSubLot",
+            "Process"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondMaterialClass": {
+      "$ref": "#/$defs/RespondMaterialClassType"
+    },
+    "RespondMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "MaterialClass",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondMaterialDefinition": {
+      "$ref": "#/$defs/RespondMaterialDefinitionType"
+    },
+    "RespondMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "MaterialDefinition",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondMaterialInformation": {
+      "$ref": "#/$defs/RespondMaterialInformationType"
+    },
+    "RespondMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "MaterialInformation",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondMaterialLot": {
+      "$ref": "#/$defs/RespondMaterialLotType"
+    },
+    "RespondMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "MaterialLot",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "RespondMaterialSubLot": {
+      "$ref": "#/$defs/RespondMaterialSubLotType"
+    },
+    "RespondMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Respond": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+            }
+          },
+          "required": [
+            "MaterialSubLot",
+            "Respond"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowMaterialClass": {
+      "$ref": "#/$defs/ShowMaterialClassType"
+    },
+    "ShowMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "MaterialClass",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowMaterialDefinition": {
+      "$ref": "#/$defs/ShowMaterialDefinitionType"
+    },
+    "ShowMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "MaterialDefinition",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowMaterialInformation": {
+      "$ref": "#/$defs/ShowMaterialInformationType"
+    },
+    "ShowMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "MaterialInformation",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowMaterialLot": {
+      "$ref": "#/$defs/ShowMaterialLotType"
+    },
+    "ShowMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "MaterialLot",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "ShowMaterialSubLot": {
+      "$ref": "#/$defs/ShowMaterialSubLotType"
+    },
+    "ShowMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Show": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+            }
+          },
+          "required": [
+            "MaterialSubLot",
+            "Show"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncMaterialClass": {
+      "$ref": "#/$defs/SyncMaterialClassType"
+    },
+    "SyncMaterialClassType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncMaterialClassType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialClass": {
+              "items": {
+                "$ref": "#/$defs/MaterialClassType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "MaterialClass",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncMaterialDefinition": {
+      "$ref": "#/$defs/SyncMaterialDefinitionType"
+    },
+    "SyncMaterialDefinitionType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncMaterialDefinitionType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialDefinition": {
+              "items": {
+                "$ref": "#/$defs/MaterialDefinitionType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "MaterialDefinition",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncMaterialInformation": {
+      "$ref": "#/$defs/SyncMaterialInformationType"
+    },
+    "SyncMaterialInformationType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncMaterialInformationType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialInformation": {
+              "items": {
+                "$ref": "#/$defs/MaterialInformationType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "MaterialInformation",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncMaterialLot": {
+      "$ref": "#/$defs/SyncMaterialLotType"
+    },
+    "SyncMaterialLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncMaterialLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "MaterialLot",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    },
+    "SyncMaterialSubLot": {
+      "$ref": "#/$defs/SyncMaterialSubLotType"
+    },
+    "SyncMaterialSubLotType": {
+      "allOf": [
+        {
+          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncMaterialSubLotType"
+        }
+      ],
+      "properties": {
+        "@releaseID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "@versionID": {
+          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        },
+        "ApplicationArea": {
+          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        },
+        "DataArea": {
+          "additionalProperties": false,
+          "properties": {
+            "MaterialSubLot": {
+              "items": {
+                "$ref": "#/$defs/MaterialSubLotType"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "Sync": {
+              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+            }
+          },
+          "required": [
+            "MaterialSubLot",
+            "Sync"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "ApplicationArea",
+        "DataArea",
+        "@releaseID"
+      ],
+      "type": "object",
+      "unevaluatedProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "AcknowledgeMaterialClass": {
+      "$ref": "#/$defs/AcknowledgeMaterialClass"
+    },
+    "AcknowledgeMaterialDefinition": {
+      "$ref": "#/$defs/AcknowledgeMaterialDefinition"
+    },
+    "AcknowledgeMaterialInformation": {
+      "$ref": "#/$defs/AcknowledgeMaterialInformation"
+    },
+    "AcknowledgeMaterialLot": {
+      "$ref": "#/$defs/AcknowledgeMaterialLot"
+    },
+    "AcknowledgeMaterialSubLot": {
+      "$ref": "#/$defs/AcknowledgeMaterialSubLot"
+    },
+    "CancelMaterialClass": {
+      "$ref": "#/$defs/CancelMaterialClass"
+    },
+    "CancelMaterialDefinition": {
+      "$ref": "#/$defs/CancelMaterialDefinition"
+    },
+    "CancelMaterialInformation": {
+      "$ref": "#/$defs/CancelMaterialInformation"
+    },
+    "CancelMaterialLot": {
+      "$ref": "#/$defs/CancelMaterialLot"
+    },
+    "CancelMaterialSubLot": {
+      "$ref": "#/$defs/CancelMaterialSubLot"
+    },
+    "ChangeMaterialClass": {
+      "$ref": "#/$defs/ChangeMaterialClass"
+    },
+    "ChangeMaterialDefinition": {
+      "$ref": "#/$defs/ChangeMaterialDefinition"
+    },
+    "ChangeMaterialInformation": {
+      "$ref": "#/$defs/ChangeMaterialInformation"
+    },
+    "ChangeMaterialLot": {
+      "$ref": "#/$defs/ChangeMaterialLot"
+    },
+    "ChangeMaterialSubLot": {
+      "$ref": "#/$defs/ChangeMaterialSubLot"
+    },
+    "GetMaterialClass": {
+      "$ref": "#/$defs/GetMaterialClass"
+    },
+    "GetMaterialDefinition": {
+      "$ref": "#/$defs/GetMaterialDefinition"
+    },
+    "GetMaterialInformation": {
+      "$ref": "#/$defs/GetMaterialInformation"
+    },
+    "GetMaterialLot": {
+      "$ref": "#/$defs/GetMaterialLot"
+    },
+    "GetMaterialSubLot": {
+      "$ref": "#/$defs/GetMaterialSubLot"
+    },
+    "MaterialClass": {
+      "$ref": "#/$defs/MaterialClass"
+    },
+    "MaterialDefinition": {
+      "$ref": "#/$defs/MaterialDefinition"
+    },
+    "MaterialInformation": {
+      "$ref": "#/$defs/MaterialInformation"
+    },
+    "MaterialLot": {
+      "$ref": "#/$defs/MaterialLot"
+    },
+    "MaterialSubLot": {
+      "$ref": "#/$defs/MaterialSubLot"
+    },
+    "ProcessMaterialClass": {
+      "$ref": "#/$defs/ProcessMaterialClass"
+    },
+    "ProcessMaterialDefinition": {
+      "$ref": "#/$defs/ProcessMaterialDefinition"
+    },
+    "ProcessMaterialInformation": {
+      "$ref": "#/$defs/ProcessMaterialInformation"
+    },
+    "ProcessMaterialLot": {
+      "$ref": "#/$defs/ProcessMaterialLot"
+    },
+    "ProcessMaterialSubLot": {
+      "$ref": "#/$defs/ProcessMaterialSubLot"
+    },
+    "RespondMaterialClass": {
+      "$ref": "#/$defs/RespondMaterialClass"
+    },
+    "RespondMaterialDefinition": {
+      "$ref": "#/$defs/RespondMaterialDefinition"
+    },
+    "RespondMaterialInformation": {
+      "$ref": "#/$defs/RespondMaterialInformation"
+    },
+    "RespondMaterialLot": {
+      "$ref": "#/$defs/RespondMaterialLot"
+    },
+    "RespondMaterialSubLot": {
+      "$ref": "#/$defs/RespondMaterialSubLot"
+    },
+    "ShowMaterialClass": {
+      "$ref": "#/$defs/ShowMaterialClass"
+    },
+    "ShowMaterialDefinition": {
+      "$ref": "#/$defs/ShowMaterialDefinition"
+    },
+    "ShowMaterialInformation": {
+      "$ref": "#/$defs/ShowMaterialInformation"
+    },
+    "ShowMaterialLot": {
+      "$ref": "#/$defs/ShowMaterialLot"
+    },
+    "ShowMaterialSubLot": {
+      "$ref": "#/$defs/ShowMaterialSubLot"
+    },
+    "SyncMaterialClass": {
+      "$ref": "#/$defs/SyncMaterialClass"
+    },
+    "SyncMaterialDefinition": {
+      "$ref": "#/$defs/SyncMaterialDefinition"
+    },
+    "SyncMaterialInformation": {
+      "$ref": "#/$defs/SyncMaterialInformation"
+    },
+    "SyncMaterialLot": {
+      "$ref": "#/$defs/SyncMaterialLot"
+    },
+    "SyncMaterialSubLot": {
+      "$ref": "#/$defs/SyncMaterialSubLot"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "./v2.0.0.extensions.schema.json#"
+    }
+  ],
+  "unevaluatedProperties": false
+}
