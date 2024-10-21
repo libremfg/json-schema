@@ -1,10 +1,10 @@
-# Rhize B2MML-BatchML JSON Schema
+# Rhize ISA-95/ISA-88 JSON Schema
 
 | A JSON Schema implementation of the ANSI/ISA-95 and ANSI/ISA-88 standards.
 
 An JSON implementation of the ANSI/ISA-95, Enterprise-Control System Integration, family of standards (ISA-95), known internationally as IEC/ISO 62264. B2MML consists of a set of JSON schemas written using the JSON Schema's Schema language (2020) that implement the data models in the ISA-95 standard.
 
-This JSON schema can be used for design for syncrhonous and asynchronous APIs.
+This JSON schema is intented be used for design for syncrhonous and asynchronous APIs.
 
 Based on the works of https://github.com/MESAInternational/B2MML-BatchML.
 
