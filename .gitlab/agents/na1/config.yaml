@@ -1,3 +1,0 @@
-ci_access:
-  projects:
-    - id: libremfg/b2mml-batchml
