@@ -1,6 +1,6 @@
 baseURL = 'https://json.libremfg.ai/'
 languageCode = 'en-us'
-title = 'Rhize B2MML-BatchML JSON Schema'
+title = 'Rhize ISA-95/ISA-88 JSON Schema'
 
 [params]
   company = 'Libre Technologies, Inc.'

@@ -52,7 +52,7 @@
         }
     },
     "type": "object",
-    "title": "Rhize B2MML-JSON - General Recipe Extensions Definitions",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - General Recipe Extensions Definitions",
     "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
     "allOf": [
         {
