@@ -6,7 +6,7 @@ This document contains a list of maintainers in this repo.
 
 | Maintainer         | Email                        | GitHub ID                  | Affiliation             |
 | ------------------ | ---------------------------- | -------------------------- | ----------------------- |
-| Matthew Princev    | matthew.princev@rhize.com    |                            | Libre Technologies Inc. |
+| Matthew Princev    | matthew.princev@rhize.com    | mattprincevrhize           | Libre Technologies Inc. |
 | Tom Hollingworth   | tom@rhize.com                | tomhollingworth            | Libre Technologies Inc. |
 
 
