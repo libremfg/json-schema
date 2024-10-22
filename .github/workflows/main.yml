@@ -50,7 +50,7 @@ jobs:
         push: true
         file: ./docker/Dockerfile
         build-args: |
-          HOST=$BUILD_HOST
+          HOST=${{ matrix.BUILD_HOST }}
         tags: |
           ghcr.io/libremfg/json-schema:${{ github.ref_name }}
           ghcr.io/libremfg/json-schema:latest
@@ -61,7 +61,7 @@ jobs:
         push: true
         file: ./docker/Dockerfile
         build-args: |
-          HOST=$BUILD_HOST
+          HOST=${{ matrix.BUILD_HOST }}
         tags: |
           ghcr.io/libremfg/json-schema:jsonlibremfgai-${{ github.ref_name }}
           ghcr.io/libremfg/json-schema:jsonlibremfgai-latest
@@ -71,8 +71,6 @@ jobs:
     needs: containerize
     if: ${{ github.ref_type == 'tag' }}
     env:
-      NAME: production
-      HOST: https://json.libremfg.ai
       ENV_SLUG: jsonlibremfgai
       KUBE_NAMESPACE: json-schema
       INGRESS_HOST: json.libremfg.ai
@@ -85,18 +83,15 @@ jobs:
           k8s-secret: ${{ secrets.NA1_KUBERNETES_SECRET }}
       - name: Install Helm
         uses: azure/setup-helm@v4.2.0
-      - name: Set Tag
-        run: |
-          if [ -z "$CI_COMMIT_TAG" ]; then
-            export TAG=$ENV_SLUG-latest;
-            echo "using tag $TAG";
-          else 
-            export TAG=$ENV_SLUG-$CI_COMMIT_TAG;
-            echo "using tag $TAG";
-          fi
       - uses: actions/checkout@master
       - name: Helm Install
         run: |
+          if [ -z "$CI_COMMIT_TAG" ]; then
+            export TAG=$ENV_SLUG-latest;
+          else 
+            export TAG=$ENV_SLUG-$CI_COMMIT_TAG;
+          fi
+          echo "using tag $TAG";
           helm upgrade --install libremfg-jsonschema ./chart \
             --set image.tag=$TAG \
             --set ingress.enabled=true \
