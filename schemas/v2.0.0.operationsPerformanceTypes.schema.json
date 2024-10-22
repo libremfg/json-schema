@@ -1,699 +1,699 @@
 {
-  "$id": "v2.0.0.operationsPerformanceTypes.schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rhize B2MML-JSON - Operation Performance Types Definitions",
-  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
-  "$defs": {
-    "OpEquipmentActualPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpEquipmentActualPropertyType"
+    "$id": "v2.0.0.operationsPerformanceTypes.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "OpEquipmentActualPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentActualPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpEquipmentActualPropertyType"
+                    }
+                },
+                "EquipmentClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "EquipmentPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpEquipmentActualPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpEquipmentActualType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentActualChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpEquipmentActualType"
+                    }
+                },
+                "EquipmentActualProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpEquipmentActualPropertyType"
+                    }
+                },
+                "EquipmentClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentUse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/EquipmentUseType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestResult": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpEquipmentActualType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpMaterialActualPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialActualPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpMaterialActualPropertyType"
+                    }
+                },
+                "MaterialClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialDefinitionPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialLotPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpMaterialActualPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpMaterialActualType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "AssemblyActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpMaterialActualType"
+                    }
+                },
+                "AssemblyRelationship": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
+                },
+                "AssemblyType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialActualProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpMaterialActualPropertyType"
+                    }
+                },
+                "MaterialClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialDefinitionID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialLotID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialSubLotID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialUse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/MaterialUseType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "StorageLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "TestResult": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpMaterialActualType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpPersonnelActualPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonnelActualPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPersonnelActualPropertyType"
+                    }
+                },
+                "PersonnelClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPersonnelActualPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpPersonnelActualType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "PersonID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelActualChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPersonnelActualType"
+                    }
+                },
+                "PersonnelActualProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPersonnelActualPropertyType"
+                    }
+                },
+                "PersonnelClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelUse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/PersonnelUseType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestResult": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPersonnelActualType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpPhysicalAssetActualPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetActualPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPhysicalAssetActualPropertyType"
+                    }
+                },
+                "PhysicalAssetClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPhysicalAssetActualPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpPhysicalAssetActualType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetActualChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPhysicalAssetActualType"
+                    }
+                },
+                "PhysicalAssetActualProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPhysicalAssetActualPropertyType"
+                    }
+                },
+                "PhysicalAssetClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetUse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/PhysicalAssetUseType"
+                },
+                "PhysicalLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestResult": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPhysicalAssetActualType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpSegmentDataType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SegmentDataChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpSegmentDataType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpSegmentDataType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OpSegmentResponseType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "ActualEndTime": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ActualStartTime": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpEquipmentActualType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobResponseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpMaterialActualType"
+                    }
+                },
+                "OperationsDefinitionID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsRequestID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsSegmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "PersonnelActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPersonnelActualType"
+                    }
+                },
+                "PhysicalAssetActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpPhysicalAssetActualType"
+                    }
+                },
+                "PostingDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ProcessSegmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "SegmentData": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpSegmentDataType"
+                    }
+                },
+                "SegmentRequirementID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "SegmentResponseChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OpSegmentResponseType"
+                    }
+                },
+                "SegmentState": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResponseStateType"
+                },
+                "WorkResponseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/OpSegmentResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
         }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EquipmentActualPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/OpEquipmentActualPropertyType"
-          },
-          "type": "array"
-        },
-        "EquipmentClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "EquipmentPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
     },
-    "OpEquipmentActualType": {
-      "allOf": [
+    "type": "object",
+    "title": "Rhize B2MML-JSON - Operation Performance Types Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {},
+    "allOf": [
         {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpEquipmentActualType"
+            "$ref": "./v2.0.0.extensions.schema.json#"
         }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EquipmentActualChild": {
-          "items": {
-            "$ref": "#/$defs/OpEquipmentActualType"
-          },
-          "type": "array"
-        },
-        "EquipmentActualProperty": {
-          "items": {
-            "$ref": "#/$defs/OpEquipmentActualPropertyType"
-          },
-          "type": "array"
-        },
-        "EquipmentClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "EquipmentID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "EquipmentUse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/EquipmentUseType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "OperationalLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "TestResult": {
-          "items": {
-            "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpMaterialActualPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpMaterialActualPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "MaterialActualPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/OpMaterialActualPropertyType"
-          },
-          "type": "array"
-        },
-        "MaterialClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "MaterialDefinitionPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "MaterialLotPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpMaterialActualType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpMaterialActualType"
-        }
-      ],
-      "properties": {
-        "AssemblyActual": {
-          "items": {
-            "$ref": "#/$defs/OpMaterialActualType"
-          },
-          "type": "array"
-        },
-        "AssemblyRelationship": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyRelationshipType"
-        },
-        "AssemblyType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/AssemblyTypeType"
-        },
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "MaterialActualProperty": {
-          "items": {
-            "$ref": "#/$defs/OpMaterialActualPropertyType"
-          },
-          "type": "array"
-        },
-        "MaterialClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "MaterialDefinitionID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "MaterialLotID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "MaterialSubLotID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "MaterialUse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/MaterialUseType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "StorageLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "TestResult": {
-          "items": {
-            "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpPersonnelActualPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPersonnelActualPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PersonPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PersonnelActualPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/OpPersonnelActualPropertyType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpPersonnelActualType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPersonnelActualType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "OperationalLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "PersonID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PersonnelActualChild": {
-          "items": {
-            "$ref": "#/$defs/OpPersonnelActualType"
-          },
-          "type": "array"
-        },
-        "PersonnelActualProperty": {
-          "items": {
-            "$ref": "#/$defs/OpPersonnelActualPropertyType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PersonnelUse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/PersonnelUseType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "TestResult": {
-          "items": {
-            "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpPhysicalAssetActualPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPhysicalAssetActualPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetActualPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/OpPhysicalAssetActualPropertyType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpPhysicalAssetActualType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpPhysicalAssetActualType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetActualChild": {
-          "items": {
-            "$ref": "#/$defs/OpPhysicalAssetActualType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetActualProperty": {
-          "items": {
-            "$ref": "#/$defs/OpPhysicalAssetActualPropertyType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetUse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/PhysicalAssetUseType"
-        },
-        "PhysicalLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "Quantity": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/QuantityValueType"
-          },
-          "type": "array"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "TestResult": {
-          "items": {
-            "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestResultType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpSegmentDataType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpSegmentDataType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SegmentDataChild": {
-          "items": {
-            "$ref": "#/$defs/OpSegmentDataType"
-          },
-          "type": "array"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "OpSegmentResponseType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/OpSegmentResponseType"
-        }
-      ],
-      "properties": {
-        "ActualEndTime": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "ActualStartTime": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EquipmentActual": {
-          "items": {
-            "$ref": "#/$defs/OpEquipmentActualType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "JobResponseID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "MaterialActual": {
-          "items": {
-            "$ref": "#/$defs/OpMaterialActualType"
-          },
-          "type": "array"
-        },
-        "OperationsDefinitionID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "OperationsRequestID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "OperationsSegmentID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "OperationsType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/OperationsTypeType"
-        },
-        "PersonnelActual": {
-          "items": {
-            "$ref": "#/$defs/OpPersonnelActualType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetActual": {
-          "items": {
-            "$ref": "#/$defs/OpPhysicalAssetActualType"
-          },
-          "type": "array"
-        },
-        "PostingDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "ProcessSegmentID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "RequiredByRequestedSegmentResponse": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
-        },
-        "SegmentData": {
-          "items": {
-            "$ref": "#/$defs/OpSegmentDataType"
-          },
-          "type": "array"
-        },
-        "SegmentRequirementID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "SegmentResponseChild": {
-          "items": {
-            "$ref": "#/$defs/OpSegmentResponseType"
-          },
-          "type": "array"
-        },
-        "SegmentState": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResponseStateType"
-        },
-        "WorkResponseID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    }
-  },
-  "type": "object",
-  "properties": {},
-  "allOf": [
-    {
-      "$ref": "./v2.0.0.extensions.schema.json#"
-    }
-  ],
-  "unevaluatedProperties": false
+    ],
+    "unevaluatedProperties": false
 }

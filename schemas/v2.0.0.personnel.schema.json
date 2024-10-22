@@ -1,1504 +1,1504 @@
 {
-  "$id": "v2.0.0.personnel.schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rhize B2MML-JSON - Personnel Definitions",
-  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
-  "$defs": {
-    "AcknowledgePerson": {
-      "$ref": "#/$defs/AcknowledgePersonType"
-    },
-    "AcknowledgePersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+    "$id": "v2.0.0.personnel.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgePerson": {
+            "$ref": "#/$defs/AcknowledgePersonType"
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "Person"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "Person"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgePersonnelClass": {
-      "$ref": "#/$defs/AcknowledgePersonnelClassType"
-    },
-    "AcknowledgePersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "AcknowledgePersonnelClass": {
+            "$ref": "#/$defs/AcknowledgePersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "PersonnelClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "PersonnelClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgePersonnelInformation": {
-      "$ref": "#/$defs/AcknowledgePersonnelInformationType"
-    },
-    "AcknowledgePersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "AcknowledgePersonnelInformation": {
+            "$ref": "#/$defs/AcknowledgePersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "PersonnelInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "PersonnelInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPerson": {
-      "$ref": "#/$defs/CancelPersonType"
-    },
-    "CancelPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelPerson": {
+            "$ref": "#/$defs/CancelPersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "Person"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "Person"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPersonnelClass": {
-      "$ref": "#/$defs/CancelPersonnelClassType"
-    },
-    "CancelPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelPersonnelClass": {
+            "$ref": "#/$defs/CancelPersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "PersonnelClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "PersonnelClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPersonnelInformation": {
-      "$ref": "#/$defs/CancelPersonnelInformationType"
-    },
-    "CancelPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPersonnelInformation": {
+            "$ref": "#/$defs/CancelPersonnelInformationType"
+        },
+        "CancelPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea"
+            ],
+            "properties": {
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "PersonnelInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "PersonnelInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePerson": {
-      "$ref": "#/$defs/ChangePersonType"
-    },
-    "ChangePersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangePerson": {
+            "$ref": "#/$defs/ChangePersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "Person"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "Person"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePersonnelClass": {
-      "$ref": "#/$defs/ChangePersonnelClassType"
-    },
-    "ChangePersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangePersonnelClass": {
+            "$ref": "#/$defs/ChangePersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "PersonnelClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "PersonnelClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePersonnelInformation": {
-      "$ref": "#/$defs/ChangePersonnelInformationType"
-    },
-    "ChangePersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangePersonnelInformation": {
+            "$ref": "#/$defs/ChangePersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "PersonnelInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "PersonnelInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPerson": {
-      "$ref": "#/$defs/GetPersonType"
-    },
-    "GetPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetPerson": {
+            "$ref": "#/$defs/GetPersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "Person"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "Person"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPersonnelClass": {
-      "$ref": "#/$defs/GetPersonnelClassType"
-    },
-    "GetPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetPersonnelClass": {
+            "$ref": "#/$defs/GetPersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "PersonnelClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "PersonnelClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPersonnelInformation": {
-      "$ref": "#/$defs/GetPersonnelInformationType"
-    },
-    "GetPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetPersonnelInformation": {
+            "$ref": "#/$defs/GetPersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "PersonnelInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "PersonnelInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "Person": {
-      "$ref": "#/$defs/PersonType",
-      "description": "A representation of a specifically identified individual is a person.\nA person may be a member of zero or more personnel classes."
-    },
-    "PersonPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PersonPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/PersonPropertyType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "OperationalLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "PersonName": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/PersonNameType"
-        },
-        "PersonProperty": {
-          "items": {
-            "$ref": "#/$defs/PersonPropertyType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "TestSpecificationID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PersonnelClass": {
-      "$ref": "#/$defs/PersonnelClassType",
-      "description": "A representation of a grouping of persons with similar characteristics for a definite purpose such as\nmanufacturing operations definition, scheduling, capability and performance is a personnel class.\nAny person may be a member of zero or more personnel classes. A personnel class may be defined as\na specialization of zero or more personnel class. A personnel class may be made up of zero or more personnel class(s)."
-    },
-    "PersonnelClassPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelClassPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PersonnelClassPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/PersonnelClassPropertyType"
-          },
-          "type": "array"
-        },
-        "PropertyType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelClassType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PersonSourceID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassBaseID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PersonnelClassProperty": {
-          "items": {
-            "$ref": "#/$defs/PersonnelClassPropertyType"
-          },
-          "type": "array"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "TestSpecificationID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PersonnelInformation": {
-      "$ref": "#/$defs/PersonnelInformationType"
-    },
-    "PersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
         "Person": {
-          "items": {
-            "$ref": "#/$defs/PersonType"
-          },
-          "type": "array"
+            "$ref": "#/$defs/PersonType",
+            "description": "A representation of a specifically identified individual is a person.\nA person may be a member of zero or more personnel classes."
+        },
+        "PersonPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonPropertyType"
+                    }
+                },
+                "PersonnelClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "PersonType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "PersonName": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/PersonNameType"
+                },
+                "PersonProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonPropertyType"
+                    }
+                },
+                "PersonnelClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
         "PersonnelClass": {
-          "items": {
-            "$ref": "#/$defs/PersonnelClassType"
-          },
-          "type": "array"
+            "$ref": "#/$defs/PersonnelClassType",
+            "description": "A representation of a grouping of persons with similar characteristics for a definite purpose such as\nmanufacturing operations definition, scheduling, capability and performance is a personnel class.\nAny person may be a member of zero or more personnel classes. A personnel class may be defined as\na specialization of zero or more personnel class. A personnel class may be made up of zero or more personnel class(s)."
         },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "TestSpecification": {
-          "items": {
-            "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPerson": {
-      "$ref": "#/$defs/ProcessPersonType"
-    },
-    "ProcessPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PersonnelClassPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonnelClassPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelClassPropertyType"
+                    }
+                },
+                "PropertyType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "Person",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPersonnelClass": {
-      "$ref": "#/$defs/ProcessPersonnelClassType"
-    },
-    "ProcessPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelClassPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelClassBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelClassProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelClassPropertyType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "PersonnelClass",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPersonnelInformation": {
-      "$ref": "#/$defs/ProcessPersonnelInformationType"
-    },
-    "ProcessPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "PersonnelInformation": {
+            "$ref": "#/$defs/PersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Person": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonType"
+                    }
+                },
+                "PersonnelClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelClassType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationType"
+                    }
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "PersonnelInformation",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPerson": {
-      "$ref": "#/$defs/RespondPersonType"
-    },
-    "RespondPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessPerson": {
+            "$ref": "#/$defs/ProcessPersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Person",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "Person",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPersonnelClass": {
-      "$ref": "#/$defs/RespondPersonnelClassType"
-    },
-    "RespondPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessPersonnelClass": {
+            "$ref": "#/$defs/ProcessPersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelClass",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "PersonnelClass",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPersonnelInformation": {
-      "$ref": "#/$defs/RespondPersonnelInformationType"
-    },
-    "RespondPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessPersonnelInformation": {
+            "$ref": "#/$defs/ProcessPersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelInformation",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "PersonnelInformation",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPerson": {
-      "$ref": "#/$defs/ShowPersonType"
-    },
-    "ShowPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "RespondPerson": {
+            "$ref": "#/$defs/RespondPersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Person",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "Person",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPersonnelClass": {
-      "$ref": "#/$defs/ShowPersonnelClassType"
-    },
-    "ShowPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "RespondPersonnelClass": {
+            "$ref": "#/$defs/RespondPersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelClass",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "PersonnelClass",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPersonnelInformation": {
-      "$ref": "#/$defs/ShowPersonnelInformationType"
-    },
-    "ShowPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "RespondPersonnelInformation": {
+            "$ref": "#/$defs/RespondPersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "PersonnelInformation",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPerson": {
-      "$ref": "#/$defs/SyncPersonType"
-    },
-    "SyncPersonType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ShowPerson": {
+            "$ref": "#/$defs/ShowPersonType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Person": {
-              "items": {
-                "$ref": "#/$defs/PersonType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ShowPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Person",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "Person",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPersonnelClass": {
-      "$ref": "#/$defs/SyncPersonnelClassType"
-    },
-    "SyncPersonnelClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonnelClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ShowPersonnelClass": {
+            "$ref": "#/$defs/ShowPersonnelClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelClass": {
-              "items": {
-                "$ref": "#/$defs/PersonnelClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ShowPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelClass",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "PersonnelClass",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPersonnelInformation": {
-      "$ref": "#/$defs/SyncPersonnelInformationType"
-    },
-    "SyncPersonnelInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonnelInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ShowPersonnelInformation": {
+            "$ref": "#/$defs/ShowPersonnelInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PersonnelInformation": {
-              "items": {
-                "$ref": "#/$defs/PersonnelInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ShowPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "PersonnelInformation",
-            "Sync"
-          ],
-          "type": "object"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPerson": {
+            "$ref": "#/$defs/SyncPersonType"
+        },
+        "SyncPersonType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Person",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Person": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPersonnelClass": {
+            "$ref": "#/$defs/SyncPersonnelClassType"
+        },
+        "SyncPersonnelClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelClass",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonnelClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPersonnelInformation": {
+            "$ref": "#/$defs/SyncPersonnelInformationType"
+        },
+        "SyncPersonnelInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PersonnelInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PersonnelInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PersonnelInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPersonnelInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    }
-  },
-  "type": "object",
-  "properties": {
-    "AcknowledgePerson": {
-      "$ref": "#/$defs/AcknowledgePerson"
     },
-    "AcknowledgePersonnelClass": {
-      "$ref": "#/$defs/AcknowledgePersonnelClass"
+    "type": "object",
+    "title": "Rhize B2MML-JSON - Personnel Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgePerson": {
+            "$ref": "#/$defs/AcknowledgePerson"
+        },
+        "AcknowledgePersonnelClass": {
+            "$ref": "#/$defs/AcknowledgePersonnelClass"
+        },
+        "AcknowledgePersonnelInformation": {
+            "$ref": "#/$defs/AcknowledgePersonnelInformation"
+        },
+        "CancelPerson": {
+            "$ref": "#/$defs/CancelPerson"
+        },
+        "CancelPersonnelClass": {
+            "$ref": "#/$defs/CancelPersonnelClass"
+        },
+        "CancelPersonnelInformation": {
+            "$ref": "#/$defs/CancelPersonnelInformation"
+        },
+        "ChangePerson": {
+            "$ref": "#/$defs/ChangePerson"
+        },
+        "ChangePersonnelClass": {
+            "$ref": "#/$defs/ChangePersonnelClass"
+        },
+        "ChangePersonnelInformation": {
+            "$ref": "#/$defs/ChangePersonnelInformation"
+        },
+        "GetPerson": {
+            "$ref": "#/$defs/GetPerson"
+        },
+        "GetPersonnelClass": {
+            "$ref": "#/$defs/GetPersonnelClass"
+        },
+        "GetPersonnelInformation": {
+            "$ref": "#/$defs/GetPersonnelInformation"
+        },
+        "Person": {
+            "$ref": "#/$defs/Person"
+        },
+        "PersonnelClass": {
+            "$ref": "#/$defs/PersonnelClass"
+        },
+        "PersonnelInformation": {
+            "$ref": "#/$defs/PersonnelInformation"
+        },
+        "ProcessPerson": {
+            "$ref": "#/$defs/ProcessPerson"
+        },
+        "ProcessPersonnelClass": {
+            "$ref": "#/$defs/ProcessPersonnelClass"
+        },
+        "ProcessPersonnelInformation": {
+            "$ref": "#/$defs/ProcessPersonnelInformation"
+        },
+        "RespondPerson": {
+            "$ref": "#/$defs/RespondPerson"
+        },
+        "RespondPersonnelClass": {
+            "$ref": "#/$defs/RespondPersonnelClass"
+        },
+        "RespondPersonnelInformation": {
+            "$ref": "#/$defs/RespondPersonnelInformation"
+        },
+        "ShowPerson": {
+            "$ref": "#/$defs/ShowPerson"
+        },
+        "ShowPersonnelClass": {
+            "$ref": "#/$defs/ShowPersonnelClass"
+        },
+        "ShowPersonnelInformation": {
+            "$ref": "#/$defs/ShowPersonnelInformation"
+        },
+        "SyncPerson": {
+            "$ref": "#/$defs/SyncPerson"
+        },
+        "SyncPersonnelClass": {
+            "$ref": "#/$defs/SyncPersonnelClass"
+        },
+        "SyncPersonnelInformation": {
+            "$ref": "#/$defs/SyncPersonnelInformation"
+        }
     },
-    "AcknowledgePersonnelInformation": {
-      "$ref": "#/$defs/AcknowledgePersonnelInformation"
-    },
-    "CancelPerson": {
-      "$ref": "#/$defs/CancelPerson"
-    },
-    "CancelPersonnelClass": {
-      "$ref": "#/$defs/CancelPersonnelClass"
-    },
-    "CancelPersonnelInformation": {
-      "$ref": "#/$defs/CancelPersonnelInformation"
-    },
-    "ChangePerson": {
-      "$ref": "#/$defs/ChangePerson"
-    },
-    "ChangePersonnelClass": {
-      "$ref": "#/$defs/ChangePersonnelClass"
-    },
-    "ChangePersonnelInformation": {
-      "$ref": "#/$defs/ChangePersonnelInformation"
-    },
-    "GetPerson": {
-      "$ref": "#/$defs/GetPerson"
-    },
-    "GetPersonnelClass": {
-      "$ref": "#/$defs/GetPersonnelClass"
-    },
-    "GetPersonnelInformation": {
-      "$ref": "#/$defs/GetPersonnelInformation"
-    },
-    "Person": {
-      "$ref": "#/$defs/Person"
-    },
-    "PersonnelClass": {
-      "$ref": "#/$defs/PersonnelClass"
-    },
-    "PersonnelInformation": {
-      "$ref": "#/$defs/PersonnelInformation"
-    },
-    "ProcessPerson": {
-      "$ref": "#/$defs/ProcessPerson"
-    },
-    "ProcessPersonnelClass": {
-      "$ref": "#/$defs/ProcessPersonnelClass"
-    },
-    "ProcessPersonnelInformation": {
-      "$ref": "#/$defs/ProcessPersonnelInformation"
-    },
-    "RespondPerson": {
-      "$ref": "#/$defs/RespondPerson"
-    },
-    "RespondPersonnelClass": {
-      "$ref": "#/$defs/RespondPersonnelClass"
-    },
-    "RespondPersonnelInformation": {
-      "$ref": "#/$defs/RespondPersonnelInformation"
-    },
-    "ShowPerson": {
-      "$ref": "#/$defs/ShowPerson"
-    },
-    "ShowPersonnelClass": {
-      "$ref": "#/$defs/ShowPersonnelClass"
-    },
-    "ShowPersonnelInformation": {
-      "$ref": "#/$defs/ShowPersonnelInformation"
-    },
-    "SyncPerson": {
-      "$ref": "#/$defs/SyncPerson"
-    },
-    "SyncPersonnelClass": {
-      "$ref": "#/$defs/SyncPersonnelClass"
-    },
-    "SyncPersonnelInformation": {
-      "$ref": "#/$defs/SyncPersonnelInformation"
-    }
-  },
-  "allOf": [
-    {
-      "$ref": "./v2.0.0.extensions.schema.json#"
-    }
-  ],
-  "unevaluatedProperties": false
+    "allOf": [
+        {
+            "$ref": "./v2.0.0.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
 }

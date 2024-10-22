@@ -2,9 +2,6 @@
     "$id": "v2.0.0.confirmBOD.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$defs": {
-        "ConfirmBOD": {
-            "$ref": "#/$defs/ConfirmBODType"
-        },
         "BODType": {
             "type": "object",
             "properties": {
@@ -33,6 +30,9 @@
                 }
             ],
             "unevaluatedProperties": false
+        },
+        "ConfirmBOD": {
+            "$ref": "#/$defs/ConfirmBODType"
         },
         "ConfirmBODType": {
             "type": "object",

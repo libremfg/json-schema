@@ -1,1623 +1,1623 @@
 {
-  "$id": "v2.0.0.physicalAsset.schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rhize B2MML-JSON - Physical Asset Definitions",
-  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
-  "$defs": {
-    "AcknowledgePhysicalAsset": {
-      "$ref": "#/$defs/AcknowledgePhysicalAssetType"
-    },
-    "AcknowledgePhysicalAssetClass": {
-      "$ref": "#/$defs/AcknowledgePhysicalAssetClassType"
-    },
-    "AcknowledgePhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+    "$id": "v2.0.0.physicalAsset.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgePhysicalAsset": {
+            "$ref": "#/$defs/AcknowledgePhysicalAssetType"
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "AcknowledgePhysicalAssetClass": {
+            "$ref": "#/$defs/AcknowledgePhysicalAssetClassType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "PhysicalAssetClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "PhysicalAssetClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgePhysicalAssetInformation": {
-      "$ref": "#/$defs/AcknowledgePhysicalAssetInformationType"
-    },
-    "AcknowledgePhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "AcknowledgePhysicalAssetInformation": {
+            "$ref": "#/$defs/AcknowledgePhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "PhysicalAssetInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "PhysicalAssetInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgePhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgePhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "PhysicalAsset"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "PhysicalAsset"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPhysicalAsset": {
-      "$ref": "#/$defs/CancelPhysicalAssetType"
-    },
-    "CancelPhysicalAssetClass": {
-      "$ref": "#/$defs/CancelPhysicalAssetClassType"
-    },
-    "CancelPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgePhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelPhysicalAsset": {
+            "$ref": "#/$defs/CancelPhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "CancelPhysicalAssetClass": {
+            "$ref": "#/$defs/CancelPhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "PhysicalAssetClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "PhysicalAssetClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPhysicalAssetInformation": {
-      "$ref": "#/$defs/CancelPhysicalAssetInformationType"
-    },
-    "CancelPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelPhysicalAssetInformation": {
+            "$ref": "#/$defs/CancelPhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "PhysicalAssetInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "PhysicalAssetInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "PhysicalAsset"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "PhysicalAsset"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePhysicalAsset": {
-      "$ref": "#/$defs/ChangePhysicalAssetType"
-    },
-    "ChangePhysicalAssetClass": {
-      "$ref": "#/$defs/ChangePhysicalAssetClassType"
-    },
-    "ChangePhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangePhysicalAsset": {
+            "$ref": "#/$defs/ChangePhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "ChangePhysicalAssetClass": {
+            "$ref": "#/$defs/ChangePhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "PhysicalAssetClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "PhysicalAssetClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePhysicalAssetInformation": {
-      "$ref": "#/$defs/ChangePhysicalAssetInformationType"
-    },
-    "ChangePhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangePhysicalAssetInformation": {
+            "$ref": "#/$defs/ChangePhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "PhysicalAssetInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "PhysicalAssetInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangePhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangePhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "PhysicalAsset"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "PhysicalAsset"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPhysicalAsset": {
-      "$ref": "#/$defs/GetPhysicalAssetType"
-    },
-    "GetPhysicalAssetClass": {
-      "$ref": "#/$defs/GetPhysicalAssetClassType"
-    },
-    "GetPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangePhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetPhysicalAsset": {
+            "$ref": "#/$defs/GetPhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "GetPhysicalAssetClass": {
+            "$ref": "#/$defs/GetPhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "PhysicalAssetClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "PhysicalAssetClass"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPhysicalAssetInformation": {
-      "$ref": "#/$defs/GetPhysicalAssetInformationType"
-    },
-    "GetPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetPhysicalAssetInformation": {
+            "$ref": "#/$defs/GetPhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "PhysicalAssetInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "PhysicalAssetInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "PhysicalAsset"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "PhysicalAsset"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PhysicalAsset": {
-      "$ref": "#/$defs/PhysicalAssetType",
-      "description": "A representation of a physical piece of equipment is a physical asset. "
-    },
-    "PhysicalAssetClass": {
-      "$ref": "#/$defs/PhysicalAssetClassType",
-      "description": "A representation of a grouping of physical assets with similar characteristics \nfor purposes of repair and replacement is a physical asset class. Any physical \nasset is a member of one physical asset class. A physical asset class may be \ndefined as a specialization of zero or more physical asset classes.  \nA physical asset class may be made up of zero or more physical asset classes."
-    },
-    "PhysicalAssetClassPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetClassPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetClassPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetClassPropertyType"
-          },
-          "type": "array"
-        },
-        "PropertyType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Manufacturer": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassBaseID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassChild": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetClassType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassProperty": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetClassPropertyType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetSourceID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "TestSpecificationID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PhysicalAssetInformation": {
-      "$ref": "#/$defs/PhysicalAssetInformationType",
-      "description": "The physical asset model contains information about the physical piece of equipment, \nusually managed as a physical asset within the enterprise often utilizing a specific \nserial number. An object in the equipment model defines a role for the equipment, \nand object in the physical asset model defines the physical asset ID and properties \nof a piece of equipment."
-    },
-    "PhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
         "PhysicalAsset": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetType"
-          },
-          "type": "array"
+            "$ref": "#/$defs/PhysicalAssetType",
+            "description": "A representation of a physical piece of equipment is a physical asset. "
         },
         "PhysicalAssetClass": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetClassType"
-          },
-          "type": "array"
+            "$ref": "#/$defs/PhysicalAssetClassType",
+            "description": "A representation of a grouping of physical assets with similar characteristics \nfor purposes of repair and replacement is a physical asset class. Any physical \nasset is a member of one physical asset class. A physical asset class may be \ndefined as a specialization of zero or more physical asset classes.  \nA physical asset class may be made up of zero or more physical asset classes."
         },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "TestSpecification": {
-          "items": {
-            "$ref": "#/$defs/TestSpecificationType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "TestSpecificationType": {
-      "type": "object",
-      "required": [
-          "EvaluatedProperty"
-      ],
-      "properties": {
-          "Description": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-              }
-          },
-          "EffectiveEndDate": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-          },
-          "EffectiveStartDate": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-          },
-          "EvaluatedProperty": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationEvaluatedPropertyType"
-              },
-              "minItems": 1
-          },
-          "HierarchyScope": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-          },
-          "ID": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "OperationsTestRequirementID": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "PhysicalSampleRequired": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IndicatorType"
-          },
-          "PublishedEndDate": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-          },
-          "RecurrenceQuantity": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "RecurrenceTimeInterval": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/DurationType"
-          },
-          "TestSampleSize": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "TestSpecificationChild": {
-              "type": "array",
-              "items": {
-                  "$ref": "#/$defs/TestSpecificationType"
-              }
-          },
-          "TestSpecificationCriteria": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationCriteriaType"
-              }
-          },
-          "TestSpecificationProperty": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationPropertyType"
-              }
-          },
-          "TestableObjectID": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "Version": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          }
-      },
-      "allOf": [
-          {
-              "$ref": "./v2.0.0.extensions.schema.json#/$defs/TestSpecificationType"
-          }
-      ],
-      "unevaluatedProperties": false
-  },
-    "PhysicalAssetPropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetPropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetPropertyChild": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetPropertyType"
-          },
-          "type": "array"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "PhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EquipmentAssetMapping": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/EquipmentAssetMappingType"
-          },
-          "type": "array"
-        },
-        "EquipmentLevel": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "FixedAssetID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PhysicalAssetChild": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetClassID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "PhysicalAssetProperty": {
-          "items": {
-            "$ref": "#/$defs/PhysicalAssetPropertyType"
-          },
-          "type": "array"
-        },
-        "PhysicalLocation": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "SpatialDefinition": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
-        },
-        "TestSpecificationID": {
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "type": "array"
-        },
-        "VendorID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPhysicalAsset": {
-      "$ref": "#/$defs/ProcessPhysicalAssetType"
-    },
-    "ProcessPhysicalAssetClass": {
-      "$ref": "#/$defs/ProcessPhysicalAssetClassType"
-    },
-    "ProcessPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PhysicalAssetClassPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetClassPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetClassPropertyType"
+                    }
+                },
+                "PropertyType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ClassPropertyTypeType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "PhysicalAssetClass",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPhysicalAssetInformation": {
-      "$ref": "#/$defs/ProcessPhysicalAssetInformationType"
-    },
-    "ProcessPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetClassPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Manufacturer": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/NameType"
+                    }
+                },
+                "PhysicalAssetClassBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetClassChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetClassType"
+                    }
+                },
+                "PhysicalAssetClassProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetClassPropertyType"
+                    }
+                },
+                "PhysicalAssetSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "PhysicalAssetInformation",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "PhysicalAssetInformation": {
+            "$ref": "#/$defs/PhysicalAssetInformationType",
+            "description": "The physical asset model contains information about the physical piece of equipment, \nusually managed as a physical asset within the enterprise often utilizing a specific \nserial number. An object in the equipment model defines a role for the equipment, \nand object in the physical asset model defines the physical asset ID and properties \nof a piece of equipment."
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAsset": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetType"
+                    }
+                },
+                "PhysicalAssetClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetClassType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/TestSpecificationType"
+                    }
+                }
             },
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
-            }
-          },
-          "required": [
-            "PhysicalAsset",
-            "Process"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPhysicalAsset": {
-      "$ref": "#/$defs/RespondPhysicalAssetType"
-    },
-    "RespondPhysicalAssetClass": {
-      "$ref": "#/$defs/RespondPhysicalAssetClassType"
-    },
-    "RespondPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PhysicalAssetPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetPropertyType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "PhysicalAssetClass",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPhysicalAssetInformation": {
-      "$ref": "#/$defs/RespondPhysicalAssetInformationType"
-    },
-    "RespondPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "PhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentAssetMapping": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/EquipmentAssetMappingType"
+                    }
+                },
+                "EquipmentLevel": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "FixedAssetID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetType"
+                    }
+                },
+                "PhysicalAssetClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetPropertyType"
+                    }
+                },
+                "PhysicalLocation": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "VendorID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "PhysicalAssetInformation",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/PhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessPhysicalAsset": {
+            "$ref": "#/$defs/ProcessPhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "ProcessPhysicalAssetClass": {
+            "$ref": "#/$defs/ProcessPhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetClass",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "PhysicalAsset",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPhysicalAsset": {
-      "$ref": "#/$defs/ShowPhysicalAssetType"
-    },
-    "ShowPhysicalAssetClass": {
-      "$ref": "#/$defs/ShowPhysicalAssetClassType"
-    },
-    "ShowPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessPhysicalAssetInformation": {
+            "$ref": "#/$defs/ProcessPhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetInformation",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "PhysicalAssetClass",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPhysicalAssetInformation": {
-      "$ref": "#/$defs/ShowPhysicalAssetInformationType"
-    },
-    "ShowPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ProcessPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAsset",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "PhysicalAssetInformation",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "RespondPhysicalAsset": {
+            "$ref": "#/$defs/RespondPhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "RespondPhysicalAssetClass": {
+            "$ref": "#/$defs/RespondPhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetClass",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "PhysicalAsset",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPhysicalAsset": {
-      "$ref": "#/$defs/SyncPhysicalAssetType"
-    },
-    "SyncPhysicalAssetClass": {
-      "$ref": "#/$defs/SyncPhysicalAssetClassType"
-    },
-    "SyncPhysicalAssetClassType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetClassType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "RespondPhysicalAssetInformation": {
+            "$ref": "#/$defs/RespondPhysicalAssetInformationType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetClass": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetClassType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "PhysicalAssetClass",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPhysicalAssetInformation": {
-      "$ref": "#/$defs/SyncPhysicalAssetInformationType"
-    },
-    "SyncPhysicalAssetInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAssetInformation": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "RespondPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAsset",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "PhysicalAssetInformation",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncPhysicalAssetType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ShowPhysicalAsset": {
+            "$ref": "#/$defs/ShowPhysicalAssetType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "ShowPhysicalAssetClass": {
+            "$ref": "#/$defs/ShowPhysicalAssetClassType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "PhysicalAsset": {
-              "items": {
-                "$ref": "#/$defs/PhysicalAssetType"
-              },
-              "minItems": 1,
-              "type": "array"
+        "ShowPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetClass",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
             },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "PhysicalAsset",
-            "Sync"
-          ],
-          "type": "object"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowPhysicalAssetInformation": {
+            "$ref": "#/$defs/ShowPhysicalAssetInformationType"
+        },
+        "ShowPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAsset",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPhysicalAsset": {
+            "$ref": "#/$defs/SyncPhysicalAssetType"
+        },
+        "SyncPhysicalAssetClass": {
+            "$ref": "#/$defs/SyncPhysicalAssetClassType"
+        },
+        "SyncPhysicalAssetClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetClass",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPhysicalAssetInformation": {
+            "$ref": "#/$defs/SyncPhysicalAssetInformationType"
+        },
+        "SyncPhysicalAssetInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAssetInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAssetInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncPhysicalAssetType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "PhysicalAsset",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "PhysicalAsset": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/PhysicalAssetType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncPhysicalAssetType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "TestSpecificationType": {
+            "type": "object",
+            "required": [
+                "EvaluatedProperty"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EvaluatedProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationEvaluatedPropertyType"
+                    },
+                    "minItems": 1
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsTestRequirementID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalSampleRequired": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "PublishedEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "RecurrenceQuantity": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                },
+                "RecurrenceTimeInterval": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/DurationType"
+                },
+                "TestSampleSize": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                },
+                "TestSpecificationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/TestSpecificationType"
+                    }
+                },
+                "TestSpecificationCriteria": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationCriteriaType"
+                    }
+                },
+                "TestSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.operationsTest.schema.json#/$defs/TestSpecificationPropertyType"
+                    }
+                },
+                "TestableObjectID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "./v2.0.0.extensions.schema.json#/$defs/TestSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
         }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    }
-  },
-  "type": "object",
-  "properties": {
-    "AcknowledgePhysicalAsset": {
-      "$ref": "#/$defs/AcknowledgePhysicalAsset"
     },
-    "AcknowledgePhysicalAssetClass": {
-      "$ref": "#/$defs/AcknowledgePhysicalAssetClass"
+    "type": "object",
+    "title": "Rhize B2MML-JSON - Physical Asset Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgePhysicalAsset": {
+            "$ref": "#/$defs/AcknowledgePhysicalAsset"
+        },
+        "AcknowledgePhysicalAssetClass": {
+            "$ref": "#/$defs/AcknowledgePhysicalAssetClass"
+        },
+        "AcknowledgePhysicalAssetInformation": {
+            "$ref": "#/$defs/AcknowledgePhysicalAssetInformation"
+        },
+        "CancelPhysicalAsset": {
+            "$ref": "#/$defs/CancelPhysicalAsset"
+        },
+        "CancelPhysicalAssetClass": {
+            "$ref": "#/$defs/CancelPhysicalAssetClass"
+        },
+        "CancelPhysicalAssetInformation": {
+            "$ref": "#/$defs/CancelPhysicalAssetInformation"
+        },
+        "ChangePhysicalAsset": {
+            "$ref": "#/$defs/ChangePhysicalAsset"
+        },
+        "ChangePhysicalAssetClass": {
+            "$ref": "#/$defs/ChangePhysicalAssetClass"
+        },
+        "ChangePhysicalAssetInformation": {
+            "$ref": "#/$defs/ChangePhysicalAssetInformation"
+        },
+        "GetPhysicalAsset": {
+            "$ref": "#/$defs/GetPhysicalAsset"
+        },
+        "GetPhysicalAssetClass": {
+            "$ref": "#/$defs/GetPhysicalAssetClass"
+        },
+        "GetPhysicalAssetInformation": {
+            "$ref": "#/$defs/GetPhysicalAssetInformation"
+        },
+        "PhysicalAsset": {
+            "$ref": "#/$defs/PhysicalAsset"
+        },
+        "PhysicalAssetClass": {
+            "$ref": "#/$defs/PhysicalAssetClass"
+        },
+        "PhysicalAssetInformation": {
+            "$ref": "#/$defs/PhysicalAssetInformation"
+        },
+        "ProcessPhysicalAsset": {
+            "$ref": "#/$defs/ProcessPhysicalAsset"
+        },
+        "ProcessPhysicalAssetClass": {
+            "$ref": "#/$defs/ProcessPhysicalAssetClass"
+        },
+        "ProcessPhysicalAssetInformation": {
+            "$ref": "#/$defs/ProcessPhysicalAssetInformation"
+        },
+        "RespondPhysicalAsset": {
+            "$ref": "#/$defs/RespondPhysicalAsset"
+        },
+        "RespondPhysicalAssetClass": {
+            "$ref": "#/$defs/RespondPhysicalAssetClass"
+        },
+        "RespondPhysicalAssetInformation": {
+            "$ref": "#/$defs/RespondPhysicalAssetInformation"
+        },
+        "ShowPhysicalAsset": {
+            "$ref": "#/$defs/ShowPhysicalAsset"
+        },
+        "ShowPhysicalAssetClass": {
+            "$ref": "#/$defs/ShowPhysicalAssetClass"
+        },
+        "ShowPhysicalAssetInformation": {
+            "$ref": "#/$defs/ShowPhysicalAssetInformation"
+        },
+        "SyncPhysicalAsset": {
+            "$ref": "#/$defs/SyncPhysicalAsset"
+        },
+        "SyncPhysicalAssetClass": {
+            "$ref": "#/$defs/SyncPhysicalAssetClass"
+        },
+        "SyncPhysicalAssetInformation": {
+            "$ref": "#/$defs/SyncPhysicalAssetInformation"
+        }
     },
-    "AcknowledgePhysicalAssetInformation": {
-      "$ref": "#/$defs/AcknowledgePhysicalAssetInformation"
-    },
-    "CancelPhysicalAsset": {
-      "$ref": "#/$defs/CancelPhysicalAsset"
-    },
-    "CancelPhysicalAssetClass": {
-      "$ref": "#/$defs/CancelPhysicalAssetClass"
-    },
-    "CancelPhysicalAssetInformation": {
-      "$ref": "#/$defs/CancelPhysicalAssetInformation"
-    },
-    "ChangePhysicalAsset": {
-      "$ref": "#/$defs/ChangePhysicalAsset"
-    },
-    "ChangePhysicalAssetClass": {
-      "$ref": "#/$defs/ChangePhysicalAssetClass"
-    },
-    "ChangePhysicalAssetInformation": {
-      "$ref": "#/$defs/ChangePhysicalAssetInformation"
-    },
-    "GetPhysicalAsset": {
-      "$ref": "#/$defs/GetPhysicalAsset"
-    },
-    "GetPhysicalAssetClass": {
-      "$ref": "#/$defs/GetPhysicalAssetClass"
-    },
-    "GetPhysicalAssetInformation": {
-      "$ref": "#/$defs/GetPhysicalAssetInformation"
-    },
-    "PhysicalAsset": {
-      "$ref": "#/$defs/PhysicalAsset"
-    },
-    "PhysicalAssetClass": {
-      "$ref": "#/$defs/PhysicalAssetClass"
-    },
-    "PhysicalAssetInformation": {
-      "$ref": "#/$defs/PhysicalAssetInformation"
-    },
-    "ProcessPhysicalAsset": {
-      "$ref": "#/$defs/ProcessPhysicalAsset"
-    },
-    "ProcessPhysicalAssetClass": {
-      "$ref": "#/$defs/ProcessPhysicalAssetClass"
-    },
-    "ProcessPhysicalAssetInformation": {
-      "$ref": "#/$defs/ProcessPhysicalAssetInformation"
-    },
-    "RespondPhysicalAsset": {
-      "$ref": "#/$defs/RespondPhysicalAsset"
-    },
-    "RespondPhysicalAssetClass": {
-      "$ref": "#/$defs/RespondPhysicalAssetClass"
-    },
-    "RespondPhysicalAssetInformation": {
-      "$ref": "#/$defs/RespondPhysicalAssetInformation"
-    },
-    "ShowPhysicalAsset": {
-      "$ref": "#/$defs/ShowPhysicalAsset"
-    },
-    "ShowPhysicalAssetClass": {
-      "$ref": "#/$defs/ShowPhysicalAssetClass"
-    },
-    "ShowPhysicalAssetInformation": {
-      "$ref": "#/$defs/ShowPhysicalAssetInformation"
-    },
-    "SyncPhysicalAsset": {
-      "$ref": "#/$defs/SyncPhysicalAsset"
-    },
-    "SyncPhysicalAssetClass": {
-      "$ref": "#/$defs/SyncPhysicalAssetClass"
-    },
-    "SyncPhysicalAssetInformation": {
-      "$ref": "#/$defs/SyncPhysicalAssetInformation"
-    }
-  },
-  "allOf": [
-    {
-      "$ref": "./v2.0.0.extensions.schema.json#"
-    }
-  ],
-  "unevaluatedProperties": false
+    "allOf": [
+        {
+            "$ref": "./v2.0.0.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
 }
