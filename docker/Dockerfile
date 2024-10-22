@@ -20,7 +20,8 @@ ARG HOST=http://localhost/
 RUN mkdir ./Docs/static/schemas && \
     cp ./schemas/* ./Docs/static/schemas/ && \
     sed -i 's,\("$id"\: *"\),\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json && \
-    sed -i 's,\("$ref"\: *"\)\./,\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json
+    sed -i 's,\("$ref"\: *"\)\./,\1'"$HOST"'schemas/,g' ./Docs/static/schemas/*.json && \
+    sed -i 's,\("$ref"\: *"\)v2,\1'"$HOST"'schemas/v2,g' ./Docs/static/schemas/*.json
 
 # Minimize the JSON Schema files.
 RUN for f in ./Docs/static/schemas/*.json; do \
