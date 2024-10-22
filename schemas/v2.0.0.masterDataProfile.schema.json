@@ -324,13 +324,13 @@
                 "WorkCalendar": {
                     "type": "array",
                     "items": {
-                        "$ref": "v2.0.0.WorkCalendar.schema.json#/$defs/WorkCalendarType"
+                        "$ref": "v2.0.0.workCalendar.schema.json#/$defs/WorkCalendarType"
                     }
                 },
                 "WorkCalendarDefinition": {
                     "type": "array",
                     "items": {
-                        "$ref": "v2.0.0.WorkCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
+                        "$ref": "v2.0.0.workCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
                     }
                 },
                 "WorkCapability": {
