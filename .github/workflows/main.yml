@@ -1,0 +1,104 @@
+name: Continuous Deployment
+on: 
+  push:
+    tags:
+      - v*
+    branches:
+      - main
+      - develop
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup Go ${{ matrix.go-version }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: 1.23
+      - name: install schemalint
+        run: go install github.com/giantswarm/schemalint/v2@latest
+      - name: lint schema files
+        run: |
+          for i in ./schemas/*.json;
+            do echo "checking $i";
+            schemalint verify $i;
+          done
+
+  containerize:
+    runs-on: ubuntu-latest
+    needs: lint
+    if: ${{ github.ref_type == 'tag' }}
+    strategy:
+      matrix:
+        BUILD_HOST: ["http://localhost/", "https://json.libremfg.ai/"]
+    permissions:
+      contents: read
+      packages: write
+    steps:
+    - uses: actions/checkout@master
+    - name: Login to GitHub Container Registry
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Publish to GitHub Container Registry for localhost
+      if: ${{ github.ref_type == 'tag' && matrix.BUILD_HOST == 'http://localhost/' }}
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        file: ./docker/Dockerfile
+        build-args: |
+          HOST=${{ matrix.BUILD_HOST }}
+        tags: |
+          ghcr.io/libremfg/json-schema:${{ github.ref_name }}
+          ghcr.io/libremfg/json-schema:latest
+    - name: Publish to GitHub Container Registry for json.libremfg.ai
+      if: ${{ github.ref_type == 'tag' && matrix.BUILD_HOST == 'https://json.libremfg.ai/' }}
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        file: ./docker/Dockerfile
+        build-args: |
+          HOST=${{ matrix.BUILD_HOST }}
+        tags: |
+          ghcr.io/libremfg/json-schema:jsonlibremfgai-${{ github.ref_name }}
+          ghcr.io/libremfg/json-schema:jsonlibremfgai-latest
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: containerize
+    if: ${{ github.ref_type == 'tag' }}
+    env:
+      ENV_SLUG: jsonlibremfgai
+      KUBE_NAMESPACE: json-schema
+      INGRESS_HOST: json.libremfg.ai
+    steps:
+      - name: Set the Kubernetes context
+        uses: azure/k8s-set-context@v2
+        with:
+          method: service-account
+          k8s-url: ${{ secrets.NA1_KUBERNETES_URL }}
+          k8s-secret: ${{ secrets.NA1_KUBERNETES_SECRET }}
+      - name: Install Helm
+        uses: azure/setup-helm@v4.2.0
+      - uses: actions/checkout@master
+      - name: Helm Install
+        run: |
+          if [ -z "$CI_COMMIT_TAG" ]; then
+            export TAG=$ENV_SLUG-latest;
+          else 
+            export TAG=$ENV_SLUG-$CI_COMMIT_TAG;
+          fi
+          echo "using tag $TAG";
+          helm upgrade --install libremfg-jsonschema ./chart \
+            --set image.tag=$TAG \
+            --set ingress.enabled=true \
+            --set ingress.className=traefik \
+            --set ingress.hosts[0].host=$INGRESS_HOST \
+            --set ingress.hosts[0].paths[0].path=/ \
+            --set ingress.hosts[0].paths[0].pathType=ImplementationSpecific \
+            --set ingress.tls[0].hosts[0]=$INGRESS_HOST \
+            --set ingress.tls[0].secretName=$INGRESS_HOST-tls \
+            --namespace $KUBE_NAMESPACE

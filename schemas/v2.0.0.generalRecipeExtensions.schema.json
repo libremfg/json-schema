@@ -1,73 +1,59 @@
 {
     "$id": "v2.0.0.generalRecipeExtensions.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "Rhize B2MML-JSON - General Recipe Extensions Definitions",
-    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
     "$defs": {
         "DirectedLink": {
+            "type": "object"
+        },
+        "GROtherInformation": {
+            "type": "object"
+        },
+        "GeneralRecipe": {
+            "type": "object"
+        },
+        "GeneralRecipeFormula": {
+            "type": "object"
+        },
+        "GeneralRecipeHeader": {
+            "type": "object"
+        },
+        "GeneralRecipeInformation": {
+            "type": "object"
+        },
+        "GeneralRecipeMaterial": {
+            "type": "object"
+        },
+        "GeneralRecipeMaterials": {
+            "type": "object"
+        },
+        "HeaderProperty": {
+            "type": "object"
+        },
+        "ProcedureChartElement": {
+            "type": "object"
+        },
+        "ProcessElement": {
+            "type": "object"
+        },
+        "ProcessElementLibrary": {
+            "type": "object"
+        },
+        "ProcessElementParameter": {
             "type": "object"
         },
         "ResourceConstraint": {
             "type": "object"
         },
-
         "ResourceConstraintLibrary": {
             "type": "object"
         },
-
         "ResourceConstraintProperty": {
-            "type": "object"
-        },
-
-        "GeneralRecipeFormula": {
-            "type": "object"
-        },
-
-        "GeneralRecipeHeader": {
-            "type": "object"
-        },
-
-        "HeaderProperty": {
-            "type": "object"
-        },
-
-        "GeneralRecipeMaterial": {
-            "type": "object"
-        },
-
-        "GeneralRecipeMaterials": {
-            "type": "object"
-        },
-
-        "GROtherInformation": {
-            "type": "object"
-        },
-
-        "ProcessElementParameter": {
-            "type": "object"
-        },
-
-        "ProcessElement": {
-            "type": "object"
-        },
-
-        "ProcessElementLibrary": {
-            "type": "object"
-        },
-
-        "ProcedureChartElement": {
-            "type": "object"
-        },
-
-        "GeneralRecipe": {
-            "type": "object"
-        },
-
-        "GeneralRecipeInformation": {
             "type": "object"
         }
     },
     "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - General Recipe Extensions Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
     "allOf": [
         {
             "$ref": "./v2.0.0.extensions.schema.json#"

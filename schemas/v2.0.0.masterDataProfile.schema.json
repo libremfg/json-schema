@@ -2,9 +2,6 @@
     "$id": "v2.0.0.masterDataProfile.schema.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$defs": {
-        "MasterDataProfile": {
-            "$ref": "#/$defs/MasterDataProfileType"
-        },
         "ChannelTopicType": {
             "type": "object",
             "required": [
@@ -64,6 +61,9 @@
                 }
             ],
             "unevaluatedProperties": false
+        },
+        "MasterDataProfile": {
+            "$ref": "#/$defs/MasterDataProfileType"
         },
         "MasterDataProfileHeaderType": {
             "type": "object",
@@ -324,13 +324,13 @@
                 "WorkCalendar": {
                     "type": "array",
                     "items": {
-                        "$ref": "v2.0.0.WorkCalendar.schema.json#/$defs/WorkCalendarType"
+                        "$ref": "v2.0.0.workCalendar.schema.json#/$defs/WorkCalendarType"
                     }
                 },
                 "WorkCalendarDefinition": {
                     "type": "array",
                     "items": {
-                        "$ref": "v2.0.0.WorkCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
+                        "$ref": "v2.0.0.workCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
                     }
                 },
                 "WorkCapability": {
@@ -474,7 +474,7 @@
         }
     },
     "type": "object",
-    "title": "Rhize B2MML-JSON - Master Data Profile Definitions",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Master Data Profile Definitions",
     "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
     "properties": {
         "MasterDataProfile": {

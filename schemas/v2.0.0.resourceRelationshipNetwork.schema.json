@@ -1,1551 +1,1553 @@
 {
-  "$id": "v2.0.0.resourceRelationshipNetwork.schema.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Rhize B2MML-JSON - Resource Relationship Network Definitions",
-  "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
-  "$defs": {
-    "AcknowledgeResourceNetworkConnectionType": {
-      "$ref": "#/$defs/AcknowledgeResourceNetworkConnectionTypeType"
-    },
-    "AcknowledgeResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+    "$id": "v2.0.0.resourceRelationshipNetwork.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeResourceNetworkConnectionType": {
+            "$ref": "#/$defs/AcknowledgeResourceNetworkConnectionTypeType"
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgeResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ResourceNetworkConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "ResourceNetworkConnectionType"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgeResourceRelationshipNetwork": {
-      "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkType"
-    },
-    "AcknowledgeResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkInformationType"
-    },
-    "AcknowledgeResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "AcknowledgeResourceRelationshipNetwork": {
+            "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "AcknowledgeResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkInformationType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgeResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ResourceRelationshipNetworkInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "ResourceRelationshipNetworkInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "AcknowledgeResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Acknowledge": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+        "AcknowledgeResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ResourceRelationshipNetwork"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Acknowledge",
-            "ResourceRelationshipNetwork"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelResourceNetworkConnectionType": {
-      "$ref": "#/$defs/CancelResourceNetworkConnectionTypeType"
-    },
-    "CancelResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/AcknowledgeResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelResourceNetworkConnectionType": {
+            "$ref": "#/$defs/CancelResourceNetworkConnectionTypeType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ResourceNetworkConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "ResourceNetworkConnectionType"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelResourceRelationshipNetwork": {
-      "$ref": "#/$defs/CancelResourceRelationshipNetworkType"
-    },
-    "CancelResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/CancelResourceRelationshipNetworkInformationType"
-    },
-    "CancelResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "CancelResourceRelationshipNetwork": {
+            "$ref": "#/$defs/CancelResourceRelationshipNetworkType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "CancelResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/CancelResourceRelationshipNetworkInformationType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ResourceRelationshipNetworkInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "ResourceRelationshipNetworkInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "CancelResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Cancel": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+        "CancelResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ResourceRelationshipNetwork"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Cancel",
-            "ResourceRelationshipNetwork"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangeResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ChangeResourceNetworkConnectionTypeType"
-    },
-    "ChangeResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/CancelResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangeResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ChangeResourceNetworkConnectionTypeType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangeResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ResourceNetworkConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "ResourceNetworkConnectionType"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangeResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ChangeResourceRelationshipNetworkType"
-    },
-    "ChangeResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ChangeResourceRelationshipNetworkInformationType"
-    },
-    "ChangeResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ChangeResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ChangeResourceRelationshipNetworkType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "ChangeResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ChangeResourceRelationshipNetworkInformationType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangeResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ResourceRelationshipNetworkInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "ResourceRelationshipNetworkInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ChangeResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Change": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+        "ChangeResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ResourceRelationshipNetwork"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Change",
-            "ResourceRelationshipNetwork"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetResourceNetworkConnectionType": {
-      "$ref": "#/$defs/GetResourceNetworkConnectionTypeType"
-    },
-    "GetResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ChangeResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetResourceNetworkConnectionType": {
+            "$ref": "#/$defs/GetResourceNetworkConnectionTypeType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "ResourceNetworkConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "ResourceNetworkConnectionType"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetResourceRelationshipNetwork": {
-      "$ref": "#/$defs/GetResourceRelationshipNetworkType"
-    },
-    "GetResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/GetResourceRelationshipNetworkInformationType"
-    },
-    "GetResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "GetResourceRelationshipNetwork": {
+            "$ref": "#/$defs/GetResourceRelationshipNetworkType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "GetResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/GetResourceRelationshipNetworkInformationType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "ResourceRelationshipNetworkInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "ResourceRelationshipNetworkInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "GetResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Get": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+        "GetResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "ResourceRelationshipNetwork"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransGetType"
+                        },
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Get",
-            "ResourceRelationshipNetwork"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ProcessResourceNetworkConnectionTypeType"
-    },
-    "ProcessResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/GetResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ProcessResourceNetworkConnectionTypeType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+        "ProcessResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "ResourceNetworkConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Process",
-            "ResourceNetworkConnectionType"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ProcessResourceRelationshipNetworkType"
-    },
-    "ProcessResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ProcessResourceRelationshipNetworkInformationType"
-    },
-    "ProcessResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+        "ProcessResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ProcessResourceRelationshipNetworkType"
         },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+        "ProcessResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ProcessResourceRelationshipNetworkInformationType"
         },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+        "ProcessResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "ResourceRelationshipNetworkInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Process",
-            "ResourceRelationshipNetworkInformation"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ProcessResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "Process": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+        "ProcessResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "ResourceRelationshipNetwork"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
             },
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            }
-          },
-          "required": [
-            "Process",
-            "ResourceRelationshipNetwork"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-    },
-    "ResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "ConnectionType": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
-        },
-        "ResourceNetworkConnectionSourceID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceNetworkConnectionTypeProperty": {
-          "items": {
-            "$ref": "#/$defs/ResourceNetworkConnectionTypePropertyType"
-          },
-          "type": "array"
-        },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        }
-      },
-      "required": [
-        "ConnectionType",
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ResourceNetworkConnectionTypePropertyType": {
-      "type": "object",
-      "properties": {
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "Description": {
-          "type": "array",
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "minItems": 0
-        },
-        "Value": {
-          "type": "array",
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "minItems": 0
-        },
-        "ResourceNetworkConnectionTypePropertyChild": {
-          "type": "array",
-          "items": {
-            "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "minItems": 0
-        },
-        "Extended:ResourceNetworkConnectionTypePropertyType": {
-          "type": "object"
-        }
-      },
-      "required": ["ID"]
-    },
-    "ResourceReferencePropertyType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceReferencePropertyType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceClassPropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourcePropertyID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceReferencePropertyChild": {
-          "items": {
-            "$ref": "#/$defs/ResourceReferencePropertyType"
-          },
-          "type": "array"
-        },
-        "Value": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-          },
-          "type": "array"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ResourceReferenceType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceReferenceType"
-        }
-      ],
-      "properties": {
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceClassID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-        },
-        "ResourceReferenceProperty": {
-          "items": {
-            "$ref": "#/$defs/ResourceReferencePropertyType"
-          },
-          "type": "array"
-        },
-        "ResourceType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/ResourceReferenceTypeType"
-        }
-      },
-      "required": [
-        "ID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ResourceRelationshipNetworkType"
-    },
-    "ResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-    },
-    "ResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
-        },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
-        },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ProcessResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
         "ResourceNetworkConnectionType": {
-          "items": {
             "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-          },
-          "minItems": 1,
-          "type": "array"
+        },
+        "ResourceNetworkConnectionTypePropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    },
+                    "minItems": 0
+                },
+                "Extended:ResourceNetworkConnectionTypePropertyType": {
+                    "type": "object"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceNetworkConnectionTypePropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                    },
+                    "minItems": 0
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    },
+                    "minItems": 0
+                }
+            }
+        },
+        "ResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ConnectionType",
+                "ID"
+            ],
+            "properties": {
+                "ConnectionType": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ResourceNetworkConnectionSourceID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceNetworkConnectionTypeProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceNetworkConnectionTypePropertyType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ResourceReferencePropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceClassPropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourcePropertyID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceReferencePropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceReferencePropertyType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceReferencePropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ResourceReferenceType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceClassID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceReferenceProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceReferencePropertyType"
+                    }
+                },
+                "ResourceType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/ResourceReferenceTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceReferenceType"
+                }
+            ],
+            "unevaluatedProperties": false
         },
         "ResourceRelationshipNetwork": {
-          "items": {
             "$ref": "#/$defs/ResourceRelationshipNetworkType"
-          },
-          "minItems": 1,
-          "type": "array"
+        },
+        "ResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+        },
+        "ResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "ResourceNetworkConnectionType",
+                "ResourceRelationshipNetwork"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceNetworkConnectionType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                    },
+                    "minItems": 1
+                },
+                "ResourceRelationshipNetwork": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                    },
+                    "minItems": 1
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ResourceRelationshipNetworkPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ResourceRelationshipNetworkPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceRelationshipNetworkPropertyType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "ResourceNetworkConnection"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "RelationshipForm": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RelationshipFormType"
+                },
+                "RelationshipType": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/RelationshipTypeType"
+                },
+                "ResourceNetworkConnection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceNetworkConnectionType"
+                    },
+                    "minItems": 1
+                },
+                "ResourceRelationshipNetworkProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceRelationshipNetworkPropertyType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondResourceNetworkConnectionType": {
+            "$ref": "#/$defs/RespondResourceNetworkConnectionTypeType"
+        },
+        "RespondResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceNetworkConnectionType",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondResourceRelationshipNetwork": {
+            "$ref": "#/$defs/RespondResourceRelationshipNetworkType"
+        },
+        "RespondResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/RespondResourceRelationshipNetworkInformationType"
+        },
+        "RespondResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetworkInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetwork",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ShowResourceNetworkConnectionTypeType"
+        },
+        "ShowResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceNetworkConnectionType",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ShowResourceRelationshipNetworkType"
+        },
+        "ShowResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ShowResourceRelationshipNetworkInformationType"
+        },
+        "ShowResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetworkInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetwork",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncResourceNetworkConnectionType": {
+            "$ref": "#/$defs/SyncResourceNetworkConnectionTypeType"
+        },
+        "SyncResourceNetworkConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceNetworkConnectionType",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceNetworkConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceNetworkConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncResourceRelationshipNetwork": {
+            "$ref": "#/$defs/SyncResourceRelationshipNetworkType"
+        },
+        "SyncResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/SyncResourceRelationshipNetworkInformationType"
+        },
+        "SyncResourceRelationshipNetworkInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetworkInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetworkInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceRelationshipNetworkInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncResourceRelationshipNetworkType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ResourceRelationshipNetwork",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ResourceRelationshipNetwork": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceRelationshipNetworkType"
+                }
+            ],
+            "unevaluatedProperties": false
         }
-      },
-      "required": [
-        "ID",
-        "ResourceNetworkConnectionType",
-        "ResourceRelationshipNetwork"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
     },
-    "ResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "Description": {
-          "items": {
-            "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-          },
-          "type": "array"
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Resource Relationship Network Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeResourceNetworkConnectionType": {
+            "$ref": "#/$defs/AcknowledgeResourceNetworkConnectionType"
         },
-        "EffectiveEndDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        "AcknowledgeResourceRelationshipNetwork": {
+            "$ref": "#/$defs/AcknowledgeResourceRelationshipNetwork"
         },
-        "EffectiveStartDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        "AcknowledgeResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkInformation"
         },
-        "HierarchyScope": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/HierarchyScopeType"
+        "CancelResourceNetworkConnectionType": {
+            "$ref": "#/$defs/CancelResourceNetworkConnectionType"
         },
-        "ID": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        "CancelResourceRelationshipNetwork": {
+            "$ref": "#/$defs/CancelResourceRelationshipNetwork"
         },
-        "PublishedDate": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/DateTimeType"
+        "CancelResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/CancelResourceRelationshipNetworkInformation"
         },
-        "RelationshipForm": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RelationshipFormType"
+        "ChangeResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ChangeResourceNetworkConnectionType"
         },
-        "RelationshipType": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/RelationshipTypeType"
+        "ChangeResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ChangeResourceRelationshipNetwork"
         },
-        "ResourceNetworkConnection": {
-          "items": {
+        "ChangeResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ChangeResourceRelationshipNetworkInformation"
+        },
+        "GetResourceNetworkConnectionType": {
+            "$ref": "#/$defs/GetResourceNetworkConnectionType"
+        },
+        "GetResourceRelationshipNetwork": {
+            "$ref": "#/$defs/GetResourceRelationshipNetwork"
+        },
+        "GetResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/GetResourceRelationshipNetworkInformation"
+        },
+        "ProcessResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ProcessResourceNetworkConnectionType"
+        },
+        "ProcessResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ProcessResourceRelationshipNetwork"
+        },
+        "ProcessResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ProcessResourceRelationshipNetworkInformation"
+        },
+        "ResourceNetworkConnectionType": {
             "$ref": "#/$defs/ResourceNetworkConnectionType"
-          },
-          "minItems": 1,
-          "type": "array"
         },
-        "ResourceRelationshipNetworkProperty": {
-          "items": {
-            "$ref": "#/$defs/ResourceRelationshipNetworkPropertyType"
-          },
-          "type": "array"
+        "ResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ResourceRelationshipNetwork"
         },
-        "Version": {
-          "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+        "ResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ResourceRelationshipNetworkInformation"
+        },
+        "RespondResourceNetworkConnectionType": {
+            "$ref": "#/$defs/RespondResourceNetworkConnectionType"
+        },
+        "RespondResourceRelationshipNetwork": {
+            "$ref": "#/$defs/RespondResourceRelationshipNetwork"
+        },
+        "RespondResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/RespondResourceRelationshipNetworkInformation"
+        },
+        "ShowResourceNetworkConnectionType": {
+            "$ref": "#/$defs/ShowResourceNetworkConnectionType"
+        },
+        "ShowResourceRelationshipNetwork": {
+            "$ref": "#/$defs/ShowResourceRelationshipNetwork"
+        },
+        "ShowResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/ShowResourceRelationshipNetworkInformation"
+        },
+        "SyncResourceNetworkConnectionType": {
+            "$ref": "#/$defs/SyncResourceNetworkConnectionType"
+        },
+        "SyncResourceRelationshipNetwork": {
+            "$ref": "#/$defs/SyncResourceRelationshipNetwork"
+        },
+        "SyncResourceRelationshipNetworkInformation": {
+            "$ref": "#/$defs/SyncResourceRelationshipNetworkInformation"
         }
-      },
-      "required": [
-        "ID",
-        "ResourceNetworkConnection"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
     },
-    "ResourceRelationshipNetworkPropertyType": {
-      "type": "object",
-      "required": [
-          "ID"
-      ],
-      "properties": {
-          "Description": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.common.schema.json#/$defs/DescriptionType"
-              }
-          },
-          "ID": {
-              "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
-          },
-          "ResourceRelationshipNetworkPropertyChild": {
-              "type": "array",
-              "items": {
-                  "$ref": "#/$defs/ResourceRelationshipNetworkPropertyType"
-              }
-          },
-          "Value": {
-              "type": "array",
-              "items": {
-                  "$ref": "v2.0.0.common.schema.json#/$defs/ValueType"
-              }
-          }
-      },
-      "allOf": [
-          {
-              "$ref": "./v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkPropertyType"
-          }
-      ],
-      "unevaluatedProperties": false
-  },
-    "RespondResourceNetworkConnectionType": {
-      "$ref": "#/$defs/RespondResourceNetworkConnectionTypeType"
-    },
-    "RespondResourceNetworkConnectionTypeType": {
-      "allOf": [
+    "allOf": [
         {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceNetworkConnectionTypeType"
+            "$ref": "./v2.0.0.extensions.schema.json#"
         }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "ResourceNetworkConnectionType",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondResourceRelationshipNetwork": {
-      "$ref": "#/$defs/RespondResourceRelationshipNetworkType"
-    },
-    "RespondResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/RespondResourceRelationshipNetworkInformationType"
-    },
-    "RespondResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetworkInformation",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "RespondResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/RespondResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Respond": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransRespondType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetwork",
-            "Respond"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ShowResourceNetworkConnectionTypeType"
-    },
-    "ShowResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "ResourceNetworkConnectionType",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ShowResourceRelationshipNetworkType"
-    },
-    "ShowResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ShowResourceRelationshipNetworkInformationType"
-    },
-    "ShowResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetworkInformation",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "ShowResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/ShowResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Show": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransShowType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetwork",
-            "Show"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncResourceNetworkConnectionType": {
-      "$ref": "#/$defs/SyncResourceNetworkConnectionTypeType"
-    },
-    "SyncResourceNetworkConnectionTypeType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceNetworkConnectionTypeType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceNetworkConnectionType": {
-              "items": {
-                "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "ResourceNetworkConnectionType",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncResourceRelationshipNetwork": {
-      "$ref": "#/$defs/SyncResourceRelationshipNetworkType"
-    },
-    "SyncResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/SyncResourceRelationshipNetworkInformationType"
-    },
-    "SyncResourceRelationshipNetworkInformationType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceRelationshipNetworkInformationType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetworkInformation": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkInformationType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetworkInformation",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    },
-    "SyncResourceRelationshipNetworkType": {
-      "allOf": [
-        {
-          "$ref": "v2.0.0.extensions.schema.json#/$defs/SyncResourceRelationshipNetworkType"
-        }
-      ],
-      "properties": {
-        "@releaseID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "@versionID": {
-          "$ref": "v2.0.0.dataType.schema.json#/$defs/normalizedString"
-        },
-        "ApplicationArea": {
-          "$ref": "v2.0.0.common.schema.json#/$defs/TransApplicationAreaType"
-        },
-        "DataArea": {
-          "additionalProperties": false,
-          "properties": {
-            "ResourceRelationshipNetwork": {
-              "items": {
-                "$ref": "#/$defs/ResourceRelationshipNetworkType"
-              },
-              "minItems": 1,
-              "type": "array"
-            },
-            "Sync": {
-              "$ref": "v2.0.0.common.schema.json#/$defs/TransSyncType"
-            }
-          },
-          "required": [
-            "ResourceRelationshipNetwork",
-            "Sync"
-          ],
-          "type": "object"
-        }
-      },
-      "required": [
-        "ApplicationArea",
-        "DataArea",
-        "@releaseID"
-      ],
-      "type": "object",
-      "unevaluatedProperties": false
-    }
-  },
-  "type": "object",
-  "properties": {
-    "AcknowledgeResourceNetworkConnectionType": {
-      "$ref": "#/$defs/AcknowledgeResourceNetworkConnectionType"
-    },
-    "AcknowledgeResourceRelationshipNetwork": {
-      "$ref": "#/$defs/AcknowledgeResourceRelationshipNetwork"
-    },
-    "AcknowledgeResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/AcknowledgeResourceRelationshipNetworkInformation"
-    },
-    "CancelResourceNetworkConnectionType": {
-      "$ref": "#/$defs/CancelResourceNetworkConnectionType"
-    },
-    "CancelResourceRelationshipNetwork": {
-      "$ref": "#/$defs/CancelResourceRelationshipNetwork"
-    },
-    "CancelResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/CancelResourceRelationshipNetworkInformation"
-    },
-    "ChangeResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ChangeResourceNetworkConnectionType"
-    },
-    "ChangeResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ChangeResourceRelationshipNetwork"
-    },
-    "ChangeResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ChangeResourceRelationshipNetworkInformation"
-    },
-    "GetResourceNetworkConnectionType": {
-      "$ref": "#/$defs/GetResourceNetworkConnectionType"
-    },
-    "GetResourceRelationshipNetwork": {
-      "$ref": "#/$defs/GetResourceRelationshipNetwork"
-    },
-    "GetResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/GetResourceRelationshipNetworkInformation"
-    },
-    "ProcessResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ProcessResourceNetworkConnectionType"
-    },
-    "ProcessResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ProcessResourceRelationshipNetwork"
-    },
-    "ProcessResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ProcessResourceRelationshipNetworkInformation"
-    },
-    "ResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ResourceNetworkConnectionType"
-    },
-    "ResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ResourceRelationshipNetwork"
-    },
-    "ResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ResourceRelationshipNetworkInformation"
-    },
-    "RespondResourceNetworkConnectionType": {
-      "$ref": "#/$defs/RespondResourceNetworkConnectionType"
-    },
-    "RespondResourceRelationshipNetwork": {
-      "$ref": "#/$defs/RespondResourceRelationshipNetwork"
-    },
-    "RespondResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/RespondResourceRelationshipNetworkInformation"
-    },
-    "ShowResourceNetworkConnectionType": {
-      "$ref": "#/$defs/ShowResourceNetworkConnectionType"
-    },
-    "ShowResourceRelationshipNetwork": {
-      "$ref": "#/$defs/ShowResourceRelationshipNetwork"
-    },
-    "ShowResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/ShowResourceRelationshipNetworkInformation"
-    },
-    "SyncResourceNetworkConnectionType": {
-      "$ref": "#/$defs/SyncResourceNetworkConnectionType"
-    },
-    "SyncResourceRelationshipNetwork": {
-      "$ref": "#/$defs/SyncResourceRelationshipNetwork"
-    },
-    "SyncResourceRelationshipNetworkInformation": {
-      "$ref": "#/$defs/SyncResourceRelationshipNetworkInformation"
-    }
-  },
-  "allOf": [
-    {
-      "$ref": "./v2.0.0.extensions.schema.json#"
-    }
-  ],
-  "unevaluatedProperties": false
+    ],
+    "unevaluatedProperties": false
 }
