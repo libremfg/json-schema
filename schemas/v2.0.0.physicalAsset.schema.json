@@ -1522,7 +1522,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "./v2.0.0.extensions.schema.json#/$defs/TestSpecificationType"
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/TestSpecificationType"
                 }
             ],
             "unevaluatedProperties": false

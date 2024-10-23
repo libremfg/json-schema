@@ -962,7 +962,7 @@
             },
             "allOf": [
                 {
-                    "$ref": "./v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkPropertyType"
+                    "$ref": "v2.0.0.extensions.schema.json#/$defs/ResourceRelationshipNetworkPropertyType"
                 }
             ],
             "unevaluatedProperties": false
