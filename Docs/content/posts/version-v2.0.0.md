@@ -28,24 +28,36 @@ Based on the works of https://github.com/MESAInternational/B2MML-BatchML.
 
 ## Quick start
 
-Start out by importing the schema and using it in your JSON documents. 
+Start out by importing the schema and using it in your JSON documents. As an example:
 
 ```
-"$schema": "{{< siteurl >}}schemas/"
+"$schema": "{{< siteurl >}}schemas/v2.0.0.equipment.schema.json"
 ```
 
-Here is an example using the JSON schema in a `NotifyWorkDefined` message.
+Here is an example using the JSON schema in a `ProcessEquipment` message.
 
 ```json
 {
-    "$schema": "{{< siteurl >}}schemas/",
-    "NotifyWorkDefined": {
-        "ApplicationArea": {},
-        "DataArea": {
-            "Notify": {},
-            "WorkDefined": {
-
+    "$schema": "https://json.libremfg.ai/schemas/v2.0.0.equipment.schema.json",
+    "ProcessEquipment": {
+        "@releaseID": "1",
+        "ApplicationArea": {
+            "CreationDateTime": "2021-01-01T00:00:00Z",
+            "Sender": {
+                "LogicalID": "Rhize Manufacutring Data Hub"
             }
+        },
+        "DataArea": {
+            "Process": {},
+            "Equipment": [
+                {
+                    "ID": "Acme Inc.",
+                    "Description": [
+                        "Acme Inc. Manufacturing Line 1"
+                    ],
+                    "EquipmentLevel": "Enterprise"
+                }
+            ]
         }
     }
 }
@@ -58,3 +70,9 @@ Refactored the v1.0.0.base.schema.json JSON file by separating it into multiple 
 Implemented several automated scripts to assist in refactoring. While these scripts are tailored for specific use cases, they can generally be disregarded outside of those particular scenarios.
 
 In Version 2.0.0, a JSON Schema validator is used for verification, replacing the previous Lint-based approach. This update compiles and validates schemas through the use of scripts, specifically compileSchemas.js, located in scripts, and validate.mjs.
+
+## Object Schema File Table
+
+Use the search functionality of your browser to find an object of interet.
+
+{{< table/propertiesV200 >}}
