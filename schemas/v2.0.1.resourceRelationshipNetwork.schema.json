@@ -723,7 +723,38 @@
             "unevaluatedProperties": false
         },
         "ResourceNetworkConnectionType": {
-            "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
+            "type": "object",
+            "required": [
+                "id",
+                "FromResourceReference",
+                "ToResourceReference"
+            ],
+            "properties": {
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ResourceNetworkConnectionTypeID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "FromResourceReference": {
+                    "$ref": "#/$defs/ResourceReferenceType"
+                },
+                "ToResourceReference": {
+                    "$ref": "#/$defs/ResourceReferenceType"
+                },
+                "ResourceNetworkConnectionProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ResourceNetworkConnectionTypePropertyType"
+                    }
+                }
+            }
         },
         "ResourceNetworkConnectionTypePropertyType": {
             "type": "object",
@@ -1508,7 +1539,7 @@
             "$ref": "#/$defs/ProcessResourceRelationshipNetworkInformation"
         },
         "ResourceNetworkConnectionType": {
-            "$ref": "#/$defs/ResourceNetworkConnectionType"
+            "$ref": "#/$defs/ResourceNetworkConnectionTypeType"
         },
         "ResourceRelationshipNetwork": {
             "$ref": "#/$defs/ResourceRelationshipNetwork"
@@ -1517,7 +1548,7 @@
             "$ref": "#/$defs/ResourceRelationshipNetworkInformation"
         },
         "RespondResourceNetworkConnectionType": {
-            "$ref": "#/$defs/RespondResourceNetworkConnectionType"
+            "$ref": "#/$defs/RespondResourceNetworkConnectionTypeType"
         },
         "RespondResourceRelationshipNetwork": {
             "$ref": "#/$defs/RespondResourceRelationshipNetwork"
