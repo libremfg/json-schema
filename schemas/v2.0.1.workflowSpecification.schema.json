@@ -1586,19 +1586,16 @@
                 "ID"
             ],
             "properties": {
-                "ID": {
-                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                "Dependency": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/DependencyType"
+                },
+                "DependencyFactor": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
                 },
                 "Description": {
                     "type": "array",
                     "items": {
                         "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
-                    }
-                },
-                "WorkflowSpecificationConnectionTypeID": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                     }
                 },
                 "FromWSNodeID": {
@@ -1607,22 +1604,25 @@
                         "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                     }
                 },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
                 "ToWSNodeID": {
                     "type": "array",
                     "items": {
                         "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                     }
                 },
-                "Dependency": {
-                    "$ref": "v2.0.1.common.schema.json#/$defs/DependencyType"
-                },
-                "DependencyFactor": {
-                    "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
-                },
                 "WorkflowSpecificationConnectionProperty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/$defs/WorkflowSpecificationConnectionPropertyType"
+                    }
+                },
+                "WorkflowSpecificationConnectionTypeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                     }
                 }
             },
@@ -1825,35 +1825,16 @@
                 "ID"
             ],
             "properties": {
-
                 "Description": {
                     "type": "array",
                     "items": {
                         "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
                     }
                 },
-                "ID": {
-                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
-                },
-                "WorkflowSpecificationNodeTypeID": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
-                    }
-                },
                 "HierarchyScope": {
                     "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
                 },
-                "WorkflowSpecification": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/$defs/WorkflowSpecificationType"
-                    }
-                },
-                "WorkMasterID": {
-                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
-                },
-                "WorkMasterVersion": {
+                "ID": {
                     "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                 },
                 "WorkDirectiveID": {
@@ -1862,10 +1843,28 @@
                 "WorkDirectiveVersion": {
                     "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                 },
+                "WorkMasterID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterVersion": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationType"
+                    }
+                },
                 "WorkflowSpecificationNodeProperty": {
                     "type": "array",
                     "items": {
                         "$ref": "#/$defs/WorkflowSpecificationNodePropertyType"
+                    }
+                },
+                "WorkflowSpecificationNodeTypeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
                     }
                 }
             },
