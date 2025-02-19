@@ -1,0 +1,4990 @@
+{
+    "$id": "v2.0.1.extensions.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeBatchProductionRecordType": {
+            "type": "object"
+        },
+        "AcknowledgeEquipmentClassType": {
+            "type": "object"
+        },
+        "AcknowledgeEquipmentInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeEquipmentType": {
+            "type": "object"
+        },
+        "AcknowledgeErrorMessageType": {
+            "type": "object"
+        },
+        "AcknowledgeGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeJobListType": {
+            "type": "object"
+        },
+        "AcknowledgeJobResponseListType": {
+            "type": "object"
+        },
+        "AcknowledgeJobResponseType": {
+            "type": "object"
+        },
+        "AcknowledgeMaterialClassType": {
+            "type": "object"
+        },
+        "AcknowledgeMaterialDefinitionType": {
+            "type": "object"
+        },
+        "AcknowledgeMaterialInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeMaterialLotType": {
+            "type": "object"
+        },
+        "AcknowledgeMaterialSubLotType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationalLocationClassType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationalLocationType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsCapabilityType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsDefinitionType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsEventClassType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsEventInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsPerformanceType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsScheduleType": {
+            "type": "object"
+        },
+        "AcknowledgeOperationsTestInformationType": {
+            "type": "object"
+        },
+        "AcknowledgePersonType": {
+            "type": "object"
+        },
+        "AcknowledgePersonnelClassType": {
+            "type": "object"
+        },
+        "AcknowledgePersonnelInformationType": {
+            "type": "object"
+        },
+        "AcknowledgePhysicalAssetClassType": {
+            "type": "object"
+        },
+        "AcknowledgePhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "AcknowledgePhysicalAssetType": {
+            "type": "object"
+        },
+        "AcknowledgeProcessElementLibraryType": {
+            "type": "object"
+        },
+        "AcknowledgeProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeProcessSegmentType": {
+            "type": "object"
+        },
+        "AcknowledgeResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "AcknowledgeResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "AcknowledgeResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "AcknowledgeTestResultType": {
+            "type": "object"
+        },
+        "AcknowledgeTestSpecificationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkAlertInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkAlertType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkCalendarType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkCapabilityType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkDirectiveType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkMasterType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkPerformanceType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkRecordType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkResponseType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkScheduleType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "AcknowledgeWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "AlarmDataType": {
+            "type": "object"
+        },
+        "ApprovalHistoryType": {
+            "type": "object"
+        },
+        "BODType": {
+            "type": "object",
+            "description": "Business Object Document"
+        },
+        "BatchEquipmentIDType": {
+            "type": "object"
+        },
+        "BatchEquipmentRequirementType": {
+            "type": "object"
+        },
+        "BatchInformationType": {
+            "type": "object"
+        },
+        "BatchListEntryType": {
+            "type": "object"
+        },
+        "BatchListType": {
+            "type": "object"
+        },
+        "BatchParameterType": {
+            "type": "object"
+        },
+        "BatchProductionRecordType": {
+            "type": "object"
+        },
+        "BatchSizeType": {
+            "type": "object"
+        },
+        "CancelBatchProductionRecordType": {
+            "type": "object"
+        },
+        "CancelEquipmentClassType": {
+            "type": "object"
+        },
+        "CancelEquipmentInformationType": {
+            "type": "object"
+        },
+        "CancelEquipmentType": {
+            "type": "object"
+        },
+        "CancelErrorMessageType": {
+            "type": "object"
+        },
+        "CancelGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "CancelJobListType": {
+            "type": "object"
+        },
+        "CancelJobResponseListType": {
+            "type": "object"
+        },
+        "CancelJobResponseType": {
+            "type": "object"
+        },
+        "CancelMaterialClassType": {
+            "type": "object"
+        },
+        "CancelMaterialDefinitionType": {
+            "type": "object"
+        },
+        "CancelMaterialInformationType": {
+            "type": "object"
+        },
+        "CancelMaterialLotType": {
+            "type": "object"
+        },
+        "CancelMaterialSubLotType": {
+            "type": "object"
+        },
+        "CancelOperationalLocationClassType": {
+            "type": "object"
+        },
+        "CancelOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "CancelOperationalLocationType": {
+            "type": "object"
+        },
+        "CancelOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "CancelOperationsCapabilityType": {
+            "type": "object"
+        },
+        "CancelOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "CancelOperationsDefinitionType": {
+            "type": "object"
+        },
+        "CancelOperationsEventClassType": {
+            "type": "object"
+        },
+        "CancelOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "CancelOperationsEventInformationType": {
+            "type": "object"
+        },
+        "CancelOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "CancelOperationsPerformanceType": {
+            "type": "object"
+        },
+        "CancelOperationsScheduleType": {
+            "type": "object"
+        },
+        "CancelOperationsTestInformationType": {
+            "type": "object"
+        },
+        "CancelPersonType": {
+            "type": "object"
+        },
+        "CancelPersonnelClassType": {
+            "type": "object"
+        },
+        "CancelPersonnelInformationType": {
+            "type": "object"
+        },
+        "CancelPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "CancelPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "CancelPhysicalAssetType": {
+            "type": "object"
+        },
+        "CancelProcessElementLibraryType": {
+            "type": "object"
+        },
+        "CancelProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "CancelProcessSegmentType": {
+            "type": "object"
+        },
+        "CancelResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "CancelResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "CancelResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "CancelResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "CancelTestResultType": {
+            "type": "object"
+        },
+        "CancelTestSpecificationType": {
+            "type": "object"
+        },
+        "CancelWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "CancelWorkAlertInformationType": {
+            "type": "object"
+        },
+        "CancelWorkAlertType": {
+            "type": "object"
+        },
+        "CancelWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "CancelWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "CancelWorkCalendarType": {
+            "type": "object"
+        },
+        "CancelWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "CancelWorkCapabilityType": {
+            "type": "object"
+        },
+        "CancelWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "CancelWorkDirectiveType": {
+            "type": "object"
+        },
+        "CancelWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "CancelWorkMasterType": {
+            "type": "object"
+        },
+        "CancelWorkPerformanceType": {
+            "type": "object"
+        },
+        "CancelWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "CancelWorkRecordType": {
+            "type": "object"
+        },
+        "CancelWorkResponseType": {
+            "type": "object"
+        },
+        "CancelWorkScheduleType": {
+            "type": "object"
+        },
+        "CancelWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "CancelWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "CancelWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "CancelWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "ChangeBatchProductionRecordType": {
+            "type": "object"
+        },
+        "ChangeEquipmentClassType": {
+            "type": "object"
+        },
+        "ChangeEquipmentInformationType": {
+            "type": "object"
+        },
+        "ChangeEquipmentType": {
+            "type": "object"
+        },
+        "ChangeErrorMessageType": {
+            "type": "object"
+        },
+        "ChangeGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "ChangeHistoryType": {
+            "type": "object"
+        },
+        "ChangeJobListType": {
+            "type": "object"
+        },
+        "ChangeJobResponseListType": {
+            "type": "object"
+        },
+        "ChangeJobResponseType": {
+            "type": "object"
+        },
+        "ChangeMaterialClassType": {
+            "type": "object"
+        },
+        "ChangeMaterialDefinitionType": {
+            "type": "object"
+        },
+        "ChangeMaterialInformationType": {
+            "type": "object"
+        },
+        "ChangeMaterialLotType": {
+            "type": "object"
+        },
+        "ChangeMaterialSubLotType": {
+            "type": "object"
+        },
+        "ChangeOperationalLocationClassType": {
+            "type": "object"
+        },
+        "ChangeOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "ChangeOperationalLocationType": {
+            "type": "object"
+        },
+        "ChangeOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "ChangeOperationsCapabilityType": {
+            "type": "object"
+        },
+        "ChangeOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "ChangeOperationsDefinitionType": {
+            "type": "object"
+        },
+        "ChangeOperationsEventClassType": {
+            "type": "object"
+        },
+        "ChangeOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "ChangeOperationsEventInformationType": {
+            "type": "object"
+        },
+        "ChangeOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "ChangeOperationsPerformanceType": {
+            "type": "object"
+        },
+        "ChangeOperationsScheduleType": {
+            "type": "object"
+        },
+        "ChangeOperationsTestInformationType": {
+            "type": "object"
+        },
+        "ChangePersonType": {
+            "type": "object"
+        },
+        "ChangePersonnelClassType": {
+            "type": "object"
+        },
+        "ChangePersonnelInformationType": {
+            "type": "object"
+        },
+        "ChangePhysicalAssetClassType": {
+            "type": "object"
+        },
+        "ChangePhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "ChangePhysicalAssetType": {
+            "type": "object"
+        },
+        "ChangeProcessElementLibraryType": {
+            "type": "object"
+        },
+        "ChangeProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "ChangeProcessSegmentType": {
+            "type": "object"
+        },
+        "ChangeResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "ChangeResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "ChangeResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "ChangeResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "ChangeTestResultType": {
+            "type": "object"
+        },
+        "ChangeTestSpecificationType": {
+            "type": "object"
+        },
+        "ChangeType": {
+            "type": "object"
+        },
+        "ChangeWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "ChangeWorkAlertInformationType": {
+            "type": "object"
+        },
+        "ChangeWorkAlertType": {
+            "type": "object"
+        },
+        "ChangeWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "ChangeWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "ChangeWorkCalendarType": {
+            "type": "object"
+        },
+        "ChangeWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "ChangeWorkCapabilityType": {
+            "type": "object"
+        },
+        "ChangeWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "ChangeWorkDirectiveType": {
+            "type": "object"
+        },
+        "ChangeWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "ChangeWorkMasterType": {
+            "type": "object"
+        },
+        "ChangeWorkPerformanceType": {
+            "type": "object"
+        },
+        "ChangeWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "ChangeWorkRecordType": {
+            "type": "object"
+        },
+        "ChangeWorkResponseType": {
+            "type": "object"
+        },
+        "ChangeWorkScheduleType": {
+            "type": "object"
+        },
+        "ChangeWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "ChangeWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "ChangeWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "ChangeWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "ChannelTopicType": {
+            "type": "object"
+        },
+        "ClassInstanceAssociationType": {
+            "type": "object"
+        },
+        "CommentType": {
+            "type": "object"
+        },
+        "CommentsType": {
+            "type": "object"
+        },
+        "ConfirmBODType": {
+            "type": "object"
+        },
+        "ConstraintType": {
+            "type": "object"
+        },
+        "ControlRecipeRecordType": {
+            "type": "object"
+        },
+        "ControlRecipeType": {
+            "type": "object"
+        },
+        "ControlRecipesType": {
+            "type": "object"
+        },
+        "DataSetType": {
+            "type": "object"
+        },
+        "DataSetsType": {
+            "type": "object"
+        },
+        "DataValueType": {
+            "type": "object"
+        },
+        "DelimitedDataBlockType": {
+            "type": "object"
+        },
+        "DirectedLinkType": {
+            "type": "object"
+        },
+        "EnumerationSetType": {
+            "type": "object"
+        },
+        "EnumerationType": {
+            "type": "object"
+        },
+        "EquipmentAssetMappingType": {
+            "type": "object"
+        },
+        "EquipmentClassPropertyType": {
+            "type": "object"
+        },
+        "EquipmentClassType": {
+            "type": "object"
+        },
+        "EquipmentConnectionType": {
+            "type": "object"
+        },
+        "EquipmentElementPropertyType": {
+            "type": "object"
+        },
+        "EquipmentElementType": {
+            "type": "object"
+        },
+        "EquipmentInformationType": {
+            "type": "object"
+        },
+        "EquipmentProceduralElementClassType": {
+            "type": "object"
+        },
+        "EquipmentProceduralElementType": {
+            "type": "object"
+        },
+        "EquipmentPropertyType": {
+            "type": "object"
+        },
+        "EquipmentSegmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "EquipmentSegmentSpecificationType": {
+            "type": "object"
+        },
+        "EquipmentType": {
+            "type": "object",
+            "properties": {
+                "color": {
+                    "type": "string"
+                }
+            }
+        },
+        "ErrorMessageType": {
+            "type": "object"
+        },
+        "EventsType": {
+            "type": "object"
+        },
+        "FormulaType": {
+            "type": "object"
+        },
+        "FromIDType": {
+            "type": "object"
+        },
+        "GROtherInformationType": {
+            "type": "object"
+        },
+        "GeneralRecipeFormulaType": {
+            "type": "object"
+        },
+        "GeneralRecipeHeaderType": {
+            "type": "object"
+        },
+        "GeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "GeneralRecipeMaterialType": {
+            "type": "object"
+        },
+        "GeneralRecipeMaterialsType": {
+            "type": "object"
+        },
+        "GeneralRecipeType": {
+            "type": "object"
+        },
+        "GetBatchProductionRecordType": {
+            "type": "object"
+        },
+        "GetEquipmentClassType": {
+            "type": "object"
+        },
+        "GetEquipmentInformationType": {
+            "type": "object"
+        },
+        "GetEquipmentType": {
+            "type": "object"
+        },
+        "GetErrorMessageType": {
+            "type": "object"
+        },
+        "GetGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "GetJobListType": {
+            "type": "object"
+        },
+        "GetJobResponseListType": {
+            "type": "object"
+        },
+        "GetJobResponseType": {
+            "type": "object"
+        },
+        "GetMaterialClassType": {
+            "type": "object"
+        },
+        "GetMaterialDefinitionType": {
+            "type": "object"
+        },
+        "GetMaterialInformationType": {
+            "type": "object"
+        },
+        "GetMaterialLotType": {
+            "type": "object"
+        },
+        "GetMaterialSubLotType": {
+            "type": "object"
+        },
+        "GetOperationalLocationClassType": {
+            "type": "object"
+        },
+        "GetOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "GetOperationalLocationType": {
+            "type": "object"
+        },
+        "GetOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "GetOperationsCapabilityType": {
+            "type": "object"
+        },
+        "GetOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "GetOperationsDefinitionType": {
+            "type": "object"
+        },
+        "GetOperationsEventClassType": {
+            "type": "object"
+        },
+        "GetOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "GetOperationsEventInformationType": {
+            "type": "object"
+        },
+        "GetOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "GetOperationsPerformanceType": {
+            "type": "object"
+        },
+        "GetOperationsScheduleType": {
+            "type": "object"
+        },
+        "GetOperationsTestInformationType": {
+            "type": "object"
+        },
+        "GetPersonType": {
+            "type": "object"
+        },
+        "GetPersonnelClassType": {
+            "type": "object"
+        },
+        "GetPersonnelInformationType": {
+            "type": "object"
+        },
+        "GetPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "GetPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "GetPhysicalAssetType": {
+            "type": "object"
+        },
+        "GetProcessElementLibraryType": {
+            "type": "object"
+        },
+        "GetProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "GetProcessSegmentType": {
+            "type": "object"
+        },
+        "GetResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "GetResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "GetResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "GetResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "GetTestResultType": {
+            "type": "object"
+        },
+        "GetTestSpecificationType": {
+            "type": "object"
+        },
+        "GetTransactionProfileType": {
+            "type": "object"
+        },
+        "GetWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "GetWorkAlertInformationType": {
+            "type": "object"
+        },
+        "GetWorkAlertType": {
+            "type": "object"
+        },
+        "GetWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "GetWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "GetWorkCalendarType": {
+            "type": "object"
+        },
+        "GetWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "GetWorkCapabilityType": {
+            "type": "object"
+        },
+        "GetWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "GetWorkDirectiveType": {
+            "type": "object"
+        },
+        "GetWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "GetWorkMasterType": {
+            "type": "object"
+        },
+        "GetWorkPerformanceType": {
+            "type": "object"
+        },
+        "GetWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "GetWorkRecordType": {
+            "type": "object"
+        },
+        "GetWorkResponseType": {
+            "type": "object"
+        },
+        "GetWorkScheduleType": {
+            "type": "object"
+        },
+        "GetWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "GetWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "GetWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "GetWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "HeaderPropertyType": {
+            "type": "object"
+        },
+        "HeaderType": {
+            "type": "object"
+        },
+        "HierarchyScopeType": {
+            "type": "object"
+        },
+        "IDandDescriptionType": {
+            "type": "object"
+        },
+        "IndividualApprovalType": {
+            "type": "object"
+        },
+        "InformationObjectResourceDefineType": {
+            "type": "object",
+            "properties": {
+                "Equipment": {
+                    "$ref": "v2.0.1.equipment.schema.json#/$defs/EquipmentType"
+                },
+                "EquipmentClass": {
+                    "$ref": "v2.0.1.equipment.schema.json#/$defs/EquipmentClassType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "MaterialClass": {
+                    "$ref": "#/$defs/MaterialClassType"
+                },
+                "MaterialDefinition": {
+                    "$ref": "#/$defs/MaterialDefinitionType"
+                },
+                "PersonnelClass": {
+                    "$ref": "#/$defs/PersonnelClassType"
+                },
+                "PhysicalAssetClass": {
+                    "$ref": "#/$defs/PhysicalAssetClassType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectType": {
+            "type": "object"
+        },
+        "InformationObjectTypeResourceDefineType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Personnel class",
+                        "Equipment class",
+                        "Equipment",
+                        "Physical asset class",
+                        "Material class",
+                        "Material definition",
+                        "Hierarchy scope",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkAbortType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Job Response",
+                        "Work Directive",
+                        "Work Performance",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Comment",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkCommenceType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Job Response",
+                        "Work Directive",
+                        "Work Performance",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Comment",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkCompleteType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Job Response",
+                        "Work Directive",
+                        "Work Performance",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Comment",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkDefineType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Work Master",
+                        "Resource Relationship Network",
+                        "Workflow Specification",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkExecuteType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Comment",
+                        "Material Lot",
+                        "Material SubLot",
+                        "Work Performance",
+                        "Job Response",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkReconcileType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Job Response",
+                        "Work Performance",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Comment",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkRedirectType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Job Response",
+                        "Work Directive",
+                        "Work Performance",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Comment",
+                        "Personnel Identification Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeWorkScheduleType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Work Schedule",
+                        "Material Lot",
+                        "Material Sublot",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectWorkAbortType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkDirective": {
+                    "$ref": "#/$defs/WorkDirectiveType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkCommenceType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkDirective": {
+                    "$ref": "#/$defs/WorkDirectiveType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkCompleteType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkDirective": {
+                    "$ref": "#/$defs/WorkDirectiveType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkDefineType": {
+            "type": "object",
+            "properties": {
+                "ResourceRelationshipNetwork": {
+                    "$ref": "#/$defs/ResourceRelationshipNetworkType"
+                },
+                "WorkMaster": {
+                    "$ref": "#/$defs/WorkMasterType"
+                },
+                "WorkflowSpecification": {
+                    "$ref": "#/$defs/WorkflowSpecificationType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkExecuteType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkReconcileType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkRedirectType": {
+            "type": "object",
+            "properties": {
+                "Comment": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/CommentType"
+                },
+                "JobResponse": {
+                    "$ref": "#/$defs/JobResponseType"
+                },
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "PersonnelIdentificationManifest": {
+                    "$ref": "v2.0.1.batchProductionRecord.schema.json#/$defs/PersonnelIdentificationManifestType"
+                },
+                "WorkDirective": {
+                    "$ref": "#/$defs/WorkDirectiveType"
+                },
+                "WorkPerformance": {
+                    "$ref": "#/$defs/WorkPerformanceType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "InformationObjectWorkScheduleType": {
+            "type": "object",
+            "properties": {
+                "MaterialLot": {
+                    "$ref": "#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "#/$defs/MaterialSubLotType"
+                },
+                "WorkSchedule": {
+                    "$ref": "#/$defs/WorkScheduleType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "JobListType": {
+            "type": "object"
+        },
+        "JobOrderType": {
+            "type": "object"
+        },
+        "JobResponseListType": {
+            "type": "object"
+        },
+        "JobResponseType": {
+            "type": "object"
+        },
+        "LinkType": {
+            "type": "object"
+        },
+        "ListHeaderType": {
+            "type": "object"
+        },
+        "MasterDataProfileHeaderType": {
+            "type": "object"
+        },
+        "MasterDataProfileType": {
+            "type": "object"
+        },
+        "MasterDataTransactionProfileType": {
+            "type": "object"
+        },
+        "MasterRecipeRecordType": {
+            "type": "object"
+        },
+        "MasterRecipeType": {
+            "type": "object"
+        },
+        "MasterRecipesType": {
+            "type": "object"
+        },
+        "MaterialClassPropertyType": {
+            "type": "object"
+        },
+        "MaterialClassType": {
+            "type": "object"
+        },
+        "MaterialDefinitionPropertyType": {
+            "type": "object"
+        },
+        "MaterialDefinitionType": {
+            "type": "object"
+        },
+        "MaterialInformationType": {
+            "type": "object"
+        },
+        "MaterialLotPropertyType": {
+            "type": "object"
+        },
+        "MaterialLotType": {
+            "type": "object"
+        },
+        "MaterialSegmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "MaterialSegmentSpecificationType": {
+            "type": "object"
+        },
+        "MaterialSubLotType": {
+            "type": "object"
+        },
+        "ModificationLogType": {
+            "type": "object"
+        },
+        "NotifyOperationsEventClassType": {
+            "type": "object"
+        },
+        "NotifyOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "NotifyOperationsEventInformationType": {
+            "type": "object"
+        },
+        "NotifyOperationsEventType": {
+            "type": "object"
+        },
+        "NotifyResourceDefine": {
+            "$ref": "#/$defs/NotifyResourceDefineType"
+        },
+        "NotifyResourceDefineType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventResourceDefineType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkAbort": {
+            "$ref": "#/$defs/NotifyWorkAbortType"
+        },
+        "NotifyWorkAbortType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkAbortType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkCommence": {
+            "$ref": "#/$defs/NotifyWorkCommenceType"
+        },
+        "NotifyWorkCommenceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkCommenceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkCompleted": {
+            "$ref": "#/$defs/NotifyWorkCompletedType"
+        },
+        "NotifyWorkCompletedType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkCompleteType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkDefine": {
+            "$ref": "#/$defs/NotifyWorkDefineType"
+        },
+        "NotifyWorkDefineType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkDefineType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkExecute": {
+            "$ref": "#/$defs/NotifyWorkExecuteType"
+        },
+        "NotifyWorkExecuteType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkExecuteType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkReconcile": {
+            "$ref": "#/$defs/NotifyWorkReconcileType"
+        },
+        "NotifyWorkReconcileType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkReconcileType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkRedirect": {
+            "$ref": "#/$defs/NotifyWorkRedirectType"
+        },
+        "NotifyWorkRedirectType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkRedirectType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "NotifyWorkSchedule": {
+            "$ref": "#/$defs/NotifyWorkScheduleType"
+        },
+        "NotifyWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Notify",
+                        "OperationsEvent"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Notify": {
+                            "$ref": "#/$defs/TransNotifyType"
+                        },
+                        "OperationsEvent": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsEventWorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OpEquipmentActualPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentActualType": {
+            "type": "object"
+        },
+        "OpEquipmentCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentCapabilityType": {
+            "type": "object"
+        },
+        "OpEquipmentRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentRequirementType": {
+            "type": "object"
+        },
+        "OpEquipmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentSpecificationType": {
+            "type": "object"
+        },
+        "OpMaterialActualPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialActualType": {
+            "type": "object"
+        },
+        "OpMaterialCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialCapabilityType": {
+            "type": "object"
+        },
+        "OpMaterialRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialRequirementType": {
+            "type": "object"
+        },
+        "OpMaterialSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialSpecificationType": {
+            "type": "object"
+        },
+        "OpOperationsSegmentCapabilityType": {
+            "type": "object"
+        },
+        "OpPersonnelActualPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelActualType": {
+            "type": "object"
+        },
+        "OpPersonnelCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelCapabilityType": {
+            "type": "object"
+        },
+        "OpPersonnelRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelRequirementType": {
+            "type": "object"
+        },
+        "OpPersonnelSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelSpecificationType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetActualPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetActualType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetCapabilityType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetRequirementType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetSpecificationType": {
+            "type": "object"
+        },
+        "OpProcessSegmentCapabilityType": {
+            "type": "object"
+        },
+        "OpSegmentDataType": {
+            "type": "object"
+        },
+        "OpSegmentRequirementType": {
+            "type": "object"
+        },
+        "OpSegmentResponseType": {
+            "type": "object"
+        },
+        "OperationalLocationClassPropertyType": {
+            "type": "object"
+        },
+        "OperationalLocationClassType": {
+            "type": "object"
+        },
+        "OperationalLocationInformationType": {
+            "type": "object"
+        },
+        "OperationalLocationPropertyType": {
+            "type": "object"
+        },
+        "OperationalLocationType": {
+            "type": "object"
+        },
+        "OperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "OperationsCapabilityType": {
+            "type": "object"
+        },
+        "OperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "OperationsDefinitionRecordType": {
+            "type": "object"
+        },
+        "OperationsDefinitionType": {
+            "type": "object"
+        },
+        "OperationsDefinitionsType": {
+            "type": "object"
+        },
+        "OperationsEventClassPropertyType": {
+            "type": "object"
+        },
+        "OperationsEventClassType": {
+            "type": "object"
+        },
+        "OperationsEventDefinitionPropertyType": {
+            "type": "object"
+        },
+        "OperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "OperationsEventInformationType": {
+            "type": "object"
+        },
+        "OperationsEventPropertyType": {
+            "type": "object"
+        },
+        "OperationsEventResourceDefineType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventResourceDefineType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordResourceDefineType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventType": {
+            "type": "object"
+        },
+        "OperationsEventWorkAbortType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkAbortType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkAbortType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkCommenceType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkCommenceType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkCommenceType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkCompleteType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkCompleteType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkCompleteType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkDefineType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkDefineType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkDefineType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkExecuteType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkExecuteType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkExecuteType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkReconcileType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkReconcileType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkReconcileType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkRedirectType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkRedirectType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkRedirectType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsEventWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsType"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EnterpriseFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EnterpriseFunctionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MOMFunction": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/MOMFunctionType"
+                },
+                "OperationsDefinitionID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsEventChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventWorkScheduleType"
+                    }
+                },
+                "OperationsEventLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventLevelType"
+                },
+                "OperationsEventProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsEventPropertyType"
+                    }
+                },
+                "OperationsEventRecord": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkScheduleType"
+                    }
+                },
+                "OperationsEventType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsEventTypeType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/NumericType"
+                },
+                "RecordTimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Source": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsMaterialBillItemType": {
+            "type": "object"
+        },
+        "OperationsMaterialBillType": {
+            "type": "object"
+        },
+        "OperationsPerformanceRecordType": {
+            "type": "object"
+        },
+        "OperationsPerformanceType": {
+            "type": "object"
+        },
+        "OperationsPerformancesType": {
+            "type": "object"
+        },
+        "OperationsRecordEntryResourceDefineType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectResourceDefineType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeResourceDefineType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryResourceDefineType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryTemplateType": {
+            "type": "object"
+        },
+        "OperationsRecordEntryWorkAbortType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkAbortType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkAbortType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkAbortType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkCommenceType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkCommenceType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkCommenceType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkCommenceType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkCompleteType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkCompleteType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkCompleteType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkCompleteType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkDefineType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkDefineType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkDefineType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkDefineType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkExecuteType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkExecuteType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkExecuteType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkExecuteType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkReconcileType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkReconcileType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkReconcileType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkReconcileType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkRedirectType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkRedirectType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkRedirectType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkRedirectType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordEntryWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ExternalReferenceID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObject": {
+                    "$ref": "#/$defs/InformationObjectWorkScheduleType"
+                },
+                "InformationObjectType": {
+                    "$ref": "#/$defs/InformationObjectTypeWorkScheduleType"
+                },
+                "OperationsRecordEntryChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkScheduleType"
+                    }
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordResourceDefineType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordResourceDefineType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryResourceDefineType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordSpecTemplateType": {
+            "type": "object"
+        },
+        "OperationsRecordTemplateType": {
+            "type": "object"
+        },
+        "OperationsRecordWorkAbortType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkAbortType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkAbortType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkCommenceType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkCommenceType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkCommenceType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkCompleteType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkCompleteType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkCompleteType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkDefineType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkDefineType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkDefineType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkExecuteType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkExecuteType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkExecuteType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkReconcileType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkReconcileType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkReconcileType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkRedirectType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkRedirectType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkRedirectType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRecordWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsRecordEntry",
+                "OperationsRecordSpecificationID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Action": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/OperationsRecordActionType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsRecordChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordWorkScheduleType"
+                    }
+                },
+                "OperationsRecordEntry": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsRecordEntryWorkScheduleType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRecordSpecificationID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "RecordTimestamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "OperationsRequestType": {
+            "type": "object"
+        },
+        "OperationsResponseType": {
+            "type": "object"
+        },
+        "OperationsScheduleRecordType": {
+            "type": "object"
+        },
+        "OperationsScheduleType": {
+            "type": "object"
+        },
+        "OperationsSchedulesType": {
+            "type": "object"
+        },
+        "OperationsSegmentType": {
+            "type": "object"
+        },
+        "OperationsTestInformationType": {
+            "type": "object"
+        },
+        "OrderedDataType": {
+            "type": "object"
+        },
+        "OtherEnumerationType": {
+            "type": "object"
+        },
+        "OtherInformationType": {
+            "type": "object"
+        },
+        "ParameterType": {
+            "type": "object"
+        },
+        "PersonPropertyType": {
+            "type": "object"
+        },
+        "PersonType": {
+            "type": "object"
+        },
+        "PersonnelClassPropertyType": {
+            "type": "object"
+        },
+        "PersonnelClassType": {
+            "type": "object"
+        },
+        "PersonnelIdentificationManifestType": {
+            "type": "object"
+        },
+        "PersonnelIdentificationType": {
+            "type": "object"
+        },
+        "PersonnelInformationType": {
+            "type": "object"
+        },
+        "PersonnelSegmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "PersonnelSegmentSpecificationType": {
+            "type": "object"
+        },
+        "PhysicalAssetClassPropertyType": {
+            "type": "object"
+        },
+        "PhysicalAssetClassType": {
+            "type": "object"
+        },
+        "PhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "PhysicalAssetPropertyType": {
+            "type": "object"
+        },
+        "PhysicalAssetSegmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "PhysicalAssetSegmentSpecificationType": {
+            "type": "object"
+        },
+        "PhysicalAssetType": {
+            "type": "object"
+        },
+        "ProcedureChartElementType": {
+            "type": "object"
+        },
+        "ProcedureLogicType": {
+            "type": "object"
+        },
+        "ProcessBatchProductionRecordType": {
+            "type": "object"
+        },
+        "ProcessElementLibraryType": {
+            "type": "object"
+        },
+        "ProcessElementParameterType": {
+            "type": "object"
+        },
+        "ProcessElementType": {
+            "type": "object"
+        },
+        "ProcessEquipmentClassType": {
+            "type": "object"
+        },
+        "ProcessEquipmentInformationType": {
+            "type": "object"
+        },
+        "ProcessEquipmentType": {
+            "type": "object"
+        },
+        "ProcessErrorMessageType": {
+            "type": "object"
+        },
+        "ProcessGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "ProcessJobListType": {
+            "type": "object"
+        },
+        "ProcessJobResponseListType": {
+            "type": "object"
+        },
+        "ProcessJobResponseType": {
+            "type": "object"
+        },
+        "ProcessMaterialClassType": {
+            "type": "object"
+        },
+        "ProcessMaterialDefinitionType": {
+            "type": "object"
+        },
+        "ProcessMaterialInformationType": {
+            "type": "object"
+        },
+        "ProcessMaterialLotType": {
+            "type": "object"
+        },
+        "ProcessMaterialSubLotType": {
+            "type": "object"
+        },
+        "ProcessOperationalLocationClassType": {
+            "type": "object"
+        },
+        "ProcessOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "ProcessOperationalLocationType": {
+            "type": "object"
+        },
+        "ProcessOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "ProcessOperationsCapabilityType": {
+            "type": "object"
+        },
+        "ProcessOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "ProcessOperationsDefinitionType": {
+            "type": "object"
+        },
+        "ProcessOperationsEventClassType": {
+            "type": "object"
+        },
+        "ProcessOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "ProcessOperationsEventInformationType": {
+            "type": "object"
+        },
+        "ProcessOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "ProcessOperationsPerformanceType": {
+            "type": "object"
+        },
+        "ProcessOperationsScheduleType": {
+            "type": "object"
+        },
+        "ProcessOperationsTestInformationType": {
+            "type": "object"
+        },
+        "ProcessPersonType": {
+            "type": "object"
+        },
+        "ProcessPersonnelClassType": {
+            "type": "object"
+        },
+        "ProcessPersonnelInformationType": {
+            "type": "object"
+        },
+        "ProcessPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "ProcessPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "ProcessPhysicalAssetType": {
+            "type": "object"
+        },
+        "ProcessProcessElementLibraryType": {
+            "type": "object"
+        },
+        "ProcessProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "ProcessProcessSegmentType": {
+            "type": "object"
+        },
+        "ProcessResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "ProcessResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "ProcessResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "ProcessResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "ProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "ProcessSegmentType": {
+            "type": "object"
+        },
+        "ProcessTestResultType": {
+            "type": "object"
+        },
+        "ProcessTestSpecificationType": {
+            "type": "object"
+        },
+        "ProcessWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "ProcessWorkAlertInformationType": {
+            "type": "object"
+        },
+        "ProcessWorkAlertType": {
+            "type": "object"
+        },
+        "ProcessWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "ProcessWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "ProcessWorkCalendarType": {
+            "type": "object"
+        },
+        "ProcessWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "ProcessWorkCapabilityType": {
+            "type": "object"
+        },
+        "ProcessWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "ProcessWorkDirectiveType": {
+            "type": "object"
+        },
+        "ProcessWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "ProcessWorkMasterType": {
+            "type": "object"
+        },
+        "ProcessWorkPerformanceType": {
+            "type": "object"
+        },
+        "ProcessWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "ProcessWorkRecordType": {
+            "type": "object"
+        },
+        "ProcessWorkResponseType": {
+            "type": "object"
+        },
+        "ProcessWorkScheduleType": {
+            "type": "object"
+        },
+        "ProcessWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "ProcessWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "ProcessWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "ProcessWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "ProfileEnumerationType": {
+            "type": "object"
+        },
+        "PropertyMeasurementType": {
+            "type": "object"
+        },
+        "QuantityValueType": {
+            "type": "object"
+        },
+        "RecipeBuildingBlockType": {
+            "type": "object"
+        },
+        "RecipeElementRecordType": {
+            "type": "object"
+        },
+        "RecipeElementType": {
+            "type": "object"
+        },
+        "RecipeElementsType": {
+            "type": "object"
+        },
+        "ResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "ResourceConstraintPropertyType": {
+            "type": "object"
+        },
+        "ResourceConstraintType": {
+            "type": "object"
+        },
+        "ResourceLocationType": {
+            "type": "object"
+        },
+        "ResourceNetworkConnectionPropertyType": {
+            "type": "object"
+        },
+        "ResourceNetworkConnectionType": {
+            "type": "object"
+        },
+        "ResourceNetworkConnectionTypePropertyType": {
+            "type": "object"
+        },
+        "ResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "ResourceQualificationsManifestType": {
+            "type": "object"
+        },
+        "ResourceQualificationsType": {
+            "type": "object"
+        },
+        "ResourceReferencePropertyType": {
+            "type": "object"
+        },
+        "ResourceReferenceType": {
+            "type": "object"
+        },
+        "ResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "ResourceRelationshipNetworkPropertyType": {
+            "type": "object"
+        },
+        "ResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "RespondBatchProductionRecordType": {
+            "type": "object"
+        },
+        "RespondEquipmentClassType": {
+            "type": "object"
+        },
+        "RespondEquipmentInformationType": {
+            "type": "object"
+        },
+        "RespondEquipmentType": {
+            "type": "object"
+        },
+        "RespondErrorMessageType": {
+            "type": "object"
+        },
+        "RespondGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "RespondJobListType": {
+            "type": "object"
+        },
+        "RespondJobResponseListType": {
+            "type": "object"
+        },
+        "RespondJobResponseType": {
+            "type": "object"
+        },
+        "RespondMaterialClassType": {
+            "type": "object"
+        },
+        "RespondMaterialDefinitionType": {
+            "type": "object"
+        },
+        "RespondMaterialInformationType": {
+            "type": "object"
+        },
+        "RespondMaterialLotType": {
+            "type": "object"
+        },
+        "RespondMaterialSubLotType": {
+            "type": "object"
+        },
+        "RespondOperationalLocationClassType": {
+            "type": "object"
+        },
+        "RespondOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "RespondOperationalLocationType": {
+            "type": "object"
+        },
+        "RespondOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "RespondOperationsCapabilityType": {
+            "type": "object"
+        },
+        "RespondOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "RespondOperationsDefinitionType": {
+            "type": "object"
+        },
+        "RespondOperationsEventClassType": {
+            "type": "object"
+        },
+        "RespondOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "RespondOperationsEventInformationType": {
+            "type": "object"
+        },
+        "RespondOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "RespondOperationsPerformanceType": {
+            "type": "object"
+        },
+        "RespondOperationsScheduleType": {
+            "type": "object"
+        },
+        "RespondOperationsTestInformationType": {
+            "type": "object"
+        },
+        "RespondPersonType": {
+            "type": "object"
+        },
+        "RespondPersonnelClassType": {
+            "type": "object"
+        },
+        "RespondPersonnelInformationType": {
+            "type": "object"
+        },
+        "RespondPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "RespondPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "RespondPhysicalAssetType": {
+            "type": "object"
+        },
+        "RespondProcessElementLibraryType": {
+            "type": "object"
+        },
+        "RespondProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "RespondProcessSegmentType": {
+            "type": "object"
+        },
+        "RespondResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "RespondResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "RespondResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "RespondResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "RespondTestResultType": {
+            "type": "object"
+        },
+        "RespondTestSpecificationType": {
+            "type": "object"
+        },
+        "RespondWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "RespondWorkAlertInformationType": {
+            "type": "object"
+        },
+        "RespondWorkAlertType": {
+            "type": "object"
+        },
+        "RespondWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "RespondWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "RespondWorkCalendarType": {
+            "type": "object"
+        },
+        "RespondWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "RespondWorkCapabilityType": {
+            "type": "object"
+        },
+        "RespondWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "RespondWorkDirectiveType": {
+            "type": "object"
+        },
+        "RespondWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "RespondWorkMasterType": {
+            "type": "object"
+        },
+        "RespondWorkPerformanceType": {
+            "type": "object"
+        },
+        "RespondWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "RespondWorkRecordType": {
+            "type": "object"
+        },
+        "RespondWorkResponseType": {
+            "type": "object"
+        },
+        "RespondWorkScheduleType": {
+            "type": "object"
+        },
+        "RespondWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "RespondWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "RespondWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "RespondWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "SampleTestResultType": {
+            "type": "object"
+        },
+        "SampleTestType": {
+            "type": "object"
+        },
+        "SampleType": {
+            "type": "object"
+        },
+        "SamplesType": {
+            "type": "object"
+        },
+        "SegmentDependencyType": {
+            "type": "object"
+        },
+        "ShowBatchProductionRecordType": {
+            "type": "object"
+        },
+        "ShowEquipmentClassType": {
+            "type": "object"
+        },
+        "ShowEquipmentInformationType": {
+            "type": "object"
+        },
+        "ShowEquipmentType": {
+            "type": "object"
+        },
+        "ShowErrorMessageType": {
+            "type": "object"
+        },
+        "ShowGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "ShowJobListType": {
+            "type": "object"
+        },
+        "ShowJobResponseListType": {
+            "type": "object"
+        },
+        "ShowJobResponseType": {
+            "type": "object"
+        },
+        "ShowMaterialClassType": {
+            "type": "object"
+        },
+        "ShowMaterialDefinitionType": {
+            "type": "object"
+        },
+        "ShowMaterialInformationType": {
+            "type": "object"
+        },
+        "ShowMaterialLotType": {
+            "type": "object"
+        },
+        "ShowMaterialSubLotType": {
+            "type": "object"
+        },
+        "ShowOperationalLocationClassType": {
+            "type": "object"
+        },
+        "ShowOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "ShowOperationalLocationType": {
+            "type": "object"
+        },
+        "ShowOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "ShowOperationsCapabilityType": {
+            "type": "object"
+        },
+        "ShowOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "ShowOperationsDefinitionType": {
+            "type": "object"
+        },
+        "ShowOperationsEventClassType": {
+            "type": "object"
+        },
+        "ShowOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "ShowOperationsEventInformationType": {
+            "type": "object"
+        },
+        "ShowOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "ShowOperationsPerformanceType": {
+            "type": "object"
+        },
+        "ShowOperationsScheduleType": {
+            "type": "object"
+        },
+        "ShowOperationsTestInformationType": {
+            "type": "object"
+        },
+        "ShowPersonType": {
+            "type": "object"
+        },
+        "ShowPersonnelClassType": {
+            "type": "object"
+        },
+        "ShowPersonnelInformationType": {
+            "type": "object"
+        },
+        "ShowPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "ShowPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "ShowPhysicalAssetType": {
+            "type": "object"
+        },
+        "ShowProcessElementLibraryType": {
+            "type": "object"
+        },
+        "ShowProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "ShowProcessSegmentType": {
+            "type": "object"
+        },
+        "ShowResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "ShowResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "ShowResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "ShowResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "ShowTestResultType": {
+            "type": "object"
+        },
+        "ShowTestSpecificationType": {
+            "type": "object"
+        },
+        "ShowTransactionProfileType": {
+            "type": "object"
+        },
+        "ShowWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "ShowWorkAlertInformationType": {
+            "type": "object"
+        },
+        "ShowWorkAlertType": {
+            "type": "object"
+        },
+        "ShowWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "ShowWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "ShowWorkCalendarType": {
+            "type": "object"
+        },
+        "ShowWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "ShowWorkCapabilityType": {
+            "type": "object"
+        },
+        "ShowWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "ShowWorkDirectiveType": {
+            "type": "object"
+        },
+        "ShowWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "ShowWorkMasterType": {
+            "type": "object"
+        },
+        "ShowWorkPerformanceType": {
+            "type": "object"
+        },
+        "ShowWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "ShowWorkRecordType": {
+            "type": "object"
+        },
+        "ShowWorkResponseType": {
+            "type": "object"
+        },
+        "ShowWorkScheduleType": {
+            "type": "object"
+        },
+        "ShowWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "ShowWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "ShowWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "ShowWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "SingleEventType": {
+            "type": "object"
+        },
+        "SpatialDefinitionType": {
+            "type": "object"
+        },
+        "StepType": {
+            "type": "object"
+        },
+        "SupportedActionType": {
+            "type": "object"
+        },
+        "SyncBatchProductionRecordType": {
+            "type": "object"
+        },
+        "SyncEquipmentClassType": {
+            "type": "object"
+        },
+        "SyncEquipmentInformationType": {
+            "type": "object"
+        },
+        "SyncEquipmentType": {
+            "type": "object"
+        },
+        "SyncErrorMessageType": {
+            "type": "object"
+        },
+        "SyncGeneralRecipeInformationType": {
+            "type": "object"
+        },
+        "SyncJobListType": {
+            "type": "object"
+        },
+        "SyncJobResponseListType": {
+            "type": "object"
+        },
+        "SyncJobResponseType": {
+            "type": "object"
+        },
+        "SyncMaterialClassType": {
+            "type": "object"
+        },
+        "SyncMaterialDefinitionType": {
+            "type": "object"
+        },
+        "SyncMaterialInformationType": {
+            "type": "object"
+        },
+        "SyncMaterialLotType": {
+            "type": "object"
+        },
+        "SyncMaterialSubLotType": {
+            "type": "object"
+        },
+        "SyncOperationalLocationClassType": {
+            "type": "object"
+        },
+        "SyncOperationalLocationInformationType": {
+            "type": "object"
+        },
+        "SyncOperationalLocationType": {
+            "type": "object"
+        },
+        "SyncOperationsCapabilityInformationType": {
+            "type": "object"
+        },
+        "SyncOperationsCapabilityType": {
+            "type": "object"
+        },
+        "SyncOperationsDefinitionInformationType": {
+            "type": "object"
+        },
+        "SyncOperationsDefinitionType": {
+            "type": "object"
+        },
+        "SyncOperationsEventClassType": {
+            "type": "object"
+        },
+        "SyncOperationsEventDefinitionType": {
+            "type": "object"
+        },
+        "SyncOperationsEventInformationType": {
+            "type": "object"
+        },
+        "SyncOperationsMaterialBillType": {
+            "type": "object"
+        },
+        "SyncOperationsPerformanceType": {
+            "type": "object"
+        },
+        "SyncOperationsScheduleType": {
+            "type": "object"
+        },
+        "SyncOperationsTestInformationType": {
+            "type": "object"
+        },
+        "SyncPersonType": {
+            "type": "object"
+        },
+        "SyncPersonnelClassType": {
+            "type": "object"
+        },
+        "SyncPersonnelInformationType": {
+            "type": "object"
+        },
+        "SyncPhysicalAssetClassType": {
+            "type": "object"
+        },
+        "SyncPhysicalAssetInformationType": {
+            "type": "object"
+        },
+        "SyncPhysicalAssetType": {
+            "type": "object"
+        },
+        "SyncProcessElementLibraryType": {
+            "type": "object"
+        },
+        "SyncProcessSegmentInformationType": {
+            "type": "object"
+        },
+        "SyncProcessSegmentType": {
+            "type": "object"
+        },
+        "SyncResourceConstraintLibraryType": {
+            "type": "object"
+        },
+        "SyncResourceNetworkConnectionTypeType": {
+            "type": "object"
+        },
+        "SyncResourceRelationshipNetworkInformationType": {
+            "type": "object"
+        },
+        "SyncResourceRelationshipNetworkType": {
+            "type": "object"
+        },
+        "SyncTestResultType": {
+            "type": "object"
+        },
+        "SyncTestSpecificationType": {
+            "type": "object"
+        },
+        "SyncWorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "SyncWorkAlertInformationType": {
+            "type": "object"
+        },
+        "SyncWorkAlertType": {
+            "type": "object"
+        },
+        "SyncWorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "SyncWorkCalendarInformationType": {
+            "type": "object"
+        },
+        "SyncWorkCalendarType": {
+            "type": "object"
+        },
+        "SyncWorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "SyncWorkCapabilityType": {
+            "type": "object"
+        },
+        "SyncWorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "SyncWorkDirectiveType": {
+            "type": "object"
+        },
+        "SyncWorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "SyncWorkMasterType": {
+            "type": "object"
+        },
+        "SyncWorkPerformanceType": {
+            "type": "object"
+        },
+        "SyncWorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "SyncWorkRecordType": {
+            "type": "object"
+        },
+        "SyncWorkResponseType": {
+            "type": "object"
+        },
+        "SyncWorkScheduleType": {
+            "type": "object"
+        },
+        "SyncWorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "SyncWorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "SyncWorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "SyncWorkflowSpecificationType": {
+            "type": "object"
+        },
+        "TagSpecificationType": {
+            "type": "object"
+        },
+        "TestResultType": {
+            "type": "object"
+        },
+        "TestSpecificationCriteriaType": {
+            "type": "object"
+        },
+        "TestSpecificationEvaluatedPropertyType": {
+            "type": "object"
+        },
+        "TestSpecificationPropertyType": {
+            "type": "object"
+        },
+        "TestSpecificationType": {
+            "type": "object"
+        },
+        "TimeSpecificationType": {
+            "type": "object"
+        },
+        "ToIDType": {
+            "type": "object"
+        },
+        "TransAcknowledgeType": {
+            "type": "object"
+        },
+        "TransActionCriteriaType": {
+            "type": "object"
+        },
+        "TransApplicationAreaType": {
+            "type": "object"
+        },
+        "TransCancelType": {
+            "type": "object"
+        },
+        "TransChangeStatusType": {
+            "type": "object"
+        },
+        "TransChangeType": {
+            "type": "object"
+        },
+        "TransConfirmType": {
+            "type": "object"
+        },
+        "TransGetType": {
+            "type": "object"
+        },
+        "TransNotifyType": {
+            "type": "object",
+            "properties": {
+                "@acknowledgeCode": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransResponseCodeType"
+                },
+                "ActionCriteria": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/TransActionCriteriaType"
+                    }
+                }
+            }
+        },
+        "TransProcessType": {
+            "type": "object"
+        },
+        "TransReceiverType": {
+            "type": "object"
+        },
+        "TransRespondType": {
+            "type": "object"
+        },
+        "TransResponseCriteriaType": {
+            "type": "object"
+        },
+        "TransSenderType": {
+            "type": "object"
+        },
+        "TransShowType": {
+            "type": "object"
+        },
+        "TransSignatureType": {
+            "type": "object"
+        },
+        "TransStateChangeType": {
+            "type": "object"
+        },
+        "TransSyncType": {
+            "type": "object"
+        },
+        "TransUserAreaType": {
+            "type": "object"
+        },
+        "TransactionProfileType": {
+            "type": "object"
+        },
+        "TransitionType": {
+            "type": "object"
+        },
+        "UserAttributeType": {
+            "type": "object"
+        },
+        "ValueType": {
+            "type": "object"
+        },
+        "WorkAlertDefinitionPropertyType": {
+            "type": "object"
+        },
+        "WorkAlertDefinitionType": {
+            "type": "object"
+        },
+        "WorkAlertInformationType": {
+            "type": "object"
+        },
+        "WorkAlertPropertyType": {
+            "type": "object"
+        },
+        "WorkAlertType": {
+            "type": "object"
+        },
+        "WorkCalendarDefinitionEntryPropertyType": {
+            "type": "object"
+        },
+        "WorkCalendarDefinitionEntryType": {
+            "type": "object"
+        },
+        "WorkCalendarDefinitionPropertyType": {
+            "type": "object"
+        },
+        "WorkCalendarDefinitionType": {
+            "type": "object"
+        },
+        "WorkCalendarEntryPropertyType": {
+            "type": "object"
+        },
+        "WorkCalendarEntryType": {
+            "type": "object"
+        },
+        "WorkCalendarInformationType": {
+            "type": "object"
+        },
+        "WorkCalendarPropertyType": {
+            "type": "object"
+        },
+        "WorkCalendarType": {
+            "type": "object"
+        },
+        "WorkCapabilityInformationType": {
+            "type": "object"
+        },
+        "WorkCapabilityType": {
+            "type": "object"
+        },
+        "WorkDefinitionInformationType": {
+            "type": "object"
+        },
+        "WorkDirectiveRecordType": {
+            "type": "object"
+        },
+        "WorkDirectiveType": {
+            "type": "object"
+        },
+        "WorkDirectivesType": {
+            "type": "object"
+        },
+        "WorkMasterCapabilityType": {
+            "type": "object"
+        },
+        "WorkMasterRecordType": {
+            "type": "object"
+        },
+        "WorkMasterType": {
+            "type": "object"
+        },
+        "WorkMastersType": {
+            "type": "object"
+        },
+        "WorkPerformanceRecordType": {
+            "type": "object"
+        },
+        "WorkPerformanceType": {
+            "type": "object"
+        },
+        "WorkPerformancesType": {
+            "type": "object"
+        },
+        "WorkRecordEntryType": {
+            "type": "object"
+        },
+        "WorkRecordSpecificationType": {
+            "type": "object"
+        },
+        "WorkRecordType": {
+            "type": "object"
+        },
+        "WorkRequestType": {
+            "type": "object"
+        },
+        "WorkResponseType": {
+            "type": "object"
+        },
+        "WorkScheduleRecordType": {
+            "type": "object"
+        },
+        "WorkScheduleType": {
+            "type": "object"
+        },
+        "WorkSchedulesType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationConnectionPropertyType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationConnectionType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationConnectionTypePropertyType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationConnectionTypeType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationInformationType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationNodePropertyType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationNodeType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationNodeTypePropertyType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationNodeTypeType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationPropertyType": {
+            "type": "object"
+        },
+        "WorkflowSpecificationType": {
+            "type": "object"
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Extensions Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. https://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "$schema": {
+            "type": "string",
+            "description": "The URI of the JSON Schema."
+        },
+        "NotifyResourceDefine": {
+            "$ref": "#/$defs/NotifyResourceDefine"
+        },
+        "NotifyWorkAbort": {
+            "$ref": "#/$defs/NotifyWorkAbort"
+        },
+        "NotifyWorkCommence": {
+            "$ref": "#/$defs/NotifyWorkCommence"
+        },
+        "NotifyWorkCompleted": {
+            "$ref": "#/$defs/NotifyWorkCompleted"
+        },
+        "NotifyWorkDefine": {
+            "$ref": "#/$defs/NotifyWorkDefine"
+        },
+        "NotifyWorkExecute": {
+            "$ref": "#/$defs/NotifyWorkExecute"
+        },
+        "NotifyWorkReconcile": {
+            "$ref": "#/$defs/NotifyWorkReconcile"
+        },
+        "NotifyWorkRedirect": {
+            "$ref": "#/$defs/NotifyWorkRedirect"
+        },
+        "NotifyWorkSchedule": {
+            "$ref": "#/$defs/NotifyWorkSchedule"
+        }
+    }
+}

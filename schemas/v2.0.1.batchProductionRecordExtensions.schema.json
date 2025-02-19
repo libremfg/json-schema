@@ -1,0 +1,171 @@
+{
+    "$id": "v2.0.1.batchProductionRecordExtensions.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeBatchProductionRecordType": {
+            "type": "object"
+        },
+        "AlarmDataType": {
+            "type": "object"
+        },
+        "BatchProductionRecordType": {
+            "type": "object"
+        },
+        "CancelBatchProductionRecordType": {
+            "type": "object"
+        },
+        "ChangeBatchProductionRecordType": {
+            "type": "object"
+        },
+        "ChangeHistoryType": {
+            "type": "object"
+        },
+        "ChangeType": {
+            "type": "object"
+        },
+        "CommentType": {
+            "type": "object"
+        },
+        "CommentsType": {
+            "type": "object"
+        },
+        "ControlRecipeRecordType": {
+            "type": "object"
+        },
+        "ControlRecipesType": {
+            "type": "object"
+        },
+        "DataSetType": {
+            "type": "object"
+        },
+        "DataSetsType": {
+            "type": "object"
+        },
+        "DataValueType": {
+            "type": "object"
+        },
+        "DelimitedDataBlockType": {
+            "type": "object"
+        },
+        "EventsType": {
+            "type": "object"
+        },
+        "GetBatchProductionRecordType": {
+            "type": "object"
+        },
+        "MasterRecipeRecordType": {
+            "type": "object"
+        },
+        "MasterRecipesType": {
+            "type": "object"
+        },
+        "OperationsDefinitionRecordType": {
+            "type": "object"
+        },
+        "OperationsDefinitionsType": {
+            "type": "object"
+        },
+        "OperationsPerformanceRecordType": {
+            "type": "object"
+        },
+        "OperationsPerformancesType": {
+            "type": "object"
+        },
+        "OperationsScheduleRecordType": {
+            "type": "object"
+        },
+        "OperationsSchedulesType": {
+            "type": "object"
+        },
+        "OrderedDataType": {
+            "type": "object"
+        },
+        "PersonnelIdentificationManifestType": {
+            "type": "object"
+        },
+        "PersonnelIdentificationType": {
+            "type": "object"
+        },
+        "ProcessBatchProductionRecordType": {
+            "type": "object"
+        },
+        "RecipeElementRecordType": {
+            "type": "object"
+        },
+        "RecipeElementsType": {
+            "type": "object"
+        },
+        "ResourceQualificationsManifestType": {
+            "type": "object"
+        },
+        "ResourceQualificationsType": {
+            "type": "object"
+        },
+        "RespondBatchProductionRecordType": {
+            "type": "object"
+        },
+        "SampleTestResultType": {
+            "type": "object"
+        },
+        "SampleTestType": {
+            "type": "object"
+        },
+        "SampleType": {
+            "type": "object"
+        },
+        "SamplesType": {
+            "type": "object"
+        },
+        "ShowBatchProductionRecordType": {
+            "type": "object"
+        },
+        "SingleEventType": {
+            "type": "object"
+        },
+        "SyncBatchProductionRecordType": {
+            "type": "object"
+        },
+        "TagSpecificationType": {
+            "type": "object"
+        },
+        "TimeSpecificationType": {
+            "type": "object"
+        },
+        "UserAttributeType": {
+            "type": "object"
+        },
+        "WorkDirectiveRecordType": {
+            "type": "object"
+        },
+        "WorkDirectivesType": {
+            "type": "object"
+        },
+        "WorkMasterRecordType": {
+            "type": "object"
+        },
+        "WorkMastersType": {
+            "type": "object"
+        },
+        "WorkPerformanceRecordType": {
+            "type": "object"
+        },
+        "WorkPerformancesType": {
+            "type": "object"
+        },
+        "WorkScheduleRecordType": {
+            "type": "object"
+        },
+        "WorkSchedulesType": {
+            "type": "object"
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Batch Production Record Extensions Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "allOf": [
+        {
+            "$ref": "./v2.0.1.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

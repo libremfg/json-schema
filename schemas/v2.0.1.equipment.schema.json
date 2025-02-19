@@ -1,0 +1,1535 @@
+{
+    "$id": "v2.0.1.equipment.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeEquipment": {
+            "$ref": "#/$defs/AcknowledgeEquipmentType"
+        },
+        "AcknowledgeEquipmentClass": {
+            "$ref": "#/$defs/AcknowledgeEquipmentClassType"
+        },
+        "AcknowledgeEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "EquipmentClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeEquipmentInformation": {
+            "$ref": "#/$defs/AcknowledgeEquipmentInformationType"
+        },
+        "AcknowledgeEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "EquipmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "Equipment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelEquipment": {
+            "$ref": "#/$defs/CancelEquipmentType"
+        },
+        "CancelEquipmentClass": {
+            "$ref": "#/$defs/CancelEquipmentClassType"
+        },
+        "CancelEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "EquipmentClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelEquipmentInformation": {
+            "$ref": "#/$defs/CancelEquipmentInformationType"
+        },
+        "CancelEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "EquipmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "Equipment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeEquipment": {
+            "$ref": "#/$defs/ChangeEquipmentType"
+        },
+        "ChangeEquipmentClass": {
+            "$ref": "#/$defs/ChangeEquipmentClassType"
+        },
+        "ChangeEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "EquipmentClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeEquipmentInformation": {
+            "$ref": "#/$defs/ChangeEquipmentInformationType"
+        },
+        "ChangeEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "EquipmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "Equipment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "Equipment": {
+            "$ref": "#/$defs/EquipmentType"
+        },
+        "EquipmentClass": {
+            "$ref": "#/$defs/EquipmentClassType",
+            "description": "A representation of a grouping of equipment with similar characteristics for a definite purpose\nsuch as manufacturing operations definition, scheduling, capability and performance is an equipment class.\nAny piece of equipment may be a member of zero or more equipment classes. An equipment class may be\ndefined as a specialization of zero or more equipment classes. An equipment class may be made up of\nzero or more equipment classes."
+        },
+        "EquipmentClassPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentClassPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentClassPropertyType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PropertyType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/ClassPropertyTypeType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/EquipmentClassPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentClassBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentClassChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentClassType"
+                    }
+                },
+                "EquipmentClassProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentClassPropertyType"
+                    }
+                },
+                "EquipmentLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EquipmentLevelType"
+                },
+                "EquipmentSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/EquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentInformation": {
+            "$ref": "#/$defs/EquipmentInformationType",
+            "description": "A collection of Role Based Equipment Class and Equipment instance definitions."
+        },
+        "EquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "Equipment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentType"
+                    }
+                },
+                "EquipmentClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentClassType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TestSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.operationsTest.schema.json#/$defs/TestSpecificationType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/EquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentClassPropertyID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "EquipmentPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentPropertyType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/EquipmentPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentAssetMapping": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/EquipmentAssetMappingType"
+                    }
+                },
+                "EquipmentChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentType"
+                    }
+                },
+                "EquipmentClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentLevel": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/EquipmentLevelType"
+                },
+                "EquipmentProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentPropertyType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "PhysicalAssetID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/EquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetEquipment": {
+            "$ref": "#/$defs/GetEquipmentType"
+        },
+        "GetEquipmentClass": {
+            "$ref": "#/$defs/GetEquipmentClassType"
+        },
+        "GetEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentClass",
+                        "Get"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetEquipmentInformation": {
+            "$ref": "#/$defs/GetEquipmentInformationType"
+        },
+        "GetEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentInformation",
+                        "Get"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Equipment",
+                        "Get"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessEquipment": {
+            "$ref": "#/$defs/ProcessEquipmentType"
+        },
+        "ProcessEquipmentClass": {
+            "$ref": "#/$defs/ProcessEquipmentClassType"
+        },
+        "ProcessEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentClass",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessEquipmentInformation": {
+            "$ref": "#/$defs/ProcessEquipmentInformationType"
+        },
+        "ProcessEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentInformation",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Equipment",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondEquipment": {
+            "$ref": "#/$defs/RespondEquipmentType"
+        },
+        "RespondEquipmentClass": {
+            "$ref": "#/$defs/RespondEquipmentClassType"
+        },
+        "RespondEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentClass",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondEquipmentInformation": {
+            "$ref": "#/$defs/RespondEquipmentInformationType"
+        },
+        "RespondEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Equipment",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowEquipment": {
+            "$ref": "#/$defs/ShowEquipmentType"
+        },
+        "ShowEquipmentClass": {
+            "$ref": "#/$defs/ShowEquipmentClassType"
+        },
+        "ShowEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentClass",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowEquipmentInformation": {
+            "$ref": "#/$defs/ShowEquipmentInformationType"
+        },
+        "ShowEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Equipment",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncEquipment": {
+            "$ref": "#/$defs/SyncEquipmentType"
+        },
+        "SyncEquipmentClass": {
+            "$ref": "#/$defs/SyncEquipmentClassType"
+        },
+        "SyncEquipmentClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentClass",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncEquipmentClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncEquipmentInformation": {
+            "$ref": "#/$defs/SyncEquipmentInformationType"
+        },
+        "SyncEquipmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "EquipmentInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "EquipmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncEquipmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncEquipmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Equipment",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Equipment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/EquipmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncEquipmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Equipment Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeEquipment": {
+            "$ref": "#/$defs/AcknowledgeEquipment"
+        },
+        "AcknowledgeEquipmentClass": {
+            "$ref": "#/$defs/AcknowledgeEquipmentClass"
+        },
+        "AcknowledgeEquipmentInformation": {
+            "$ref": "#/$defs/AcknowledgeEquipmentInformation"
+        },
+        "CancelEquipment": {
+            "$ref": "#/$defs/CancelEquipment"
+        },
+        "CancelEquipmentClass": {
+            "$ref": "#/$defs/CancelEquipmentClass"
+        },
+        "CancelEquipmentInformation": {
+            "$ref": "#/$defs/CancelEquipmentInformation"
+        },
+        "ChangeEquipment": {
+            "$ref": "#/$defs/ChangeEquipment"
+        },
+        "ChangeEquipmentClass": {
+            "$ref": "#/$defs/ChangeEquipmentClass"
+        },
+        "ChangeEquipmentInformation": {
+            "$ref": "#/$defs/ChangeEquipmentInformation"
+        },
+        "Equipment": {
+            "$ref": "#/$defs/Equipment"
+        },
+        "EquipmentClass": {
+            "$ref": "#/$defs/EquipmentClass"
+        },
+        "EquipmentInformation": {
+            "$ref": "#/$defs/EquipmentInformation"
+        },
+        "GetEquipment": {
+            "$ref": "#/$defs/GetEquipment"
+        },
+        "GetEquipmentClass": {
+            "$ref": "#/$defs/GetEquipmentClass"
+        },
+        "GetEquipmentInformation": {
+            "$ref": "#/$defs/GetEquipmentInformation"
+        },
+        "ProcessEquipment": {
+            "$ref": "#/$defs/ProcessEquipment"
+        },
+        "ProcessEquipmentClass": {
+            "$ref": "#/$defs/ProcessEquipmentClass"
+        },
+        "ProcessEquipmentInformation": {
+            "$ref": "#/$defs/ProcessEquipmentInformation"
+        },
+        "RespondEquipment": {
+            "$ref": "#/$defs/RespondEquipment"
+        },
+        "RespondEquipmentClass": {
+            "$ref": "#/$defs/RespondEquipmentClass"
+        },
+        "RespondEquipmentInformation": {
+            "$ref": "#/$defs/RespondEquipmentInformation"
+        },
+        "ShowEquipment": {
+            "$ref": "#/$defs/ShowEquipment"
+        },
+        "ShowEquipmentClass": {
+            "$ref": "#/$defs/ShowEquipmentClass"
+        },
+        "ShowEquipmentInformation": {
+            "$ref": "#/$defs/ShowEquipmentInformation"
+        },
+        "SyncEquipment": {
+            "$ref": "#/$defs/SyncEquipment"
+        },
+        "SyncEquipmentClass": {
+            "$ref": "#/$defs/SyncEquipmentClass"
+        },
+        "SyncEquipmentInformation": {
+            "$ref": "#/$defs/SyncEquipmentInformation"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.1.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
