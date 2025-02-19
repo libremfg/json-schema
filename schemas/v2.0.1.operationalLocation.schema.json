@@ -1,0 +1,1529 @@
+{
+    "$id": "v2.0.1.operationalLocation.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeOperationalLocation": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocationType"
+        },
+        "AcknowledgeOperationalLocationClass": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocationClassType"
+        },
+        "AcknowledgeOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "OperationalLocationClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeOperationalLocationInformation": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocationInformationType"
+        },
+        "AcknowledgeOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "OperationalLocationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "OperationalLocation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelOperationalLocation": {
+            "$ref": "#/$defs/CancelOperationalLocationType"
+        },
+        "CancelOperationalLocationClass": {
+            "$ref": "#/$defs/CancelOperationalLocationClassType"
+        },
+        "CancelOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "OperationalLocationClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelOperationalLocationInformation": {
+            "$ref": "#/$defs/CancelOperationalLocationInformationType"
+        },
+        "CancelOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "OperationalLocationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "OperationalLocation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeOperationalLocation": {
+            "$ref": "#/$defs/ChangeOperationalLocationType"
+        },
+        "ChangeOperationalLocationClass": {
+            "$ref": "#/$defs/ChangeOperationalLocationClassType"
+        },
+        "ChangeOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "OperationalLocationClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeOperationalLocationInformation": {
+            "$ref": "#/$defs/ChangeOperationalLocationInformationType"
+        },
+        "ChangeOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "OperationalLocationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "OperationalLocation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetOperationalLocation": {
+            "$ref": "#/$defs/GetOperationalLocationType"
+        },
+        "GetOperationalLocationClass": {
+            "$ref": "#/$defs/GetOperationalLocationClassType"
+        },
+        "GetOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "OperationalLocationClass"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        },
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetOperationalLocationInformation": {
+            "$ref": "#/$defs/GetOperationalLocationInformationType"
+        },
+        "GetOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "OperationalLocationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        },
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "OperationalLocation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        },
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationalLocation": {
+            "$ref": "#/$defs/OperationalLocationType",
+            "description": "A logical or physical location where a material lot, material sublot, equipment, physical asset or person\nis located or expected to be located shall be presented as an operational location. Operational locations\nmay be made up of other operational locations."
+        },
+        "OperationalLocationClass": {
+            "$ref": "#/$defs/OperationalLocationClassType",
+            "description": "A representation of a grouping of operational locations with similar characteristics for a definite purpose\nsuch as manufacturing operations definition, scheduling, capability and performance shall be presented as an\noperational location class. Any operational location may be a member of zero or more operational location classes."
+        },
+        "OperationalLocationClassPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocationClassPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationalLocationClassPropertyType"
+                    }
+                },
+                "PropertyType": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/ClassPropertyTypeType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/OperationalLocationClassPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocationClassBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationalLocationClassChild": {
+                    "$ref": "#/$defs/OperationalLocationClassType"
+                },
+                "OperationalLocationClassProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationalLocationClassPropertyType"
+                    }
+                },
+                "OperationalLocationSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/OperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationalLocationInformation": {
+            "$ref": "#/$defs/OperationalLocationInformationType",
+            "description": "Operational locations define the logical or physical places in which resources are located or are expected to be located within a plant.\nOperational locations may be made up of smaller operational locations. An operational location may belong to one or more operational location classes.\nAn operational location class may be a specialization of one or more operational location classes."
+        },
+        "OperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                            }
+                        ]
+                    }
+                },
+                "HierarchyScope": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                        }
+                    ]
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            }
+                        ]
+                    }
+                },
+                "OperationalLocationClass": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            }
+                        ]
+                    }
+                },
+                "PublishedDate": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                        }
+                    ]
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/OperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationalLocationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalClassPropertyID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationalLocationPropertyType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/OperationalLocationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalClassID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationalLocationType"
+                    }
+                },
+                "OperationalLocationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationalLocationPropertyType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "Version": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/OperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessOperationalLocation": {
+            "$ref": "#/$defs/ProcessOperationalLocationType"
+        },
+        "ProcessOperationalLocationClass": {
+            "$ref": "#/$defs/ProcessOperationalLocationClassType"
+        },
+        "ProcessOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationClass",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessOperationalLocationInformation": {
+            "$ref": "#/$defs/ProcessOperationalLocationInformationType"
+        },
+        "ProcessOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationInformation",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocation",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondOperationalLocation": {
+            "$ref": "#/$defs/RespondOperationalLocationType"
+        },
+        "RespondOperationalLocationClass": {
+            "$ref": "#/$defs/RespondOperationalLocationClassType"
+        },
+        "RespondOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationClass",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondOperationalLocationInformation": {
+            "$ref": "#/$defs/RespondOperationalLocationInformationType"
+        },
+        "RespondOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowOperationalLocation": {
+            "$ref": "#/$defs/ShowOperationalLocationType"
+        },
+        "ShowOperationalLocationClass": {
+            "$ref": "#/$defs/ShowOperationalLocationClassType"
+        },
+        "ShowOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationClass",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowOperationalLocationInformation": {
+            "$ref": "#/$defs/ShowOperationalLocationInformationType"
+        },
+        "ShowOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncOperationalLocation": {
+            "$ref": "#/$defs/SyncOperationalLocationType"
+        },
+        "SyncOperationalLocationClass": {
+            "$ref": "#/$defs/SyncOperationalLocationType"
+        },
+        "SyncOperationalLocationClassType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationClass",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationClass": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationClassType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncOperationalLocationClassType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncOperationalLocationInformation": {
+            "$ref": "#/$defs/SyncOperationalLocationInformationType"
+        },
+        "SyncOperationalLocationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocationInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncOperationalLocationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncOperationalLocationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationalLocation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationalLocation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationalLocationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncOperationalLocationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Operational Location Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeOperationalLocation": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocation"
+        },
+        "AcknowledgeOperationalLocationClass": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocationClass"
+        },
+        "AcknowledgeOperationalLocationInformation": {
+            "$ref": "#/$defs/AcknowledgeOperationalLocationInformation"
+        },
+        "CancelOperationalLocation": {
+            "$ref": "#/$defs/CancelOperationalLocation"
+        },
+        "CancelOperationalLocationClass": {
+            "$ref": "#/$defs/CancelOperationalLocationClass"
+        },
+        "CancelOperationalLocationInformation": {
+            "$ref": "#/$defs/CancelOperationalLocationInformation"
+        },
+        "ChangeOperationalLocation": {
+            "$ref": "#/$defs/ChangeOperationalLocation"
+        },
+        "ChangeOperationalLocationClass": {
+            "$ref": "#/$defs/ChangeOperationalLocationClass"
+        },
+        "ChangeOperationalLocationInformation": {
+            "$ref": "#/$defs/ChangeOperationalLocationInformation"
+        },
+        "GetOperationalLocation": {
+            "$ref": "#/$defs/GetOperationalLocation"
+        },
+        "GetOperationalLocationClass": {
+            "$ref": "#/$defs/GetOperationalLocationClass"
+        },
+        "GetOperationalLocationInformation": {
+            "$ref": "#/$defs/GetOperationalLocationInformation"
+        },
+        "OperationalLocation": {
+            "$ref": "#/$defs/OperationalLocation"
+        },
+        "OperationalLocationClass": {
+            "$ref": "#/$defs/OperationalLocationClass"
+        },
+        "OperationalLocationInformation": {
+            "$ref": "#/$defs/OperationalLocationInformation"
+        },
+        "ProcessOperationalLocation": {
+            "$ref": "#/$defs/ProcessOperationalLocation"
+        },
+        "ProcessOperationalLocationClass": {
+            "$ref": "#/$defs/ProcessOperationalLocationClass"
+        },
+        "ProcessOperationalLocationInformation": {
+            "$ref": "#/$defs/ProcessOperationalLocationInformation"
+        },
+        "RespondOperationalLocation": {
+            "$ref": "#/$defs/RespondOperationalLocation"
+        },
+        "RespondOperationalLocationClass": {
+            "$ref": "#/$defs/RespondOperationalLocationClass"
+        },
+        "RespondOperationalLocationInformation": {
+            "$ref": "#/$defs/RespondOperationalLocationInformation"
+        },
+        "ShowOperationalLocation": {
+            "$ref": "#/$defs/ShowOperationalLocation"
+        },
+        "ShowOperationalLocationClass": {
+            "$ref": "#/$defs/ShowOperationalLocationClass"
+        },
+        "ShowOperationalLocationInformation": {
+            "$ref": "#/$defs/ShowOperationalLocationInformation"
+        },
+        "SyncOperationalLocation": {
+            "$ref": "#/$defs/SyncOperationalLocation"
+        },
+        "SyncOperationalLocationClass": {
+            "$ref": "#/$defs/SyncOperationalLocationClass"
+        },
+        "SyncOperationalLocationInformation": {
+            "$ref": "#/$defs/SyncOperationalLocationInformation"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.1.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

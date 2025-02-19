@@ -1,0 +1,581 @@
+{
+    "$id": "v2.0.1.transactionProfile.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "GetTransactionProfile": {
+            "$ref": "#/$defs/GetTransactionProfileType"
+        },
+        "GetTransactionProfileType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        },
+                        "TransactionProfile": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/TransactionProfileType"
+                            }
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetTransactionProfileType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowTransactionProfile": {
+            "$ref": "#/$defs/ShowTransactionProfileType"
+        },
+        "ShowTransactionProfileType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        },
+                        "TransactionProfile": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/TransactionProfileType"
+                            }
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowTransactionProfileType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SupportedActionType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "TransactionNoun",
+                "TransactionVerb",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationProvider": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "InformationReceiver": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "InformationSender": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "InformationUser": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "ObjectWildcardSupported": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "PropertyWildcardSupported": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IndicatorType"
+                },
+                "TransactionNoun": {
+                    "$ref": "#/$defs/TransactionNounType"
+                },
+                "TransactionVerb": {
+                    "$ref": "#/$defs/TransactionVerbType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SupportedActionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "TransactionNoun1Type": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "PERSON",
+                        "PERSONNEL CLASS",
+                        "PERSONNEL INFORMATION",
+                        "EQUIPMENT",
+                        "EQUIPMENT CAPABILITY TEST",
+                        "EQUIPMENT CLASS",
+                        "EQUIPMENT INFORMATION",
+                        "PHYSICAL ASSET",
+                        "PHYSICAL ASSET CLASS",
+                        "PHYSICAL ASSET INFORMATION",
+                        "MASTER DATA PROFILE",
+                        "MATERIAL CLASS",
+                        "MATERIAL DEFINITION",
+                        "MATERIAL LOT",
+                        "MATERIAL INFORMATION",
+                        "MATERIAL SUBLOT",
+                        "PROCESS SEGMENT",
+                        "PROCESS INFORMATION",
+                        "OPERATIONAL LOCATION",
+                        "OPERATIONAL LOCATION CLASS",
+                        "OPERATIONAL LOCATION INFORMATION",
+                        "OPERATIONS DEFINITION",
+                        "OPERATIONS SEGMENT",
+                        "OPERATIONS DEFINITION INFORMATION",
+                        "OPERATIONS EVENT",
+                        "OPERATIONS EVENT CLASS",
+                        "OPERATIONS EVENT DEFINITION",
+                        "OPERATIONS EVENT INFORMATION",
+                        "OPERATIONS SCHEDULE",
+                        "OPERATIONS REQUEST",
+                        "SEGMENT REQUIREMENT",
+                        "OPERATIONS PERFORMANCE",
+                        "OPERATIONS RESPONSE",
+                        "OPERATIONS CAPABILITY",
+                        "OPERATIONS CAPABILITY INFORMATION",
+                        "RESOURCE RELATIONSHIP NETWORK",
+                        "RESOURCE NETWORK CONNECTION TYPE",
+                        "RESOURCE NETWORK CONNECTION INFORMATION",
+                        "TEST SPECIFICATION",
+                        "TEST SPECIFICATION INFORMATION",
+                        "TRANSACTION PROFILE",
+                        "WORK ALERT",
+                        "WORK ALERT DEFINITION",
+                        "WORK ALERT INFORMATION",
+                        "WORK CALENDAR",
+                        "WORK CALENDAR DEFINITION",
+                        "WORK CALENDAR INFORMATION",
+                        "WORK CAPABILITY",
+                        "WORK MASTER CAPABILITY",
+                        "WORK CAPABILITY INFORMATION",
+                        "WORK DEFINITION INFORMATION",
+                        "WORK DIRECTIVE",
+                        "WORK MASTER",
+                        "WORK PERFORMANCE",
+                        "WORK RESPONSE",
+                        "JOB RESPONSE",
+                        "JOB RESPONSE LIST",
+                        "WORK RECORD",
+                        "WORK RECORD SPECIFICATION",
+                        "WORK SCHEDULE",
+                        "WORK REQUEST",
+                        "JOB LIST",
+                        "JOB ORDER",
+                        "WORKFLOW INFORMATION",
+                        "WORKFLOW SPECIFICATION",
+                        "WORKFLOW SPECIFICATION NODE",
+                        "WORKFLOW SPECIFICATION CONNECTION TYPE",
+                        "BATCH INFORMATION",
+                        "MASTER RECIPE",
+                        "CONTROL RECIPE",
+                        "RECIPE BUILDING BLOCK",
+                        "BATCH LIST",
+                        "BATCH PRODUCTION RECORD",
+                        "GeneralRecipe INFORMATION",
+                        "RESOURCE CONSTAINT LIBRARY",
+                        "PROCESS ELEMENT LIBRARY",
+                        "GeneralRecipe",
+                        "RESOURCE CONSTRAINT",
+                        "PROCESS ELEMENT",
+                        "CONFIRM BOD",
+                        "ERROR MESSAGE",
+                        "Other"
+                    ]
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "TransactionNounType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "PERSON",
+                        "PERSONNEL CLASS",
+                        "PERSONNEL INFORMATION",
+                        "EQUIPMENT",
+                        "EQUIPMENT CAPABILITY TEST",
+                        "EQUIPMENT CLASS",
+                        "EQUIPMENT INFORMATION",
+                        "PHYSICAL ASSET",
+                        "PHYSICAL ASSET CLASS",
+                        "PHYSICAL ASSET INFORMATION",
+                        "MASTER DATA PROFILE",
+                        "MATERIAL CLASS",
+                        "MATERIAL DEFINITION",
+                        "MATERIAL LOT",
+                        "MATERIAL INFORMATION",
+                        "MATERIAL SUBLOT",
+                        "PROCESS SEGMENT",
+                        "PROCESS INFORMATION",
+                        "OPERATIONAL LOCATION",
+                        "OPERATIONAL LOCATION CLASS",
+                        "OPERATIONAL LOCATION INFORMATION",
+                        "OPERATIONS DEFINITION",
+                        "OPERATIONS SEGMENT",
+                        "OPERATIONS DEFINITION INFORMATION",
+                        "OPERATIONS EVENT",
+                        "OPERATIONS EVENT CLASS",
+                        "OPERATIONS EVENT DEFINITION",
+                        "OPERATIONS EVENT INFORMATION",
+                        "OPERATIONS SCHEDULE",
+                        "OPERATIONS REQUEST",
+                        "SEGMENT REQUIREMENT",
+                        "OPERATIONS PERFORMANCE",
+                        "OPERATIONS RESPONSE",
+                        "OPERATIONS CAPABILITY",
+                        "OPERATIONS CAPABILITY INFORMATION",
+                        "RESOURCE RELATIONSHIP NETWORK",
+                        "RESOURCE NETWORK CONNECTION TYPE",
+                        "RESOURCE NETWORK CONNECTION INFORMATION",
+                        "TEST SPECIFICATION",
+                        "TEST SPECIFICATION INFORMATION",
+                        "TRANSACTION PROFILE",
+                        "WORK ALERT",
+                        "WORK ALERT DEFINITION",
+                        "WORK ALERT INFORMATION",
+                        "WORK CALENDAR",
+                        "WORK CALENDAR DEFINITION",
+                        "WORK CALENDAR INFORMATION",
+                        "WORK CAPABILITY",
+                        "WORK MASTER CAPABILITY",
+                        "WORK CAPABILITY INFORMATION",
+                        "WORK DEFINITION INFORMATION",
+                        "WORK DIRECTIVE",
+                        "WORK MASTER",
+                        "WORK PERFORMANCE",
+                        "WORK RESPONSE",
+                        "JOB RESPONSE",
+                        "JOB RESPONSE LIST",
+                        "WORK RECORD",
+                        "WORK RECORD SPECIFICATION",
+                        "WORK SCHEDULE",
+                        "WORK REQUEST",
+                        "JOB LIST",
+                        "JOB ORDER",
+                        "WORKFLOW INFORMATION",
+                        "WORKFLOW SPECIFICATION",
+                        "WORKFLOW SPECIFICATION NODE",
+                        "WORKFLOW SPECIFICATION CONNECTION TYPE",
+                        "BATCH INFORMATION",
+                        "MASTER RECIPE",
+                        "CONTROL RECIPE",
+                        "RECIPE BUILDING BLOCK",
+                        "BATCH LIST",
+                        "BATCH PRODUCTION RECORD",
+                        "GeneralRecipe INFORMATION",
+                        "RESOURCE CONSTAINT LIBRARY",
+                        "PROCESS ELEMENT LIBRARY",
+                        "GeneralRecipe",
+                        "RESOURCE CONSTRAINT",
+                        "PROCESS ELEMENT",
+                        "CONFIRM BOD",
+                        "ERROR MESSAGE",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "TransactionProfile": {
+            "$ref": "#/$defs/TransactionProfileType"
+        },
+        "TransactionProfileType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SupportedAction": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/SupportedActionType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/TransactionProfileType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "TransactionVerb1Type": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "NOTIFY",
+                        "GET",
+                        "PROCESS",
+                        "CHANGE",
+                        "CANCEL",
+                        "CONFIRM",
+                        "SYNC ADD",
+                        "SYNC CHANGE",
+                        "SYNC DELETE",
+                        "Other"
+                    ]
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "TransactionVerbType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "NOTIFY",
+                        "GET",
+                        "PROCESS",
+                        "CHANGE",
+                        "CANCEL",
+                        "CONFIRM",
+                        "SYNC ADD",
+                        "SYNC CHANGE",
+                        "SYNC DELETE",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Transaction Profile Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "GetTransactionProfile": {
+            "$ref": "#/$defs/GetTransactionProfile"
+        },
+        "ShowTransactionProfile": {
+            "$ref": "#/$defs/ShowTransactionProfile"
+        },
+        "TransactionProfile": {
+            "$ref": "#/$defs/TransactionProfile"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.1.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

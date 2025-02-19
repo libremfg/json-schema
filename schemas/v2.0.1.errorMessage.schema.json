@@ -1,0 +1,559 @@
+{
+    "$id": "v2.0.1.errorMessage.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeErrorMessage": {
+            "$ref": "#/$defs/AcknowledgeErrorMessageType"
+        },
+        "AcknowledgeErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ErrorMessage"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/AcknowledgeErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelErrorMessage": {
+            "$ref": "#/$defs/CancelErrorMessageType"
+        },
+        "CancelErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ErrorMessage"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/CancelErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeErrorMessage": {
+            "$ref": "#/$defs/ChangeErrorMessageType"
+        },
+        "ChangeErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ErrorMessage"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ChangeErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ErrorMessage": {
+            "$ref": "#/$defs/ErrorMessageType"
+        },
+        "ErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ErrorType",
+                "ThrownFrom",
+                "TimeStamp"
+            ],
+            "properties": {
+                "CausedBy": {
+                    "$ref": "#/$defs/ErrorMessageType"
+                },
+                "ErrorCode": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "ErrorDescription": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                    }
+                },
+                "ErrorType": {
+                    "$ref": "#/$defs/ErrorTypeType"
+                },
+                "ThrownFrom": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "TimeStamp": {
+                    "$ref": "v2.0.1.coreComponents.schema.json#/$defs/DateTimeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ErrorType1Type": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "BusinessError",
+                        "SystemError",
+                        "Other"
+                    ]
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "ErrorTypeType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "BusinessError",
+                        "SystemError",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "GetErrorMessage": {
+            "$ref": "#/$defs/GetErrorMessageType"
+        },
+        "GetErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            }
+                        },
+                        "Get": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransGetType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/GetErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessErrorMessage": {
+            "$ref": "#/$defs/ProcessErrorMessageType"
+        },
+        "ProcessErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ErrorMessage",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ProcessErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondErrorMessage": {
+            "$ref": "#/$defs/RespondErrorMessageType"
+        },
+        "RespondErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ErrorMessage",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/RespondErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowErrorMessage": {
+            "$ref": "#/$defs/ShowErrorMessageType"
+        },
+        "ShowErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            }
+                        },
+                        "Show": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/ShowErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncErrorMessage": {
+            "$ref": "#/$defs/SyncErrorMessageType"
+        },
+        "SyncErrorMessageType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.1.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.1.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ErrorMessage",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ErrorMessage": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ErrorMessageType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.1.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.1.extensions.schema.json#/$defs/SyncErrorMessageType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Error Message Definitions",
+    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.1\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeErrorMessage": {
+            "$ref": "#/$defs/AcknowledgeErrorMessage"
+        },
+        "CancelErrorMessage": {
+            "$ref": "#/$defs/CancelErrorMessage"
+        },
+        "ChangeErrorMessage": {
+            "$ref": "#/$defs/ChangeErrorMessage"
+        },
+        "ErrorMessage": {
+            "$ref": "#/$defs/ErrorMessage"
+        },
+        "GetErrorMessage": {
+            "$ref": "#/$defs/GetErrorMessage"
+        },
+        "ProcessErrorMessage": {
+            "$ref": "#/$defs/ProcessErrorMessage"
+        },
+        "RespondErrorMessage": {
+            "$ref": "#/$defs/RespondErrorMessage"
+        },
+        "ShowErrorMessage": {
+            "$ref": "#/$defs/ShowErrorMessage"
+        },
+        "SyncErrorMessage": {
+            "$ref": "#/$defs/SyncErrorMessage"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.1.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
