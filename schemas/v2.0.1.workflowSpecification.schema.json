@@ -2165,13 +2165,13 @@
             "$ref": "#/$defs/WorkflowSpecification"
         },
         "WorkflowSpecificationConnectionType": {
-            "$ref": "#/$defs/WorkflowSpecificationConnectionType"
+            "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
         },
         "WorkflowSpecificationInformation": {
             "$ref": "#/$defs/WorkflowSpecificationInformation"
         },
         "WorkflowSpecificationNodeType": {
-            "$ref": "#/$defs/WorkflowSpecificationNodeType"
+            "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
         }
     },
     "allOf": [
