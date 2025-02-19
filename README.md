@@ -33,7 +33,7 @@ For convenience, [Libre Technologies Inc.](http://www.libremfg.com/) hosts the s
 
 ```
 {
-    "$schema": "https://json.libremfg.ai/schemas/v2.0.0.equipment.schema.json",
+    "$schema": "https://json.libremfg.ai/schemas/v2.0.1.equipment.schema.json",
     "Equipment": {
         "ID": "Hello World"
     }
@@ -49,7 +49,7 @@ You can clone this repository and use file references to the schema.
 
 ```json
 {
-    "$schema": "~/json-schema/schemas/v2.0.0.equipment.schema.json",
+    "$schema": "~/json-schema/schemas/v2.0.1.equipment.schema.json",
     "Equipment": {
         "ID": "Hello World"
     }
@@ -62,7 +62,7 @@ You can use the JSON schemas for validating ISA-95 based data exchanges. Here's 
 
 ```js
 const Ajv = require("ajv");
-const schema = require("./path/to/json-schema/v2.0.0.equipment.schema.json");
+const schema = require("./path/to/json-schema/v2.0.1.equipment.schema.json");
 
 const ajv = new Ajv();
 const validate = ajv.compile(schema);
@@ -96,4 +96,4 @@ Rhize ISA-95/ISA-88 JSON Schema is distributed under [AGPL-3.0-only](LICENSE).
 - Based on the works of [MESA International](https://github.com/MESAInternational/B2MML-BatchML).
 - Contributions from the ISA-95 and ISA-88 community are appreciated.
 
-Copyright 2024, Libre Technologies Inc.
+Copyright 2025, Libre Technologies Inc.
