@@ -4031,7 +4031,42 @@
             }
         },
         "ParameterType": {
-            "$ref": "v2.0.0.batchInformation.schema.json#/$defs/ParameterTypeType"
+            "ID": {
+                "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+            },
+            "Value": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/ValueType"
+                }
+            },
+            "Description": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/DescriptionType"
+                }
+            },
+            "HierarchyScope": {
+                "$ref": "#/$defs/HierarchyScopeType"
+            },
+            "ParameterChild": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/ParameterType"
+                }
+            },
+            "ParameterSpecificationID": {
+                "type": "array",
+                "items": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "ProcessSegmentParameterID": {
+                "type": "array",
+                "items": {
+                    "$ref": "v2.0.0.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            }
         },
         "PersonNameType": {
             "type": [
@@ -6155,15 +6190,15 @@
                     "$ref": "v2.0.0.dataType.schema.json#/$defs/string"
                 }
             }
-        }
-    },
-    "type": "object",
-    "title": "Rhize ISA-95/ISA-88 JSON Schema - Common Definitions",
-    "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
-    "allOf": [
-        {
-            "$ref": "./v2.0.0.extensions.schema.json#"
-        }
-    ],
-    "unevaluatedProperties": false
+        },
+        "type": "object",
+        "title": "Rhize ISA-95/ISA-88 JSON Schema - Common Definitions",
+        "description": "Copyright 2024, Libre Technologies Inc., Version v2.0.0\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+        "allOf": [
+            {
+                "$ref": "./v2.0.0.extensions.schema.json#"
+            }
+        ],
+        "unevaluatedProperties": false
+    }
 }
