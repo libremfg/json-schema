@@ -1,0 +1,1520 @@
+{
+    "$id": "v2.0.2.workAlert.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeWorkAlert": {
+            "$ref": "#/$defs/AcknowledgeWorkAlertType"
+        },
+        "AcknowledgeWorkAlertDefinition": {
+            "$ref": "#/$defs/AcknowledgeWorkAlertDefinitionType"
+        },
+        "AcknowledgeWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkAlertInformation": {
+            "$ref": "#/$defs/AcknowledgeWorkAlertInformationType"
+        },
+        "AcknowledgeWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkAlert": {
+            "$ref": "#/$defs/CancelWorkAlertType"
+        },
+        "CancelWorkAlertDefinition": {
+            "$ref": "#/$defs/CancelWorkAlertDefinitionType"
+        },
+        "CancelWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkAlertInformation": {
+            "$ref": "#/$defs/CancelWorkAlertInformationType"
+        },
+        "CancelWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkAlert": {
+            "$ref": "#/$defs/ChangeWorkAlertType"
+        },
+        "ChangeWorkAlertDefinition": {
+            "$ref": "#/$defs/ChangeWorkAlertDefinitionType"
+        },
+        "ChangeWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkAlertInformation": {
+            "$ref": "#/$defs/ChangeWorkAlertInformationType"
+        },
+        "ChangeWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkAlert": {
+            "$ref": "#/$defs/GetWorkAlertType"
+        },
+        "GetWorkAlertDefinition": {
+            "$ref": "#/$defs/GetWorkAlertDefinitionType"
+        },
+        "GetWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkAlertInformation": {
+            "$ref": "#/$defs/GetWorkAlertInformationType"
+        },
+        "GetWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkAlert": {
+            "$ref": "#/$defs/ProcessWorkAlertType"
+        },
+        "ProcessWorkAlertDefinition": {
+            "$ref": "#/$defs/ProcessWorkAlertDefinitionType"
+        },
+        "ProcessWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkAlertInformation": {
+            "$ref": "#/$defs/ProcessWorkAlertInformationType"
+        },
+        "ProcessWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkAlert": {
+            "$ref": "#/$defs/RespondWorkAlertType"
+        },
+        "RespondWorkAlertDefinition": {
+            "$ref": "#/$defs/RespondWorkAlertDefinitionType"
+        },
+        "RespondWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkAlertInformation": {
+            "$ref": "#/$defs/RespondWorkAlertInformationType"
+        },
+        "RespondWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkAlert": {
+            "$ref": "#/$defs/ShowWorkAlertType"
+        },
+        "ShowWorkAlertDefinition": {
+            "$ref": "#/$defs/ShowWorkAlertDefinitionType"
+        },
+        "ShowWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkAlertInformation": {
+            "$ref": "#/$defs/ShowWorkAlertInformationType"
+        },
+        "ShowWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkAlert": {
+            "$ref": "#/$defs/SyncWorkAlertType"
+        },
+        "SyncWorkAlertDefinition": {
+            "$ref": "#/$defs/SyncWorkAlertDefinitionType"
+        },
+        "SyncWorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkAlertDefinition"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkAlertDefinition": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncWorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkAlertInformation": {
+            "$ref": "#/$defs/SyncWorkAlertInformationType"
+        },
+        "SyncWorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkAlertInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkAlertInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncWorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkAlertType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkAlert"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkAlert": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkAlertType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncWorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkAlert": {
+            "$ref": "#/$defs/WorkAlertType"
+        },
+        "WorkAlertDefinition": {
+            "$ref": "#/$defs/WorkAlertDefinitionType"
+        },
+        "WorkAlertDefinitionPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkAlertDefinitionPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkAlertPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkAlertDefinitionPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkAlertDefinitionType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Category": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Priority": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/PriorityType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkAlertDefinitionProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkAlertDefinitionPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkAlertDefinitionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkAlertInformation": {
+            "$ref": "#/$defs/WorkAlertInformationType"
+        },
+        "WorkAlertInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                            }
+                        ]
+                    }
+                },
+                "HierarchyScope": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                        }
+                    ]
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "anyOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                        }
+                    ]
+                },
+                "WorkAlert": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "#/$defs/WorkAlertType"
+                            }
+                        ]
+                    }
+                },
+                "WorkAlertDefinition": {
+                    "type": "array",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "type": "null"
+                            },
+                            {
+                                "$ref": "#/$defs/WorkAlertDefinitionType"
+                            }
+                        ]
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkAlertInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkAlertPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkAlertDefinitionPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkAlertPropertyChid": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkAlertPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkAlertPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkAlertType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Category": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MessageText": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "Priority": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/PriorityType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "TimeStamp": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "WorkAlertProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkAlertPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkAlertType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Work Alert Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeWorkAlert": {
+            "$ref": "#/$defs/AcknowledgeWorkAlert"
+        },
+        "AcknowledgeWorkAlertDefinition": {
+            "$ref": "#/$defs/AcknowledgeWorkAlertDefinition"
+        },
+        "AcknowledgeWorkAlertInformation": {
+            "$ref": "#/$defs/AcknowledgeWorkAlertInformation"
+        },
+        "CancelWorkAlert": {
+            "$ref": "#/$defs/CancelWorkAlert"
+        },
+        "CancelWorkAlertDefinition": {
+            "$ref": "#/$defs/CancelWorkAlertDefinition"
+        },
+        "CancelWorkAlertInformation": {
+            "$ref": "#/$defs/CancelWorkAlertInformation"
+        },
+        "ChangeWorkAlert": {
+            "$ref": "#/$defs/ChangeWorkAlert"
+        },
+        "ChangeWorkAlertDefinition": {
+            "$ref": "#/$defs/ChangeWorkAlertDefinition"
+        },
+        "ChangeWorkAlertInformation": {
+            "$ref": "#/$defs/ChangeWorkAlertInformation"
+        },
+        "GetWorkAlert": {
+            "$ref": "#/$defs/GetWorkAlert"
+        },
+        "GetWorkAlertDefinition": {
+            "$ref": "#/$defs/GetWorkAlertDefinition"
+        },
+        "GetWorkAlertInformation": {
+            "$ref": "#/$defs/GetWorkAlertInformation"
+        },
+        "ProcessWorkAlert": {
+            "$ref": "#/$defs/ProcessWorkAlert"
+        },
+        "ProcessWorkAlertDefinition": {
+            "$ref": "#/$defs/ProcessWorkAlertDefinition"
+        },
+        "ProcessWorkAlertInformation": {
+            "$ref": "#/$defs/ProcessWorkAlertInformation"
+        },
+        "RespondWorkAlert": {
+            "$ref": "#/$defs/RespondWorkAlert"
+        },
+        "RespondWorkAlertDefinition": {
+            "$ref": "#/$defs/RespondWorkAlertDefinition"
+        },
+        "RespondWorkAlertInformation": {
+            "$ref": "#/$defs/RespondWorkAlertInformation"
+        },
+        "ShowWorkAlert": {
+            "$ref": "#/$defs/ShowWorkAlert"
+        },
+        "ShowWorkAlertDefinition": {
+            "$ref": "#/$defs/ShowWorkAlertDefinition"
+        },
+        "ShowWorkAlertInformation": {
+            "$ref": "#/$defs/ShowWorkAlertInformation"
+        },
+        "SyncWorkAlert": {
+            "$ref": "#/$defs/SyncWorkAlert"
+        },
+        "SyncWorkAlertDefinition": {
+            "$ref": "#/$defs/SyncWorkAlertDefinition"
+        },
+        "SyncWorkAlertInformation": {
+            "$ref": "#/$defs/SyncWorkAlertInformation"
+        },
+        "WorkAlert": {
+            "$ref": "#/$defs/WorkAlert"
+        },
+        "WorkAlertDefinition": {
+            "$ref": "#/$defs/WorkAlertDefinition"
+        },
+        "WorkAlertInformation": {
+            "$ref": "#/$defs/WorkAlertInformation"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

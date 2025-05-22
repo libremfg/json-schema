@@ -1,0 +1,1121 @@
+{
+    "$id": "v2.0.2.workSchedule.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeJobList": {
+            "$ref": "#/$defs/AcknowledgeJobListType"
+        },
+        "AcknowledgeJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "JobList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkSchedule": {
+            "$ref": "#/$defs/AcknowledgeWorkScheduleType"
+        },
+        "AcknowledgeWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelJobList": {
+            "$ref": "#/$defs/CancelJobListType"
+        },
+        "CancelJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "JobList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkSchedule": {
+            "$ref": "#/$defs/CancelWorkScheduleType"
+        },
+        "CancelWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeJobList": {
+            "$ref": "#/$defs/ChangeJobListType"
+        },
+        "ChangeJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "JobList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkSchedule": {
+            "$ref": "#/$defs/ChangeWorkScheduleType"
+        },
+        "ChangeWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetJobList": {
+            "$ref": "#/$defs/GetJobListType"
+        },
+        "GetJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "JobList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkSchedule": {
+            "$ref": "#/$defs/GetWorkScheduleType"
+        },
+        "GetWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "JobList": {
+            "$ref": "#/$defs/JobListType"
+        },
+        "JobListType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobOrder": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/JobOrderType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/JobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "JobOrder": {
+            "$ref": "#/$defs/JobOrderType"
+        },
+        "JobOrderType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Command": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/JobOrderCommandType"
+                },
+                "CommandRule": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/JobOrderCommandRuleType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "DispatchStatus": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/JobOrderDispatchStatusType"
+                },
+                "EndTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentRequirement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/OpEquipmentRequirementType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobOrderParameter": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ParameterType"
+                    }
+                },
+                "MaterialRequirement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/OpMaterialRequirementType"
+                    }
+                },
+                "PersonnelRequirement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/OpPersonnelRequirementType"
+                    }
+                },
+                "PhysicalAssetRequirement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/OpPhysicalAssetRequirementType"
+                    }
+                },
+                "Priority": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/PriorityType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SegmentRequirementID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "StartTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterVersion": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/JobOrderType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessJobList": {
+            "$ref": "#/$defs/ProcessJobListType"
+        },
+        "ProcessJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobList",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkSchedule": {
+            "$ref": "#/$defs/ProcessWorkScheduleType"
+        },
+        "ProcessWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondJobList": {
+            "$ref": "#/$defs/RespondJobListType"
+        },
+        "RespondJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobList",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkSchedule": {
+            "$ref": "#/$defs/RespondWorkScheduleType"
+        },
+        "RespondWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowJobList": {
+            "$ref": "#/$defs/ShowJobListType"
+        },
+        "ShowJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobList",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkSchedule": {
+            "$ref": "#/$defs/ShowWorkScheduleType"
+        },
+        "ShowWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncJobList": {
+            "$ref": "#/$defs/SyncJobListType"
+        },
+        "SyncJobListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobList",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncJobListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkSchedule": {
+            "$ref": "#/$defs/SyncWorkScheduleType"
+        },
+        "SyncWorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkSchedule"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkSchedule": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkScheduleType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncWorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkRequest": {
+            "$ref": "#/$defs/WorkRequestType"
+        },
+        "WorkRequestType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "JobOrder"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobOrder": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/JobOrderType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsRequestID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Priority": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/PriorityType"
+                },
+                "RequestState": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/RequestStateType"
+                },
+                "SegmentRequirementID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkRequestChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkRequestType"
+                    }
+                },
+                "WorkType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkRequestType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkSchedule": {
+            "$ref": "#/$defs/WorkScheduleType"
+        },
+        "WorkScheduleType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "WorkRequest"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ScheduleState": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/RequestStateType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkRequest": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkRequestType"
+                    },
+                    "minItems": 1
+                },
+                "WorkScheduleChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkScheduleType"
+                    }
+                },
+                "WorkType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/WorkScheduleType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Work Schedule Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeJobList": {
+            "$ref": "#/$defs/AcknowledgeJobList"
+        },
+        "AcknowledgeWorkSchedule": {
+            "$ref": "#/$defs/AcknowledgeWorkSchedule"
+        },
+        "CancelJobList": {
+            "$ref": "#/$defs/CancelJobList"
+        },
+        "CancelWorkSchedule": {
+            "$ref": "#/$defs/CancelWorkSchedule"
+        },
+        "ChangeJobList": {
+            "$ref": "#/$defs/ChangeJobList"
+        },
+        "ChangeWorkSchedule": {
+            "$ref": "#/$defs/ChangeWorkSchedule"
+        },
+        "GetJobList": {
+            "$ref": "#/$defs/GetJobList"
+        },
+        "GetWorkSchedule": {
+            "$ref": "#/$defs/GetWorkSchedule"
+        },
+        "JobList": {
+            "$ref": "#/$defs/JobList"
+        },
+        "JobOrder": {
+            "$ref": "#/$defs/JobOrder"
+        },
+        "ProcessJobList": {
+            "$ref": "#/$defs/ProcessJobList"
+        },
+        "ProcessWorkSchedule": {
+            "$ref": "#/$defs/ProcessWorkSchedule"
+        },
+        "RespondJobList": {
+            "$ref": "#/$defs/RespondJobList"
+        },
+        "RespondWorkSchedule": {
+            "$ref": "#/$defs/RespondWorkSchedule"
+        },
+        "ShowJobList": {
+            "$ref": "#/$defs/ShowJobList"
+        },
+        "ShowWorkSchedule": {
+            "$ref": "#/$defs/ShowWorkSchedule"
+        },
+        "SyncJobList": {
+            "$ref": "#/$defs/SyncJobList"
+        },
+        "SyncWorkSchedule": {
+            "$ref": "#/$defs/SyncWorkSchedule"
+        },
+        "WorkRequest": {
+            "$ref": "#/$defs/WorkRequest"
+        },
+        "WorkSchedule": {
+            "$ref": "#/$defs/WorkSchedule"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

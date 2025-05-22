@@ -1,0 +1,171 @@
+{
+    "$id": "v2.0.2.commonExtensions.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "EquipmentAssetMappingType": {
+            "type": "object"
+        },
+        "HierarchyScopeType": {
+            "type": "object"
+        },
+        "OpEquipmentCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentCapabilityType": {
+            "type": "object"
+        },
+        "OpEquipmentRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentRequirementType": {
+            "type": "object"
+        },
+        "OpEquipmentSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpEquipmentSpecificationType": {
+            "type": "object"
+        },
+        "OpMaterialCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialCapabilityType": {
+            "type": "object"
+        },
+        "OpMaterialRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialRequirementType": {
+            "type": "object"
+        },
+        "OpMaterialSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpMaterialSpecificationType": {
+            "type": "object"
+        },
+        "OpPersonnelCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelCapabilityType": {
+            "type": "object"
+        },
+        "OpPersonnelRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelRequirementType": {
+            "type": "object"
+        },
+        "OpPersonnelSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpPersonnelSpecificationType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetCapabilityPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetCapabilityType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetRequirementPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetRequirementType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetSpecificationPropertyType": {
+            "type": "object"
+        },
+        "OpPhysicalAssetSpecificationType": {
+            "type": "object"
+        },
+        "OperationsRecordEntryTemplateType": {
+            "type": "object"
+        },
+        "OperationsRecordSpecTemplateType": {
+            "type": "object"
+        },
+        "OperationsRecordTemplateType": {
+            "type": "object"
+        },
+        "QuantityValueType": {
+            "type": "object"
+        },
+        "ResourceLocationType": {
+            "type": "object"
+        },
+        "SegmentDependencyType": {
+            "type": "object"
+        },
+        "SpatialDefinitionType": {
+            "type": "object"
+        },
+        "TransAcknowledgeType": {
+            "type": "object"
+        },
+        "TransActionCriteriaType": {
+            "type": "object"
+        },
+        "TransApplicationAreaType": {
+            "type": "object"
+        },
+        "TransCancelType": {
+            "type": "object"
+        },
+        "TransChangeStatusType": {
+            "type": "object"
+        },
+        "TransChangeType": {
+            "type": "object"
+        },
+        "TransConfirmType": {
+            "type": "object"
+        },
+        "TransGetType": {
+            "type": "object"
+        },
+        "TransProcessType": {
+            "type": "object"
+        },
+        "TransReceiverType": {
+            "type": "object"
+        },
+        "TransRespondType": {
+            "type": "object"
+        },
+        "TransResponseCriteriaType": {
+            "type": "object"
+        },
+        "TransSenderType": {
+            "type": "object"
+        },
+        "TransShowType": {
+            "type": "object"
+        },
+        "TransSignatureType": {
+            "type": "object"
+        },
+        "TransStateChangeType": {
+            "type": "object"
+        },
+        "TransSyncType": {
+            "type": "object"
+        },
+        "TransUserAreaType": {
+            "type": "object"
+        },
+        "ValueType": {
+            "type": "object"
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Common Extensions Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

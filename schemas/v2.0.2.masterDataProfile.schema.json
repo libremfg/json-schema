@@ -1,0 +1,490 @@
+{
+    "$id": "v2.0.2.masterDataProfile.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "ChannelTopicType": {
+            "type": "object",
+            "required": [
+                "ChannelURI",
+                "Topic"
+            ],
+            "properties": {
+                "ChannelDescription": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "ChannelURI": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "MessageSpec": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "Topic": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "TopicDescription": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChannelTopicType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "IDandDescriptionType": {
+            "type": "object",
+            "required": [
+                "Description",
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/IDandDescriptionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "MasterDataProfile": {
+            "$ref": "#/$defs/MasterDataProfileType"
+        },
+        "MasterDataProfileHeaderType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "Name",
+                "Version"
+            ],
+            "properties": {
+                "Abbreviation": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "ContactInformation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Keyword": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "Name": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "NormativeReference": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "OwningAuthority": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Scope": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "Terms": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                    }
+                },
+                "URILocation": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/MasterDataProfileHeaderType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "MasterDataProfileType": {
+            "type": "object",
+            "required": [
+                "Header"
+            ],
+            "properties": {
+                "DataType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IDandDescriptionType"
+                    }
+                },
+                "Enumeration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ProfileEnumerationType"
+                    }
+                },
+                "Equipment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.equipment.schema.json#/$defs/EquipmentType"
+                    }
+                },
+                "EquipmentClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.equipment.schema.json#/$defs/EquipmentClassType"
+                    }
+                },
+                "Header": {
+                    "$ref": "#/$defs/MasterDataProfileHeaderType"
+                },
+                "MaterialClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.material.schema.json#/$defs/MaterialClassType"
+                    }
+                },
+                "MaterialDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.material.schema.json#/$defs/MaterialDefinitionType"
+                    }
+                },
+                "MaterialLot": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.material.schema.json#/$defs/MaterialLotType"
+                    }
+                },
+                "MaterialSublot": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.material.schema.json#/$defs/MaterialLotType"
+                    }
+                },
+                "OperationalLocation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationalLocation.schema.json#/$defs/OperationalLocationType"
+                    }
+                },
+                "OperationalLocationClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationalLocation.schema.json#/$defs/OperationalLocationClassType"
+                    }
+                },
+                "OperationsCapability": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsCapability.schema.json#/$defs/OperationsCapabilityType"
+                    }
+                },
+                "OperationsDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsDefinition.schema.json#/$defs/OperationsDefinitionType"
+                    }
+                },
+                "OperationsEventClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsEvent.schema.json#/$defs/OperationsEventClassType"
+                    }
+                },
+                "OperationsEventDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsEvent.schema.json#/$defs/OperationsEventDefinitionType"
+                    }
+                },
+                "OperationsSegment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsDefinition.schema.json#/$defs/OperationsSegmentType"
+                    }
+                },
+                "OtherEnumeration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OtherEnumerationType"
+                    }
+                },
+                "Person": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.personnel.schema.json#/$defs/PersonType"
+                    }
+                },
+                "PersonnelClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.personnel.schema.json#/$defs/PersonnelClassType"
+                    }
+                },
+                "PhysicalAsset": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.physicalAsset.schema.json#/$defs/PhysicalAssetType"
+                    }
+                },
+                "PhysicalAssetClass": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.physicalAsset.schema.json#/$defs/PhysicalAssetClassType"
+                    }
+                },
+                "ProcessSegment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.processSegment.schema.json#/$defs/ProcessSegmentType"
+                    }
+                },
+                "ResourceNetworkConnectionType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.resourceRelationshipNetwork.schema.json#/$defs/ResourceNetworkConnectionTypeType"
+                    }
+                },
+                "ResourceRelationshipNetwork": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.resourceRelationshipNetwork.schema.json#/$defs/ResourceRelationshipNetworkType"
+                    }
+                },
+                "TestResult": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsTest.schema.json#/$defs/TestResultType"
+                    }
+                },
+                "TestSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.operationsTest.schema.json#/$defs/TestSpecificationType"
+                    }
+                },
+                "TransactionProfile": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MasterDataTransactionProfileType"
+                    }
+                },
+                "UnitOfMeasure": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IDandDescriptionType"
+                    }
+                },
+                "ValueKey": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/IDandDescriptionType"
+                    }
+                },
+                "WorkAlertDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workAlert.schema.json#/$defs/WorkAlertDefinitionType"
+                    }
+                },
+                "WorkCalendar": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workCalendar.schema.json#/$defs/WorkCalendarType"
+                    }
+                },
+                "WorkCalendarDefinition": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
+                    }
+                },
+                "WorkCapability": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workCapability.schema.json#/$defs/WorkCapabilityType"
+                    }
+                },
+                "WorkMaster": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workDefinition.schema.json#/$defs/WorkMasterType"
+                    }
+                },
+                "WorkMasterCapability": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workCapability.schema.json#/$defs/WorkMasterCapabilityType"
+                    }
+                },
+                "WorkRecordSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workRecord.schema.json#/$defs/WorkRecordSpecificationType"
+                    }
+                },
+                "WorkflowSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workflowSpecification.schema.json#/$defs/WorkflowSpecificationType"
+                    }
+                },
+                "WorkflowSpecificationConnectionType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workflowSpecification.schema.json#/$defs/WorkflowSpecificationConnectionTypeType"
+                    }
+                },
+                "WorkflowSpecificationNodeType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.workflowSpecification.schema.json#/$defs/WorkflowSpecificationNodeTypeType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/MasterDataProfileType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "MasterDataTransactionProfileType": {
+            "type": "object",
+            "required": [
+                "ApplicationID",
+                "ApplicationRole",
+                "TransactionProfile"
+            ],
+            "properties": {
+                "ApplicationID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ApplicationRole": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ChannelTopic": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ChannelTopicType"
+                    }
+                },
+                "TransactionProfile": {
+                    "$ref": "v2.0.2.transactionProfile.schema.json#/$defs/TransactionProfileType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/MasterDataTransactionProfileType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OtherEnumerationType": {
+            "type": "object",
+            "required": [
+                "Description",
+                "EnumElementName",
+                "InformationObjectName",
+                "OtherEnumValue"
+            ],
+            "properties": {
+                "Description": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "EnumElementName": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObjectName": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OtherEnumValue": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/OtherEnumerationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProfileEnumerationType": {
+            "type": "object",
+            "required": [
+                "DefinedValue",
+                "Description",
+                "ElementName",
+                "InformationObjectName"
+            ],
+            "properties": {
+                "DefinedValue": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Description": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/TextType"
+                },
+                "ElementName": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "InformationObjectName": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProfileEnumerationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Master Data Profile Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "MasterDataProfile": {
+            "$ref": "#/$defs/MasterDataProfile"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
