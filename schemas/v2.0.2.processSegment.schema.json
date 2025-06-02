@@ -1,0 +1,1493 @@
+{
+    "$id": "v2.0.2.processSegment.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeProcessSegment": {
+            "$ref": "#/$defs/AcknowledgeProcessSegmentType"
+        },
+        "AcknowledgeProcessSegmentInformation": {
+            "$ref": "#/$defs/AcknowledgeProcessSegmentInformationType"
+        },
+        "AcknowledgeProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ProcessSegmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "ProcessSegment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/AcknowledgeProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelProcessSegment": {
+            "$ref": "#/$defs/CancelProcessSegmentType"
+        },
+        "CancelProcessSegmentInformation": {
+            "$ref": "#/$defs/CancelProcessSegmentInformationType"
+        },
+        "CancelProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ProcessSegmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "ProcessSegment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/CancelProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeProcessSegment": {
+            "$ref": "#/$defs/ChangeProcessSegmentType"
+        },
+        "ChangeProcessSegmentInformation": {
+            "$ref": "#/$defs/ChangeProcessSegmentInformationType"
+        },
+        "ChangeProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ProcessSegmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "ProcessSegment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ChangeProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentSegmentSpecificationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentClassPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "EquipmentPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "EquipmentSegmentSpecificationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentSegmentSpecificationPropertyType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/EquipmentSegmentSpecificationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "EquipmentSegmentSpecificationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EquipmentClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "EquipmentSegmentSpecificationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentSegmentSpecificationType"
+                    }
+                },
+                "EquipmentSegmentSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentSegmentSpecificationPropertyType"
+                    }
+                },
+                "EquipmentUse": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/CodeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/EquipmentSegmentSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetProcessSegment": {
+            "$ref": "#/$defs/GetProcessSegmentType"
+        },
+        "GetProcessSegmentInformation": {
+            "$ref": "#/$defs/GetProcessSegmentInformationType"
+        },
+        "GetProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "ProcessSegmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "ProcessSegment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransGetType"
+                        },
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/GetProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "MaterialSegmentSpecificationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialClassPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialDefinitionPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialLotPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialSegmentSpecificationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MaterialSegmentSpecificationPropertyType"
+                    }
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/MaterialSegmentSpecificationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "MaterialSegmentSpecificationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "AssemblyRelationship": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/AssemblyRelationshipType"
+                },
+                "AssemblySegmentSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MaterialSegmentSpecificationType"
+                    }
+                },
+                "AssemblyType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/AssemblyTypeType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialDefinitionID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialLotID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialSegmentSpecificationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MaterialSegmentSpecificationType"
+                    }
+                },
+                "MaterialSegmentSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MaterialSegmentSpecificationPropertyType"
+                    }
+                },
+                "MaterialSublotID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "MaterialUse": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/MaterialUseType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "StorageLocation": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/MaterialSegmentSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "PersonnelSegmentSpecificationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PersonnalSegmentSpecificationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelSegmentSpecificationPropertyType"
+                    }
+                },
+                "PersonnelClassPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/PersonnelSegmentSpecificationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "PersonnelSegmentSpecificationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "PersonID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PersonnelSegmentSpecificationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelSegmentSpecificationType"
+                    }
+                },
+                "PersonnelSegmentSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelSegmentSpecificationPropertyType"
+                    }
+                },
+                "PersonnelUse": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/CodeType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/PersonnelSegmentSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "PhysicalAssetSegmentSpecificationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetClassPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetPropertyID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetSegmentSpecificationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetSegmentSpecificationPropertyType"
+                    }
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ValueType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/PhysicalAssetSegmentSpecificationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "PhysicalAssetSegmentSpecificationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PhysicalAssetClassID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "PhysicalAssetSegmentSpecificationChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetSegmentSpecificationType"
+                    }
+                },
+                "PhysicalAssetSegmentSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetSegmentSpecificationPropertyType"
+                    }
+                },
+                "PhysicalAssetUse": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/CodeType"
+                },
+                "PhysicalLocation": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/ResourceLocationType"
+                },
+                "Quantity": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/QuantityValueType"
+                    }
+                },
+                "SpatialDefinition": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/SpatialDefinitionType"
+                },
+                "TestSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/PhysicalAssetSegmentSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessProcessSegment": {
+            "$ref": "#/$defs/ProcessProcessSegmentType"
+        },
+        "ProcessProcessSegmentInformation": {
+            "$ref": "#/$defs/ProcessProcessSegmentInformationType"
+        },
+        "ProcessProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "ProcessSegmentInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "ProcessSegment"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessSegment": {
+            "$ref": "#/$defs/ProcessSegmentType",
+            "description": "A process segment lists the classes of personnel, equipment, physical assets, and material needed, \nand/or it may present specific resources, such as specific equipment needed for the process segment. \nA process segment may list the quantity of the resource needed.\nA process segment may be a specialization of another process segment. A process segment shall be \ndefined as a 'pattern' or an 'instance'. A pattern process segment defines a ‘template’, upon which \nother pattern or instance process segments may be based. Unlike instance process segments, pattern \nprocess segments shall not be directly scheduled or tracked. Therefore, segment requirements, \nsegment responses and process segment capabilities shall not reference pattern process segments.\nWhere a process segment references a work master, the definition type (pattern or instance) of the \nreferenced work master shall have the same value as that of the process segment.  "
+        },
+        "ProcessSegmentInformation": {
+            "$ref": "#/$defs/ProcessSegmentInformationType"
+        },
+        "ProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ProcessSegment": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ProcessSegmentType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "DefinitionType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/DefinitionTypeType"
+                },
+                "DependentProcessSegmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentSegmentSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/EquipmentSegmentSpecificationType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "MaterialSegmentSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/MaterialSegmentSpecificationType"
+                    }
+                },
+                "OperationsSegmentSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "PersonnelSegmentSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PersonnelSegmentSpecificationType"
+                    }
+                },
+                "PhysicalAssetSegmentSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/PhysicalAssetSegmentSpecificationType"
+                    }
+                },
+                "ProcessSegmentChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ProcessSegmentType"
+                    }
+                },
+                "ProcessSegmentParameter": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/ParameterType"
+                    }
+                },
+                "ProcessSegmentPatternID": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "SegmentDependency": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.common.schema.json#/$defs/SegmentDependencyType"
+                    }
+                },
+                "SegmentRequirementSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Version": {
+                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterSourceID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondProcessSegment": {
+            "$ref": "#/$defs/RespondProcessSegmentType"
+        },
+        "RespondProcessSegmentInformation": {
+            "$ref": "#/$defs/RespondProcessSegmentInformationType"
+        },
+        "RespondProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegmentInformation",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegment",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/RespondProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowProcessSegment": {
+            "$ref": "#/$defs/ShowProcessSegmentType"
+        },
+        "ShowProcessSegmentInformation": {
+            "$ref": "#/$defs/ShowProcessSegmentInformationType"
+        },
+        "ShowProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegmentInformation",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegment",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ShowProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncProcessSegment": {
+            "$ref": "#/$defs/SyncProcessSegmentType"
+        },
+        "SyncProcessSegmentInformation": {
+            "$ref": "#/$defs/SyncProcessSegmentInformationType"
+        },
+        "SyncProcessSegmentInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegmentInformation",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegmentInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentInformationType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncProcessSegmentInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncProcessSegmentType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.2.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "ProcessSegment",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "ProcessSegment": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/ProcessSegmentType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.2.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/SyncProcessSegmentType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Process Segment Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeProcessSegment": {
+            "$ref": "#/$defs/AcknowledgeProcessSegment"
+        },
+        "AcknowledgeProcessSegmentInformation": {
+            "$ref": "#/$defs/AcknowledgeProcessSegmentInformation"
+        },
+        "CancelProcessSegment": {
+            "$ref": "#/$defs/CancelProcessSegment"
+        },
+        "CancelProcessSegmentInformation": {
+            "$ref": "#/$defs/CancelProcessSegmentInformation"
+        },
+        "ChangeProcessSegment": {
+            "$ref": "#/$defs/ChangeProcessSegment"
+        },
+        "ChangeProcessSegmentInformation": {
+            "$ref": "#/$defs/ChangeProcessSegmentInformation"
+        },
+        "GetProcessSegment": {
+            "$ref": "#/$defs/GetProcessSegment"
+        },
+        "GetProcessSegmentInformation": {
+            "$ref": "#/$defs/GetProcessSegmentInformation"
+        },
+        "ProcessProcessSegment": {
+            "$ref": "#/$defs/ProcessProcessSegment"
+        },
+        "ProcessProcessSegmentInformation": {
+            "$ref": "#/$defs/ProcessProcessSegmentInformation"
+        },
+        "ProcessSegment": {
+            "$ref": "#/$defs/ProcessSegment"
+        },
+        "ProcessSegmentInformation": {
+            "$ref": "#/$defs/ProcessSegmentInformation"
+        },
+        "RespondProcessSegment": {
+            "$ref": "#/$defs/RespondProcessSegment"
+        },
+        "RespondProcessSegmentInformation": {
+            "$ref": "#/$defs/RespondProcessSegmentInformation"
+        },
+        "ShowProcessSegment": {
+            "$ref": "#/$defs/ShowProcessSegment"
+        },
+        "ShowProcessSegmentInformation": {
+            "$ref": "#/$defs/ShowProcessSegmentInformation"
+        },
+        "SyncProcessSegment": {
+            "$ref": "#/$defs/SyncProcessSegment"
+        },
+        "SyncProcessSegmentInformation": {
+            "$ref": "#/$defs/SyncProcessSegmentInformation"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

@@ -1,0 +1,260 @@
+{
+    "$id": "v2.0.2.coreComponents.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AmountType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/decimal"
+                },
+                "@currencyCodeListVersionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@currencyID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                }
+            }
+        },
+        "BinaryObjectType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/base64Binary"
+                },
+                "@characterSetCode": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@encodingCode": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@filename": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@format": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@mimeCode": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@uri": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/anyURI"
+                }
+            }
+        },
+        "CodeType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "DateTimeType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/dateTime"
+                },
+                "@format": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "IdentifierType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@schemeAgencyID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@schemeAgencyName": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@schemeDataURI": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/anyURI"
+                },
+                "@schemeID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@schemeName": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@schemeURI": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/anyURI"
+                },
+                "@schemeVersionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                }
+            }
+        },
+        "IndicatorType": {
+            "type": "boolean"
+        },
+        "MeasureType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/decimal"
+                },
+                "@unitCode": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@unitCodeListVersionID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                }
+            }
+        },
+        "NameType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/language"
+                }
+            }
+        },
+        "NumericType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/decimal"
+                },
+                "@format": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "QuantityType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/decimal"
+                },
+                "@unitCode": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@unitCodeListAgencyID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@unitCodeListAgencyName": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@unitCodeListID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/normalizedString"
+                }
+            }
+        },
+        "TextType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.2.dataType.schema.json#/$defs/language"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Core Component Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.2\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "allOf": [
+        {
+            "$ref": "./v2.0.2.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
