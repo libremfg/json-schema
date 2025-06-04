@@ -4031,15 +4031,6 @@
             }
         },
         "ParameterType": {
-            "ID": {
-                "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
-            },
-            "Value": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/$defs/ValueType"
-                }
-            },
             "Description": {
                 "type": "array",
                 "items": {
@@ -4048,6 +4039,9 @@
             },
             "HierarchyScope": {
                 "$ref": "#/$defs/HierarchyScopeType"
+            },
+            "ID": {
+                "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
             },
             "ParameterChild": {
                 "type": "array",
@@ -4065,6 +4059,12 @@
                 "type": "array",
                 "items": {
                     "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "Value": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/$defs/ValueType"
                 }
             }
         },
