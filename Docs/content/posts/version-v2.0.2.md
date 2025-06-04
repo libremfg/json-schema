@@ -1,6 +1,7 @@
 +++
 title = 'Version 2.0.2'
-date = 2025-06-04T13:45:31-05:00
+date = 2025-06-04T13:58:52-04:00
+draft = false
 +++
 
 > A JSON Schema implementation of the ANSI/ISA-95 and ANSI/ISA-88 standards.
