@@ -4031,42 +4031,55 @@
             }
         },
         "ParameterType": {
-            "Description": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/$defs/DescriptionType"
-                }
-            },
-            "HierarchyScope": {
-                "$ref": "#/$defs/HierarchyScopeType"
-            },
-            "ID": {
-                "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
-            },
-            "ParameterChild": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/$defs/ParameterType"
-                }
-            },
-            "ParameterSpecificationID": {
-                "type": "array",
-                "items": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "#/$defs/HierarchyScopeType"
+                },
+                "ID": {
                     "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ParameterChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ParameterType"
+                    }
+                },
+                "ParameterSpecificationID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "ProcessSegmentParameterID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/ValueType"
+                    }
                 }
             },
-            "ProcessSegmentParameterID": {
-                "type": "array",
-                "items": {
-                    "$ref": "v2.0.2.coreComponents.schema.json#/$defs/IdentifierType"
+            "allOf": [
+                {
+                    "$ref": "v2.0.2.extensions.schema.json#/$defs/ParameterType"
                 }
-            },
-            "Value": {
-                "type": "array",
-                "items": {
-                    "$ref": "#/$defs/ValueType"
-                }
-            }
+            ],
+            "unevaluatedProperties": false
         },
         "PersonNameType": {
             "type": [
