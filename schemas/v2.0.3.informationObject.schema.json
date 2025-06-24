@@ -1,0 +1,413 @@
+{
+    "$id": "v2.0.3.informationObject.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "InformationObject": {
+            "$ref": "#/$defs/InformationObjectType1"
+        },
+        "InformationObjectType": {
+            "$ref": "#/$defs/InformationObjectTypeType"
+        },
+        "InformationObjectType1": {
+            "type": "object",
+            "properties": {
+                "BatchProductionRecord": {
+                    "$ref": "v2.0.3.batchProductionRecord.schema.json#/$defs/BatchProductionRecordType"
+                },
+                "Equipment": {
+                    "$ref": "v2.0.3.equipment.schema.json#/$defs/EquipmentType"
+                },
+                "EquipmentClass": {
+                    "$ref": "v2.0.3.equipment.schema.json#/$defs/EquipmentClassType"
+                },
+                "GeneralRecipe": {
+                    "$ref": "v2.0.3.generalRecipe.schema.json#/$defs/GeneralRecipeType"
+                },
+                "JobList": {
+                    "$ref": "v2.0.3.workSchedule.schema.json#/$defs/JobListType"
+                },
+                "JobOrder": {
+                    "$ref": "v2.0.3.workSchedule.schema.json#/$defs/JobOrderType"
+                },
+                "JobResponse": {
+                    "$ref": "v2.0.3.workPerformance.schema.json#/$defs/JobResponseType"
+                },
+                "JobResponseList": {
+                    "$ref": "v2.0.3.workPerformance.schema.json#/$defs/JobResponseListType"
+                },
+                "MaterialClass": {
+                    "$ref": "v2.0.3.material.schema.json#/$defs/MaterialClassType"
+                },
+                "MaterialDefinition": {
+                    "$ref": "v2.0.3.material.schema.json#/$defs/MaterialDefinitionType"
+                },
+                "MaterialLot": {
+                    "$ref": "v2.0.3.material.schema.json#/$defs/MaterialLotType"
+                },
+                "MaterialSubLot": {
+                    "$ref": "v2.0.3.material.schema.json#/$defs/MaterialSubLotType"
+                },
+                "OperationalLocation": {
+                    "$ref": "v2.0.3.operationalLocation.schema.json#/$defs/OperationalLocationType"
+                },
+                "OperationalLocationClass": {
+                    "$ref": "v2.0.3.operationalLocation.schema.json#/$defs/OperationalLocationClassType"
+                },
+                "OperationsCapability": {
+                    "$ref": "v2.0.3.operationsCapability.schema.json#/$defs/OperationsCapabilityType"
+                },
+                "OperationsDefinition": {
+                    "$ref": "v2.0.3.operationsDefinition.schema.json#/$defs/OperationsDefinitionType"
+                },
+                "OperationsEvent": {
+                    "$ref": "v2.0.3.operationsEvent.schema.json#/$defs/OperationsEventType"
+                },
+                "OperationsEventClass": {
+                    "$ref": "v2.0.3.operationsEvent.schema.json#/$defs/OperationsEventClassType"
+                },
+                "OperationsEventDefinition": {
+                    "$ref": "v2.0.3.operationsEvent.schema.json#/$defs/OperationsEventDefinitionType"
+                },
+                "OperationsPerformance": {
+                    "$ref": "v2.0.3.operationsPerformance.schema.json#/$defs/OperationsPerformanceType"
+                },
+                "OperationsRequest": {
+                    "$ref": "v2.0.3.operationsSchedule.schema.json#/$defs/OperationsRequestType"
+                },
+                "OperationsResponse": {
+                    "$ref": "v2.0.3.operationsPerformance.schema.json#/$defs/OperationsResponseType"
+                },
+                "OperationsSchedule": {
+                    "$ref": "v2.0.3.operationsSchedule.schema.json#/$defs/OperationsScheduleType"
+                },
+                "OperationsSegment": {
+                    "$ref": "v2.0.3.operationsDefinition.schema.json#/$defs/OperationsSegmentType"
+                },
+                "Person": {
+                    "$ref": "v2.0.3.personnel.schema.json#/$defs/PersonType"
+                },
+                "PersonnelClass": {
+                    "$ref": "v2.0.3.personnel.schema.json#/$defs/PersonnelClassType"
+                },
+                "PhysicalAsset": {
+                    "$ref": "v2.0.3.physicalAsset.schema.json#/$defs/PhysicalAssetType"
+                },
+                "PhysicalAssetClass": {
+                    "$ref": "v2.0.3.physicalAsset.schema.json#/$defs/PhysicalAssetClassType"
+                },
+                "ProcessElement": {
+                    "$ref": "v2.0.3.generalRecipe.schema.json#/$defs/ProcessElementType"
+                },
+                "ProcessSegment": {
+                    "$ref": "v2.0.3.processSegment.schema.json#/$defs/ProcessSegmentType"
+                },
+                "ResourceConstraint": {
+                    "$ref": "v2.0.3.generalRecipe.schema.json#/$defs/ResourceConstraintType"
+                },
+                "ResourceNetworkConnectionType": {
+                    "$ref": "v2.0.3.resourceRelationshipNetwork.schema.json#/$defs/ResourceNetworkConnectionTypeType"
+                },
+                "ResourceRelationshipNetwork": {
+                    "$ref": "v2.0.3.resourceRelationshipNetwork.schema.json#/$defs/ResourceRelationshipNetworkType"
+                },
+                "TestResult": {
+                    "$ref": "v2.0.3.operationsTest.schema.json#/$defs/TestResultType"
+                },
+                "TestSpecification": {
+                    "$ref": "v2.0.3.operationsTest.schema.json#/$defs/TestSpecificationType"
+                },
+                "WorkAlert": {
+                    "$ref": "v2.0.3.workAlert.schema.json#/$defs/WorkAlertType"
+                },
+                "WorkAlertDefinition": {
+                    "$ref": "v2.0.3.workAlert.schema.json#/$defs/WorkAlertDefinitionType"
+                },
+                "WorkCalendar": {
+                    "$ref": "v2.0.3.workCalendar.schema.json#/$defs/WorkCalendarType"
+                },
+                "WorkCalendarDefinition": {
+                    "$ref": "v2.0.3.workCalendar.schema.json#/$defs/WorkCalendarDefinitionType"
+                },
+                "WorkCapability": {
+                    "$ref": "v2.0.3.workCapability.schema.json#/$defs/WorkCapabilityType"
+                },
+                "WorkDirective": {
+                    "$ref": "v2.0.3.workDefinition.schema.json#/$defs/WorkDirectiveType"
+                },
+                "WorkMaster": {
+                    "$ref": "v2.0.3.workDefinition.schema.json#/$defs/WorkMasterType"
+                },
+                "WorkMasterCapability": {
+                    "$ref": "v2.0.3.workCapability.schema.json#/$defs/WorkMasterCapabilityType"
+                },
+                "WorkPerformance": {
+                    "$ref": "v2.0.3.workPerformance.schema.json#/$defs/WorkPerformanceType"
+                },
+                "WorkRecord": {
+                    "$ref": "v2.0.3.workRecord.schema.json#/$defs/WorkRecordType"
+                },
+                "WorkRecordSpecification": {
+                    "$ref": "v2.0.3.workRecord.schema.json#/$defs/WorkRecordSpecificationType"
+                },
+                "WorkRequest": {
+                    "$ref": "v2.0.3.workSchedule.schema.json#/$defs/WorkRequestType"
+                },
+                "WorkResponse": {
+                    "$ref": "v2.0.3.workPerformance.schema.json#/$defs/WorkResponseType"
+                },
+                "WorkSchedule": {
+                    "$ref": "v2.0.3.workSchedule.schema.json#/$defs/WorkScheduleType"
+                },
+                "WorkflowSpecification": {
+                    "$ref": "v2.0.3.workflowSpecification.schema.json#/$defs/WorkflowSpecificationType"
+                },
+                "WorkflowSpecificationConnectionType": {
+                    "$ref": "v2.0.3.workflowSpecification.schema.json#/$defs/WorkflowSpecificationConnectionTypeType"
+                },
+                "WorkflowSpecificationNodeType": {
+                    "$ref": "v2.0.3.workflowSpecification.schema.json#/$defs/WorkflowSpecificationNodeTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/InformationObjectType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "InformationObjectType1Type": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Change",
+                        "Comment",
+                        "DataSet",
+                        "Event",
+                        "Operational Location",
+                        "Operational LocationClass",
+                        "Personnel Class",
+                        "Person",
+                        "Equipment Class",
+                        "Equipment",
+                        "Physical Asset Class",
+                        "Physical Asset",
+                        "Material Class",
+                        "Material Definition",
+                        "Material Lot",
+                        "Material SubLot",
+                        "Process Segment",
+                        "Test Specification",
+                        "Test Result",
+                        "Sample",
+                        "Property Measurement",
+                        "Operations Event Class",
+                        "Operations Event Definition",
+                        "Operations Event",
+                        "Operations Definition",
+                        "Operations Segment",
+                        "Operations Schedule",
+                        "Operations Request",
+                        "Operations Performance",
+                        "Operations Response",
+                        "Operations Capability",
+                        "Resource Relationship Network",
+                        "Resource Network Connection Type",
+                        "Work Master",
+                        "Work Directive",
+                        "Workflow Specification",
+                        "Workflow Specification Node Type",
+                        "Workflow Specification Connection Type",
+                        "Work Schedule",
+                        "Work Request",
+                        "Job List",
+                        "Job Order",
+                        "Work Performance",
+                        "Work Response",
+                        "Job Response",
+                        "Job Response List",
+                        "Work Capability",
+                        "Work Master Capability",
+                        "Work Alert Definition",
+                        "Work Alert",
+                        "Work Calendar",
+                        "Work Calendar Definition",
+                        "Work Record",
+                        "Work Record Specification",
+                        "Batch Production Record",
+                        "Control Recipe",
+                        "Master Recipe",
+                        "GeneralRecipe",
+                        "Recipe Element",
+                        "Resource Constraint",
+                        "Process Element",
+                        "Personnel Identification Manifest",
+                        "Resource Definition Manifest",
+                        "Other"
+                    ]
+                },
+                "@languageID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                }
+            }
+        },
+        "InformationObjectTypeType": {
+            "type": [
+                "object",
+                "string",
+                "number",
+                "boolean"
+            ],
+            "additionalProperties": false,
+            "properties": {
+                "$": {
+                    "type": "string",
+                    "enum": [
+                        "Change",
+                        "Comment",
+                        "DataSet",
+                        "Event",
+                        "Operational Location",
+                        "Operational LocationClass",
+                        "Personnel Class",
+                        "Person",
+                        "Equipment Class",
+                        "Equipment",
+                        "Physical Asset Class",
+                        "Physical Asset",
+                        "Material Class",
+                        "Material Definition",
+                        "Material Lot",
+                        "Material SubLot",
+                        "Process Segment",
+                        "Test Specification",
+                        "Test Result",
+                        "Sample",
+                        "Property Measurement",
+                        "Operations Event Class",
+                        "Operations Event Definition",
+                        "Operations Event",
+                        "Operations Definition",
+                        "Operations Segment",
+                        "Operations Schedule",
+                        "Operations Request",
+                        "Operations Performance",
+                        "Operations Response",
+                        "Operations Capability",
+                        "Resource Relationship Network",
+                        "Resource Network Connection Type",
+                        "Work Master",
+                        "Work Directive",
+                        "Workflow Specification",
+                        "Workflow Specification Node Type",
+                        "Workflow Specification Connection Type",
+                        "Work Schedule",
+                        "Work Request",
+                        "Job List",
+                        "Job Order",
+                        "Work Performance",
+                        "Work Response",
+                        "Job Response",
+                        "Job Response List",
+                        "Work Capability",
+                        "Work Master Capability",
+                        "Work Alert Definition",
+                        "Work Alert",
+                        "Work Calendar",
+                        "Work Calendar Definition",
+                        "Work Record",
+                        "Work Record Specification",
+                        "Batch Production Record",
+                        "Control Recipe",
+                        "Master Recipe",
+                        "GeneralRecipe",
+                        "Recipe Element",
+                        "Resource Constraint",
+                        "Process Element",
+                        "Personnel Identification Manifest",
+                        "Resource Definition Manifest",
+                        "Other"
+                    ]
+                },
+                "@OtherValue": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                },
+                "@languageID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/language"
+                },
+                "@listAgencyID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listAgencyName": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                },
+                "@listID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@listName": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                },
+                "@listSchemeURI": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listURI": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/anyURI"
+                },
+                "@listVersionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@name": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/string"
+                }
+            }
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Information Object Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.3\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "InformationObject": {
+            "$ref": "#/$defs/InformationObject"
+        },
+        "InformationObjectType": {
+            "$ref": "#/$defs/InformationObjectType"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.3.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

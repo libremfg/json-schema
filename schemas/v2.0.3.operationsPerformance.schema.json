@@ -1,0 +1,565 @@
+{
+    "$id": "v2.0.3.operationsPerformance.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeOperationsPerformance": {
+            "$ref": "#/$defs/AcknowledgeOperationsPerformanceType"
+        },
+        "AcknowledgeOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "OperationsPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelOperationsPerformance": {
+            "$ref": "#/$defs/CancelOperationsPerformanceType"
+        },
+        "CancelOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "OperationsPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeOperationsPerformance": {
+            "$ref": "#/$defs/ChangeOperationsPerformanceType"
+        },
+        "ChangeOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "OperationsPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetOperationsPerformance": {
+            "$ref": "#/$defs/GetOperationsPerformanceType"
+        },
+        "GetOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "OperationsPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationsPerformance": {
+            "$ref": "#/$defs/OperationsPerformanceType"
+        },
+        "OperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "OperationsResponse"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "Endtime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsResponse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/OperationsResponseType"
+                    },
+                    "minItems": 1
+                },
+                "OperationsScheduleID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "PerformanceState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/OperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "OperationsResponse": {
+            "$ref": "#/$defs/OperationsResponseType"
+        },
+        "OperationsResponseType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "SegmentResponse"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "OperationsDefinitionID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsRequestID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsSegmentID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "OperationsType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "ResponseState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "SegmentRequirementID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "SegmentResponse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpSegmentResponseType"
+                    },
+                    "minItems": 1
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/OperationsResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessOperationsPerformance": {
+            "$ref": "#/$defs/ProcessOperationsPerformanceType"
+        },
+        "ProcessOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationsPerformance",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondOperationsPerformance": {
+            "$ref": "#/$defs/RespondOperationsPerformanceType"
+        },
+        "RespondOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationsPerformance",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowOperationsPerformance": {
+            "$ref": "#/$defs/ShowOperationsPerformanceType"
+        },
+        "ShowOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationsPerformance",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncOperationsPerformance": {
+            "$ref": "#/$defs/SyncOperationsPerformanceType"
+        },
+        "SyncOperationsPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "OperationsPerformance",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "OperationsPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/OperationsPerformanceType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncOperationsPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Operations Performance Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.3\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeOperationsPerformance": {
+            "$ref": "#/$defs/AcknowledgeOperationsPerformance"
+        },
+        "CancelOperationsPerformance": {
+            "$ref": "#/$defs/CancelOperationsPerformance"
+        },
+        "ChangeOperationsPerformance": {
+            "$ref": "#/$defs/ChangeOperationsPerformance"
+        },
+        "GetOperationsPerformance": {
+            "$ref": "#/$defs/GetOperationsPerformance"
+        },
+        "OperationsPerformance": {
+            "$ref": "#/$defs/OperationsPerformance"
+        },
+        "OperationsResponse": {
+            "$ref": "#/$defs/OperationsResponse"
+        },
+        "ProcessOperationsPerformance": {
+            "$ref": "#/$defs/ProcessOperationsPerformance"
+        },
+        "RespondOperationsPerformance": {
+            "$ref": "#/$defs/RespondOperationsPerformance"
+        },
+        "ShowOperationsPerformance": {
+            "$ref": "#/$defs/ShowOperationsPerformance"
+        },
+        "SyncOperationsPerformance": {
+            "$ref": "#/$defs/SyncOperationsPerformance"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.3.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
