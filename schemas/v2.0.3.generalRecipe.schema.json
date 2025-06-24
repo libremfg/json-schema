@@ -2531,6 +2531,9 @@
         "ProcessElement": {
             "$ref": "#/$defs/ProcessElement"
         },
+        "ProcessGeneralRecipeInformation": {
+            "$ref": "#/$defs/ProcessGeneralRecipeInformation"
+        },
         "ProcessProcessElementLibrary": {
             "$ref": "#/$defs/ProcessProcessElementLibrary"
         },
