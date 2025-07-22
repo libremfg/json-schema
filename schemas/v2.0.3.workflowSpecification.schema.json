@@ -1,0 +1,2182 @@
+{
+    "$id": "v2.0.3.workflowSpecification.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeWorkflowSpecification": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationType"
+        },
+        "AcknowledgeWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationConnectionTypeType"
+        },
+        "AcknowledgeWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationInformationType"
+        },
+        "AcknowledgeWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationNodeTypeType"
+        },
+        "AcknowledgeWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkflowSpecification": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationType"
+        },
+        "CancelWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationConnectionTypeType"
+        },
+        "CancelWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationInformationType"
+        },
+        "CancelWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationNodeTypeType"
+        },
+        "CancelWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkflowSpecification": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationType"
+        },
+        "ChangeWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationConnectionTypeType"
+        },
+        "ChangeWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationInformationType"
+        },
+        "ChangeWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationNodeTypeType"
+        },
+        "ChangeWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkflowSpecification": {
+            "$ref": "#/$defs/GetWorkflowSpecificationType"
+        },
+        "GetWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/GetWorkflowSpecificationConnectionTypeType"
+        },
+        "GetWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/GetWorkflowSpecificationInformationType"
+        },
+        "GetWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/GetWorkflowSpecificationNodeTypeType"
+        },
+        "GetWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkflowSpecification": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationType"
+        },
+        "ProcessWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationConnectionTypeType"
+        },
+        "ProcessWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationInformationType"
+        },
+        "ProcessWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationNodeTypeType"
+        },
+        "ProcessWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkflowSpecification": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationType"
+        },
+        "RespondWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationConnectionTypeType"
+        },
+        "RespondWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationInformationType"
+        },
+        "RespondWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationNodeTypeType"
+        },
+        "RespondWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkflowSpecification": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationType"
+        },
+        "ShowWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationConnectionTypeType"
+        },
+        "ShowWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationInformationType"
+        },
+        "ShowWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationNodeTypeType"
+        },
+        "ShowWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkflowSpecification": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationType"
+        },
+        "SyncWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationConnectionTypeType"
+        },
+        "SyncWorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkflowSpecificationConnectionType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkflowSpecificationConnectionType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationInformationType"
+        },
+        "SyncWorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkflowSpecificationInformation"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkflowSpecificationInformation": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationInformationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationNodeTypeType"
+        },
+        "SyncWorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkflowSpecificationNodeType"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkflowSpecificationNodeType": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkflowSpecification"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkflowSpecification": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkflowSpecificationType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecification": {
+            "$ref": "#/$defs/WorkflowSpecificationType"
+        },
+        "WorkflowSpecificationConnectionPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkflowSpecificationConnectionPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionPropertyType"
+                    }
+                },
+                "WorkflowSpecificationConnectionTypePropertyID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationConnectionPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationConnectionType": {
+            "type": "object",
+            "required": [
+                "Dependency",
+                "ID"
+            ],
+            "properties": {
+                "Dependency": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/DependencyType"
+                },
+                "DependencyFactor": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "FromWSNodeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "ToWSNodeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "WorkflowSpecificationConnectionProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionPropertyType"
+                    }
+                },
+                "WorkflowSpecificationConnectionTypeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationConnectionType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationConnectionTypePropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkflowSpecificationConnectionTypePropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionTypePropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationConnectionTypePropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationConnectionTypeType": {
+            "type": "object",
+            "required": [
+                "Dependency",
+                "ID"
+            ],
+            "properties": {
+                "Dependency": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/DependencyType"
+                },
+                "DependencyFactor": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "FromWSNodeMultiplicity": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "ToWSNodeMultiplicity": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecificationConnectionTypeBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "WorkflowSpecificationConnectionTypeProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionTypePropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationConnectionTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationInformation": {
+            "$ref": "#/$defs/WorkflowSpecificationInformationType"
+        },
+        "WorkflowSpecificationInformationType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "WorkflowSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationType"
+                    }
+                },
+                "WorkflowSpecificationConnectionType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+                    }
+                },
+                "WorkflowSpecificationNodeType": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationInformationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationNodePropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkflowSpecificationNodePropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodePropertyType"
+                    }
+                },
+                "WorkflowSpecificationNodeTypePropertyID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationNodePropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationNodeType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkDirectiveID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkDirectiveVersion": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterVersion": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecification": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationType"
+                    }
+                },
+                "WorkflowSpecificationNodeProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodePropertyType"
+                    }
+                },
+                "WorkflowSpecificationNodeTypeID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationNodeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationNodeTypePropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkflowSpecificationNodeTypePropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodeTypePropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationNodeTypePropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationNodeTypeType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecificationNodeTypeBaseID": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                    }
+                },
+                "WorkflowSpecificationNodeTypeProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodeTypePropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationNodeTypeType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationPropertyType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "Value": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/ValueType"
+                    }
+                },
+                "WorkflowSpecificationPropertyChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationPropertyType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkflowSpecificationType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "WorkflowSpecificationNode"
+            ],
+            "properties": {
+                "DefinitionType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/DefinitionTypeType"
+                },
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EffectiveEndDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EffectiveStartDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecificationConnection": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationConnectionType"
+                    }
+                },
+                "WorkflowSpecificationNode": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationNodeType"
+                    },
+                    "minItems": 1
+                },
+                "WorkflowSpecificationPatternID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecificationProperty": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkflowSpecificationPropertyType"
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkflowSpecificationType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Workflow Specification Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.3\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeWorkflowSpecification": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecification"
+        },
+        "AcknowledgeWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationConnectionType"
+        },
+        "AcknowledgeWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationInformation"
+        },
+        "AcknowledgeWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/AcknowledgeWorkflowSpecificationNodeType"
+        },
+        "CancelWorkflowSpecification": {
+            "$ref": "#/$defs/CancelWorkflowSpecification"
+        },
+        "CancelWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationConnectionType"
+        },
+        "CancelWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationInformation"
+        },
+        "CancelWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/CancelWorkflowSpecificationNodeType"
+        },
+        "ChangeWorkflowSpecification": {
+            "$ref": "#/$defs/ChangeWorkflowSpecification"
+        },
+        "ChangeWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationConnectionType"
+        },
+        "ChangeWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationInformation"
+        },
+        "ChangeWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ChangeWorkflowSpecificationNodeType"
+        },
+        "GetWorkflowSpecification": {
+            "$ref": "#/$defs/GetWorkflowSpecification"
+        },
+        "GetWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/GetWorkflowSpecificationConnectionType"
+        },
+        "GetWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/GetWorkflowSpecificationInformation"
+        },
+        "GetWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/GetWorkflowSpecificationNodeType"
+        },
+        "ProcessWorkflowSpecification": {
+            "$ref": "#/$defs/ProcessWorkflowSpecification"
+        },
+        "ProcessWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationConnectionType"
+        },
+        "ProcessWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationInformation"
+        },
+        "ProcessWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ProcessWorkflowSpecificationNodeType"
+        },
+        "RespondWorkflowSpecification": {
+            "$ref": "#/$defs/RespondWorkflowSpecification"
+        },
+        "RespondWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationConnectionType"
+        },
+        "RespondWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationInformation"
+        },
+        "RespondWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/RespondWorkflowSpecificationNodeType"
+        },
+        "ShowWorkflowSpecification": {
+            "$ref": "#/$defs/ShowWorkflowSpecification"
+        },
+        "ShowWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationConnectionType"
+        },
+        "ShowWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationInformation"
+        },
+        "ShowWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/ShowWorkflowSpecificationNodeType"
+        },
+        "SyncWorkflowSpecification": {
+            "$ref": "#/$defs/SyncWorkflowSpecification"
+        },
+        "SyncWorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationConnectionType"
+        },
+        "SyncWorkflowSpecificationInformation": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationInformation"
+        },
+        "SyncWorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/SyncWorkflowSpecificationNodeType"
+        },
+        "WorkflowSpecification": {
+            "$ref": "#/$defs/WorkflowSpecification"
+        },
+        "WorkflowSpecificationConnectionType": {
+            "$ref": "#/$defs/WorkflowSpecificationConnectionTypeType"
+        },
+        "WorkflowSpecificationInformation": {
+            "$ref": "#/$defs/WorkflowSpecificationInformation"
+        },
+        "WorkflowSpecificationNodeType": {
+            "$ref": "#/$defs/WorkflowSpecificationNodeTypeType"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.3.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}

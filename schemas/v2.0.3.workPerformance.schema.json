@@ -1,0 +1,1949 @@
+{
+    "$id": "v2.0.3.workPerformance.schema.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "AcknowledgeJobResponse": {
+            "$ref": "#/$defs/AcknowledgeJobResponseType"
+        },
+        "AcknowledgeJobResponseList": {
+            "$ref": "#/$defs/AcknowledgeJobResponseListType"
+        },
+        "AcknowledgeJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "JobResponseList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "JobResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkPerformance": {
+            "$ref": "#/$defs/AcknowledgeWorkPerformanceType"
+        },
+        "AcknowledgeWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "AcknowledgeWorkResponse": {
+            "$ref": "#/$defs/AcknowledgeWorkResponseType"
+        },
+        "AcknowledgeWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Acknowledge",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Acknowledge": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransAcknowledgeType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/AcknowledgeWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelJobResponse": {
+            "$ref": "#/$defs/CancelJobResponseType"
+        },
+        "CancelJobResponseList": {
+            "$ref": "#/$defs/CancelJobResponseListType"
+        },
+        "CancelJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "JobResponseList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "JobResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkPerformance": {
+            "$ref": "#/$defs/CancelWorkPerformanceType"
+        },
+        "CancelWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "CancelWorkResponse": {
+            "$ref": "#/$defs/CancelWorkResponseType"
+        },
+        "CancelWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Cancel",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Cancel": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransCancelType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/CancelWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeJobResponse": {
+            "$ref": "#/$defs/ChangeJobResponseType"
+        },
+        "ChangeJobResponseList": {
+            "$ref": "#/$defs/ChangeJobResponseListType"
+        },
+        "ChangeJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "JobResponseList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "JobResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkPerformance": {
+            "$ref": "#/$defs/ChangeWorkPerformanceType"
+        },
+        "ChangeWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ChangeWorkResponse": {
+            "$ref": "#/$defs/ChangeWorkResponseType"
+        },
+        "ChangeWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Change",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Change": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransChangeType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ChangeWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetJobResponse": {
+            "$ref": "#/$defs/GetJobResponseType"
+        },
+        "GetJobResponseList": {
+            "$ref": "#/$defs/GetJobResponseListType"
+        },
+        "GetJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "JobResponseList"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "JobResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkPerformance": {
+            "$ref": "#/$defs/GetWorkPerformanceType"
+        },
+        "GetWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "GetWorkResponse": {
+            "$ref": "#/$defs/GetWorkResponseType"
+        },
+        "GetWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Get",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Get": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransGetType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/GetWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "JobResponse": {
+            "$ref": "#/$defs/JobResponseType"
+        },
+        "JobResponseList": {
+            "$ref": "#/$defs/JobResponseListType"
+        },
+        "JobResponseListType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "JobResponse"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobResponse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/JobResponseType"
+                    },
+                    "minItems": 1
+                },
+                "JobState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/JobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "JobResponseType": {
+            "type": "object",
+            "required": [
+                "ID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "EquipmentActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpEquipmentActualType"
+                    }
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobOrderID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobResponseData": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpSegmentDataType"
+                    }
+                },
+                "JobState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "MaterialActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpMaterialActualType"
+                    }
+                },
+                "PersonnelActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpPersonnelActualType"
+                    }
+                },
+                "PhysicalAssetActual": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.operationsPerformanceTypes.schema.json#/$defs/OpPhysicalAssetActualType"
+                    }
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkDirective": {
+                    "$ref": "v2.0.3.workDefinition.schema.json#/$defs/WorkDirectiveType"
+                },
+                "WorkDirectiveVersion": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkMasterVersion": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                },
+                "WorkflowSpecificationID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkflowSpecificationNodeID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/JobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessJobResponse": {
+            "$ref": "#/$defs/ProcessJobResponseType"
+        },
+        "ProcessJobResponseList": {
+            "$ref": "#/$defs/ProcessJobResponseListType"
+        },
+        "ProcessJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponseList",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponse",
+                        "Process"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        },
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkPerformance": {
+            "$ref": "#/$defs/ProcessWorkPerformanceType"
+        },
+        "ProcessWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ProcessWorkResponse": {
+            "$ref": "#/$defs/ProcessWorkResponseType"
+        },
+        "ProcessWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Process",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Process": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransProcessType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ProcessWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondJobResponse": {
+            "$ref": "#/$defs/RespondJobResponseType"
+        },
+        "RespondJobResponseList": {
+            "$ref": "#/$defs/RespondJobResponseListType"
+        },
+        "RespondJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponseList",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponse",
+                        "Respond"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        },
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkPerformance": {
+            "$ref": "#/$defs/RespondWorkPerformanceType"
+        },
+        "RespondWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "RespondWorkResponse": {
+            "$ref": "#/$defs/RespondWorkResponseType"
+        },
+        "RespondWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Respond",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Respond": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransRespondType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/RespondWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowJobResponse": {
+            "$ref": "#/$defs/ShowJobResponseType"
+        },
+        "ShowJobResponseList": {
+            "$ref": "#/$defs/ShowJobResponseListType"
+        },
+        "ShowJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponseList",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponse",
+                        "Show"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        },
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkPerformance": {
+            "$ref": "#/$defs/ShowWorkPerformanceType"
+        },
+        "ShowWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "ShowWorkResponse": {
+            "$ref": "#/$defs/ShowWorkResponseType"
+        },
+        "ShowWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Show",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Show": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransShowType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/ShowWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncJobResponse": {
+            "$ref": "#/$defs/SyncJobResponseType"
+        },
+        "SyncJobResponseList": {
+            "$ref": "#/$defs/SyncJobResponseListType"
+        },
+        "SyncJobResponseListType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponseList",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponseList": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseListType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncJobResponseListType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncJobResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "JobResponse",
+                        "Sync"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "JobResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/JobResponseType"
+                            },
+                            "minItems": 1
+                        },
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncJobResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkPerformance": {
+            "$ref": "#/$defs/SyncWorkPerformanceType"
+        },
+        "SyncWorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkPerformance"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkPerformance": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkPerformanceType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "SyncWorkResponse": {
+            "$ref": "#/$defs/SyncWorkResponseType"
+        },
+        "SyncWorkResponseType": {
+            "type": "object",
+            "required": [
+                "ApplicationArea",
+                "DataArea",
+                "@releaseID"
+            ],
+            "properties": {
+                "@releaseID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "@versionID": {
+                    "$ref": "v2.0.3.dataType.schema.json#/$defs/normalizedString"
+                },
+                "ApplicationArea": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/TransApplicationAreaType"
+                },
+                "DataArea": {
+                    "type": "object",
+                    "required": [
+                        "Sync",
+                        "WorkResponse"
+                    ],
+                    "additionalProperties": false,
+                    "properties": {
+                        "Sync": {
+                            "$ref": "v2.0.3.common.schema.json#/$defs/TransSyncType"
+                        },
+                        "WorkResponse": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/WorkResponseType"
+                            },
+                            "minItems": 1
+                        }
+                    }
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/SyncWorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkPerformance": {
+            "$ref": "#/$defs/WorkPerformanceType"
+        },
+        "WorkPerformanceType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "WorkResponse",
+                "WorkScheduleID"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkPerformanceChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkPerformanceType"
+                    }
+                },
+                "WorkResponse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkResponseType"
+                    },
+                    "minItems": 1
+                },
+                "WorkScheduleID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "WorkType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkPerformanceType"
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "WorkResponse": {
+            "$ref": "#/$defs/WorkResponseType"
+        },
+        "WorkResponseType": {
+            "type": "object",
+            "required": [
+                "ID",
+                "JobResponse"
+            ],
+            "properties": {
+                "Description": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "v2.0.3.common.schema.json#/$defs/DescriptionType"
+                    }
+                },
+                "EndTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "HierarchyScope": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/HierarchyScopeType"
+                },
+                "ID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "JobResponse": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/JobResponseType"
+                    },
+                    "minItems": 1
+                },
+                "PublishedDate": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "RequiredByRequestedSegmentResponse": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/RequiredByRequestedSegmentResponseType"
+                },
+                "ResponseState": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/ResponseStateType"
+                },
+                "StartTime": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/DateTimeType"
+                },
+                "Version": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkRequestID": {
+                    "$ref": "v2.0.3.coreComponents.schema.json#/$defs/IdentifierType"
+                },
+                "WorkResponseChild": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/WorkResponseType"
+                    }
+                },
+                "WorkType": {
+                    "$ref": "v2.0.3.common.schema.json#/$defs/OperationsTypeType"
+                }
+            },
+            "allOf": [
+                {
+                    "$ref": "v2.0.3.extensions.schema.json#/$defs/WorkResponseType"
+                }
+            ],
+            "unevaluatedProperties": false
+        }
+    },
+    "type": "object",
+    "title": "Rhize ISA-95/ISA-88 JSON Schema - Work Performance Definitions",
+    "description": "Copyright 2025, Libre Technologies Inc., Version v2.0.3\nAll Rights Reserved. http://www.rhize.com\nBased upon the ANSI/ISA-95.00.02-2018 Enterprise-Control System Integration Part 2: Object Model Attributes Standard and the ANSI/ISA-95.00.05-2018 Enterprise-Control System Integration Part 5: Business to Manufacturing Transactions.\nThe Business To Manufacturing Markup Language-JSON (B2MML-JSON) is used courtesy of MESA International.",
+    "properties": {
+        "AcknowledgeJobResponse": {
+            "$ref": "#/$defs/AcknowledgeJobResponse"
+        },
+        "AcknowledgeJobResponseList": {
+            "$ref": "#/$defs/AcknowledgeJobResponseList"
+        },
+        "AcknowledgeWorkPerformance": {
+            "$ref": "#/$defs/AcknowledgeWorkPerformance"
+        },
+        "AcknowledgeWorkResponse": {
+            "$ref": "#/$defs/AcknowledgeWorkResponse"
+        },
+        "CancelJobResponse": {
+            "$ref": "#/$defs/CancelJobResponse"
+        },
+        "CancelJobResponseList": {
+            "$ref": "#/$defs/CancelJobResponseList"
+        },
+        "CancelWorkPerformance": {
+            "$ref": "#/$defs/CancelWorkPerformance"
+        },
+        "CancelWorkResponse": {
+            "$ref": "#/$defs/CancelWorkResponse"
+        },
+        "ChangeJobResponse": {
+            "$ref": "#/$defs/ChangeJobResponse"
+        },
+        "ChangeJobResponseList": {
+            "$ref": "#/$defs/ChangeJobResponseList"
+        },
+        "ChangeWorkPerformance": {
+            "$ref": "#/$defs/ChangeWorkPerformance"
+        },
+        "ChangeWorkResponse": {
+            "$ref": "#/$defs/ChangeWorkResponse"
+        },
+        "GetJobResponse": {
+            "$ref": "#/$defs/GetJobResponse"
+        },
+        "GetJobResponseList": {
+            "$ref": "#/$defs/GetJobResponseList"
+        },
+        "GetWorkPerformance": {
+            "$ref": "#/$defs/GetWorkPerformance"
+        },
+        "GetWorkResponse": {
+            "$ref": "#/$defs/GetWorkResponse"
+        },
+        "JobResponse": {
+            "$ref": "#/$defs/JobResponse"
+        },
+        "JobResponseList": {
+            "$ref": "#/$defs/JobResponseList"
+        },
+        "ProcessJobResponse": {
+            "$ref": "#/$defs/ProcessJobResponse"
+        },
+        "ProcessJobResponseList": {
+            "$ref": "#/$defs/ProcessJobResponseList"
+        },
+        "ProcessWorkPerformance": {
+            "$ref": "#/$defs/ProcessWorkPerformance"
+        },
+        "ProcessWorkResponse": {
+            "$ref": "#/$defs/ProcessWorkResponse"
+        },
+        "RespondJobResponse": {
+            "$ref": "#/$defs/RespondJobResponse"
+        },
+        "RespondJobResponseList": {
+            "$ref": "#/$defs/RespondJobResponseList"
+        },
+        "RespondWorkPerformance": {
+            "$ref": "#/$defs/RespondWorkPerformance"
+        },
+        "RespondWorkResponse": {
+            "$ref": "#/$defs/RespondWorkResponse"
+        },
+        "ShowJobResponse": {
+            "$ref": "#/$defs/ShowJobResponse"
+        },
+        "ShowJobResponseList": {
+            "$ref": "#/$defs/ShowJobResponseList"
+        },
+        "ShowWorkPerformance": {
+            "$ref": "#/$defs/ShowWorkPerformance"
+        },
+        "ShowWorkResponse": {
+            "$ref": "#/$defs/ShowWorkResponse"
+        },
+        "SyncJobResponse": {
+            "$ref": "#/$defs/SyncJobResponse"
+        },
+        "SyncJobResponseList": {
+            "$ref": "#/$defs/SyncJobResponseList"
+        },
+        "SyncWorkPerformance": {
+            "$ref": "#/$defs/SyncWorkPerformance"
+        },
+        "SyncWorkResponse": {
+            "$ref": "#/$defs/SyncWorkResponse"
+        },
+        "WorkPerformance": {
+            "$ref": "#/$defs/WorkPerformance"
+        },
+        "WorkResponse": {
+            "$ref": "#/$defs/WorkResponse"
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "./v2.0.3.extensions.schema.json#"
+        }
+    ],
+    "unevaluatedProperties": false
+}
